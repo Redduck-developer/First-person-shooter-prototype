@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=4 uid="uid://c1qe4q0mgoclp"]
+[gd_scene load_steps=26 format=4 uid="uid://c1qe4q0mgoclp"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_script.gd" id="1_v3f0n"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="2_6d0qf"]
+[ext_resource type="Texture2D" uid="uid://byh5tfua0n40h" path="res://Assets/Textures/material_textures/Metal_normal.png" id="3_yl4ys"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6dx8v"]
 
@@ -144,6 +145,55 @@ _data = {
 "reset_axe": SubResource("Animation_2jug2")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hs1k0"]
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 0.515
+initial_velocity_min = 11.33
+initial_velocity_max = 11.33
+gravity = Vector3(0, -46.815, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_paycn"]
+specular_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.44
+roughness_texture = ExtResource("3_yl4ys")
+normal_enabled = true
+normal_scale = 8.64
+normal_texture = ExtResource("3_yl4ys")
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_r82ou"]
+material = SubResource("StandardMaterial3D_paycn")
+radius = 0.03
+
+[sub_resource type="Curve" id="Curve_iflke"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 27.5338), 102.02, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_u0go3"]
+curve = SubResource("Curve_iflke")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_go10j"]
+spread = 180.0
+initial_velocity_min = 12.44
+initial_velocity_max = 12.44
+gravity = Vector3(0, -75.795, 0)
+damping_min = 42.324
+damping_max = 42.324
+damping_curve = SubResource("CurveTexture_u0go3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5sd8"]
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.24
+
+[sub_resource type="SphereMesh" id="SphereMesh_fwgrd"]
+material = SubResource("StandardMaterial3D_k5sd8")
+radius = 0.055
+height = 0.11
+
 [node name="Enemy_test" type="CharacterBody3D" groups=["Enemies"]]
 script = ExtResource("1_v3f0n")
 
@@ -219,6 +269,31 @@ target_position = Vector3(0, -0.59, 0)
 libraries = {
 "": SubResource("AnimationLibrary_331t3")
 }
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457355, 0)
+gi_mode = 2
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.2
+randomness = 0.06
+trail_enabled = true
+trail_lifetime = 0.51
+process_material = SubResource("ParticleProcessMaterial_hs1k0")
+draw_passes = 2
+draw_pass_1 = SubResource("TubeTrailMesh_r82ou")
+draw_pass_2 = null
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.681675, 0)
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_go10j")
+draw_pass_1 = SubResource("SphereMesh_fwgrd")
 
 [connection signal="body_entered" from="MeshInstance3D/head/VISION" to="." method="_on_vision_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/head/VISION" to="." method="_on_vision_body_exited"]

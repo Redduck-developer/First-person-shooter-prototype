@@ -108,3 +108,9 @@ func _on_attack_animation_player_animation_finished(anim_name: StringName) -> vo
 		if %HURT_CAST.is_colliding():
 			if %HURT_CAST.get_collider() is player:
 				StatusManager._hurt(10)
+
+
+func  _hurt(amount):
+	Health = Health - amount
+	$GPUParticles3D.emitting = true
+	$GPUParticles3D2.emitting = true

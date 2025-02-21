@@ -10,6 +10,7 @@ func _hit():
 			get_collider()._break()
 	if get_collider() is enemy:
 		print("gatcha stupid idiot")
+		get_collider()._hurt(10)
 	if is_colliding() == true:
 		$SpringArm3D/GPUParticles3D.emitting = true
 		$SpringArm3D/Clang.play(0)
