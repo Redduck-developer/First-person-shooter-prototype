@@ -1,0 +1,1493 @@
+[gd_scene load_steps=60 format=3 uid="uid://dvmtoc4v7jnod"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Unused/player_r.gd" id="1_6374o"]
+[ext_resource type="Script" path="res://Scripts/Props/touch.gd" id="2_w1hkq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ddw5d"]
+friction = 0.05
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7tuqx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_l4smv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5lat"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0hn5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv8ap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy3r5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gogem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1sox"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sgkl"]
+bg_color = Color(1, 0, 0.95, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tvlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0pqr"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6o2y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptuod"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n048y"]
+font_size = 431
+font_color = Color(0.56, 0.56, 0.56, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8y0l"]
+albedo_color = Color(0.87, 0.63249, 0.3219, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxjax"]
+material = SubResource("StandardMaterial3D_g8y0l")
+size = Vector3(0.165, 0.205, 0.695)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtvg5"]
+albedo_color = Color(0.52, 0.199333, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juxmi"]
+albedo_color = Color(0.64, 0.64, 0.64, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1un8"]
+albedo_color = Color(0.55, 0.55, 0.55, 1)
+metallic = 1.0
+metallic_specular = 1.0
+clearcoat_enabled = true
+uv1_triplanar_sharpness = 0.00133402
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3820h"]
+size = Vector3(0.287018, 0.240723, 1.92899)
+
+[sub_resource type="Shader" id="Shader_0csac"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_toon, unshaded, depth_test_disabled;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform float rim : hint_range(0.0, 1.0, 0.01);
+uniform float rim_tint : hint_range(0.0, 1.0, 0.01);
+uniform sampler2D texture_rim : hint_default_white, filter_linear_mipmap, repeat_enable;
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	// Use Point Size: Enabled
+	POINT_SIZE = point_size;
+
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	// Use Point Size: Enabled
+	vec4 albedo_tex = texture(texture_albedo, POINT_COORD);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Rim: Enabled
+	vec2 rim_tex = texture(texture_rim, base_uv).xy;
+	RIM = rim * rim_tex.x;
+	RIM_TINT = rim_tint * rim_tex.y;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21qa2"]
+render_priority = 0
+shader = SubResource("Shader_0csac")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.5
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/rim = 1.0
+shader_parameter/rim_tint = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3lvem"]
+material = SubResource("ShaderMaterial_21qa2")
+radial_segments = 14
+
+[sub_resource type="Gradient" id="Gradient_6xyc0"]
+offsets = PackedFloat32Array(0.60355, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_67374"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5hq58"]
+color_ramp = SubResource("Gradient_6xyc0")
+noise = SubResource("FastNoiseLite_67374")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qoda"]
+specular_mode = 1
+albedo_color = Color(0.322167, 0.17, 1, 1)
+roughness = 0.0
+rim_enabled = true
+rim_tint = 1.0
+detail_enabled = true
+detail_mask = SubResource("NoiseTexture2D_5hq58")
+detail_blend_mode = 1
+grow = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jxj0d"]
+material = SubResource("StandardMaterial3D_5qoda")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p315d"]
+material = SubResource("StandardMaterial3D_5qoda")
+size = Vector3(0.56, 0.635, 0.38)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nwua"]
+material = SubResource("StandardMaterial3D_g8y0l")
+size = Vector3(0.17, 0.565, 0.205)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dfd6d"]
+material = SubResource("StandardMaterial3D_g8y0l")
+size = Vector3(0.17, 0.565, 0.205)
+
+[sub_resource type="Gradient" id="Gradient_l24d3"]
+offsets = PackedFloat32Array(0.60355, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bkv8t"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dxdok"]
+color_ramp = SubResource("Gradient_l24d3")
+noise = SubResource("FastNoiseLite_bkv8t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qin4e"]
+specular_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+rim_enabled = true
+rim_tint = 1.0
+detail_enabled = true
+detail_mask = SubResource("NoiseTexture2D_dxdok")
+detail_blend_mode = 1
+grow = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_uabqs"]
+material = SubResource("StandardMaterial3D_qin4e")
+size = Vector3(0.125, 0.04, 0.375)
+
+[sub_resource type="SphereMesh" id="SphereMesh_57i0r"]
+material = SubResource("StandardMaterial3D_g8y0l")
+radius = 0.175
+height = 0.35
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qcw20"]
+
+[sub_resource type="Animation" id="Animation_mjdy2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/PitchPivot/Camera3D:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [90.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.00351888, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7552k"]
+resource_name = "SLIDE"
+length = 0.3373
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(0.170755, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.226893)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(0.210224, 0.249999),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0698132, 0.392699, 1.94604)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/PitchPivot/Camera3D:fov")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(0.170755, 1),
+"update": 0,
+"values": [90.0, 111.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.00396666, 0.166667),
+"transitions": PackedFloat32Array(0.210224, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0698132, -0.392699, -1.94604)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(5.65685, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.820305, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.8675, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.00351888, 0), Vector3(0, -0.140338, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqqdg"]
+_data = {
+"RESET": SubResource("Animation_mjdy2"),
+"SLIDE": SubResource("Animation_7552k")
+}
+
+[sub_resource type="Animation" id="Animation_2sd0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_douua"]
+resource_name = "SLASH"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.270526, 0.925025, -0.994838), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.270526, -0.925025, 0.994838), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ky8k6"]
+_data = {
+"RESET": SubResource("Animation_2sd0r"),
+"SLASH": SubResource("Animation_douua")
+}
+
+[sub_resource type="Animation" id="Animation_urdfa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.626, -0.388, -0.224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h5fe8"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.626, -0.388, -0.224), Vector3(0.441, -0.388, -0.224), Vector3(0.626, -0.388, -0.224), Vector3(0.891, -0.388, -0.224), Vector3(0.626, -0.388, -0.224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.466667, 0.633333, 0.733333, 0.933333, 1, 1.2, 1.4, 1.46667, 1.63333, 1.73333, 1.93333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.662394, 0, 0), Vector3(0.410222, 0, 0), Vector3(0.18326, 0, 0), Vector3(0, 0, 0), Vector3(-0.461276, 0, 0), Vector3(-0.299062, 0, 0), Vector3(-0.1309, 0, 0), Vector3(0.662394, 0, 0), Vector3(0.410222, 0, 0), Vector3(0.18326, 0, 0), Vector3(0, 0, 0), Vector3(-0.461276, 0, 0), Vector3(-0.299062, 0, 0), Vector3(-0.1309, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.466667, 0.633333, 0.766667, 0.933333, 1, 1.2, 1.4, 1.46667, 1.63333, 1.76667, 1.93333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.461276, 0, 0), Vector3(-0.299062, 0, 0), Vector3(-0.1309, 0, 0), Vector3(0, 0, 0), Vector3(0.662394, 0, 0), Vector3(0.410222, 0, 0), Vector3(0.18326, 0, 0), Vector3(-0.461276, 0, 0), Vector3(-0.299062, 0, 0), Vector3(-0.1309, 0, 0), Vector3(0, 0, 0), Vector3(0.662394, 0, 0), Vector3(0.410222, 0, 0), Vector3(0.18326, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.0666667, 0, 0.4, 0.466667, 0.5, 0.7, 0.9, 0.966667, 1.03333, 1.43333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.19991, 0, 0), Vector3(-0.549914, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.597586, 0, 0), Vector3(-0.346291, 0, 0), Vector3(0, 0, 0), Vector3(-0.19991, 0, 0), Vector3(-0.549914, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.466667, 0.533333, 0.933333, 1, 1.2, 1.4, 1.46667, 1.53333, 1.93333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.597586, 0, 0), Vector3(-0.346291, 0, 0), Vector3(0, 0, 0), Vector3(-0.19991, 0, 0), Vector3(-0.549914, 0, 0), Vector3(0, 0, 0), Vector3(-0.597586, 0, 0), Vector3(-0.346291, 0, 0), Vector3(0, 0, 0), Vector3(-0.19991, 0, 0), Vector3(-0.549914, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6nbg"]
+_data = {
+"RESET": SubResource("Animation_urdfa"),
+"walk": SubResource("Animation_h5fe8")
+}
+
+[sub_resource type="Animation" id="Animation_kwvoq"]
+resource_name = "3rd person"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.210224, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.255, 2.215)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/SpringArm3D/MeshInstance3D:layers")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_564mq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/PitchPivot/SpringArm3D/MeshInstance3D:layers")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wgmsu"]
+_data = {
+"3rd person": SubResource("Animation_kwvoq"),
+"RESET": SubResource("Animation_564mq")
+}
+
+[sub_resource type="Animation" id="Animation_52jyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/SpringArm3D/MeshInstance3D:mesh:material:shader_parameter/albedo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eqj1a"]
+resource_name = "hue"
+length = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/PitchPivot/SpringArm3D/MeshInstance3D:mesh:material:shader_parameter/albedo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0.25, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d51p7"]
+_data = {
+"RESET": SubResource("Animation_52jyt"),
+"hue": SubResource("Animation_eqj1a")
+}
+
+[sub_resource type="Animation" id="Animation_gxe05"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 5.83287e-10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, -4.25959e-12, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, -1.48943e-09, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.626, -0.388, -0.224)]
+}
+
+[sub_resource type="Animation" id="Animation_j6xv2"]
+resource_name = "crouching"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 5.83287e-10, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.85672, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.85672, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.85672, 0, 0), Vector3(1.5708, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5708, -1.48943e-09, 0), Vector3(1.85672, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.85672, 0, 0), Vector3(1.5708, 0, 0), Vector3(1.85672, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TwistPivot/PitchPivot/arm_base/Node3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.626, -0.388, -0.224), Vector3(0.441, -0.388, -0.224), Vector3(0.626, -0.388, -0.224), Vector3(0.891, -0.388, -0.224), Vector3(0.626, -0.388, -0.224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rlfp"]
+_data = {
+"RESET": SubResource("Animation_gxe05"),
+"crouching": SubResource("Animation_j6xv2")
+}
+
+[node name="Player R" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ddw5d")
+gravity_scale = 2.0
+lock_rotation = true
+linear_damp = 1.0
+script = ExtResource("1_6374o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7tuqx")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78677, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+fov = 90.0
+
+[node name="debug" type="CanvasLayer" parent="TwistPivot/PitchPivot/Camera3D"]
+visible = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+modulate = Color(1, 0.55, 0, 0.0235294)
+position = Vector2(576.5, 326.5)
+scale = Vector2(1152.31, 643)
+mesh = SubResource("SphereMesh_l4smv")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+modulate = Color(1, 0.55, 0, 0.0235294)
+position = Vector2(576.5, 326.5)
+scale = Vector2(1048.76, 585.218)
+mesh = SubResource("SphereMesh_l4smv")
+
+[node name="Label" type="Label" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+offset_left = 359.0
+offset_top = 128.0
+offset_right = 784.0
+offset_bottom = 170.0
+text = "null"
+horizontal_alignment = 1
+
+[node name="text_y" type="Label" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+visible = false
+offset_left = 248.0
+offset_top = 222.0
+offset_right = 308.0
+offset_bottom = 264.0
+text = "0.03"
+clip_text = true
+
+[node name="text_zed" type="Label" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+visible = false
+offset_left = 248.0
+offset_top = 262.0
+offset_right = 308.0
+offset_bottom = 304.0
+text = "0.03f"
+clip_text = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+offset_left = 758.0
+offset_top = 447.0
+offset_right = 1148.0
+offset_bottom = 645.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(390, 198)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.829038, -0.271102, 0.489081, 0, 0.87462, 0.48481, -0.559193, -0.401925, 0.725093, 3.315, 3.887, 4.245)
+fov = 90.0
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+offset_left = 1.0
+offset_top = 447.0
+offset_right = 391.0
+offset_bottom = 645.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(390, 198)
+render_target_update_mode = 0
+
+[node name="Camera3D2" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer2/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634601, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, -93.11, 79.11, 109.005)
+projection = 1
+size = 38.557
+near = 0.001
+far = 847.31
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+offset_left = 771.0
+offset_right = 1153.0
+offset_bottom = 244.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer3"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(382, 244)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer3/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634602, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, 21.99, 25.845, 2.595)
+projection = 1
+size = 21.28
+near = 0.001
+far = 847.31
+
+[node name="SubViewportContainer4" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/debug"]
+offset_right = 382.0
+offset_bottom = 244.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer4"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(382, 244)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/debug/SubViewportContainer4/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634601, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, 20.43, 23.795, -88.74)
+projection = 1
+size = 28.945
+near = 0.001
+far = 847.31
+
+[node name="spawn menu" type="CanvasLayer" parent="TwistPivot/PitchPivot/Camera3D"]
+visible = false
+
+[node name="Node2D" type="Node2D" parent="TwistPivot/PitchPivot/Camera3D/spawn menu"]
+
+[node name="TabContainer" type="TabContainer" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D"]
+offset_right = 1149.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="spawnables" type="TabBar" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Button" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 49.0
+offset_right = 244.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "Can"
+
+[node name="table" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 161.0
+offset_right = 244.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "table"
+
+[node name="bean" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 271.0
+offset_right = 244.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "bean"
+
+[node name="flashbang" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 383.0
+offset_right = 244.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "Flash"
+
+[node name="utilities" type="TabBar" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/utilities"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "tbd"
+label_settings = SubResource("LabelSettings_n048y")
+
+[node name="carbut" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/utilities"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 49.0
+offset_right = 244.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "spawn Car"
+
+[node name="chairbutt" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/utilities"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 45.0
+offset_top = 168.0
+offset_right = 277.0
+offset_bottom = 257.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "spawn nimbus chair"
+
+[node name="cameras" type="TabBar" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras"]
+layout_mode = 0
+offset_left = 759.0
+offset_top = 416.0
+offset_right = 1149.0
+offset_bottom = 614.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(390, 198)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.829038, -0.271102, 0.489081, 0, 0.87462, 0.48481, -0.559193, -0.401925, 0.725093, 3.315, 3.887, 4.245)
+fov = 90.0
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 416.0
+offset_right = 392.0
+offset_bottom = 614.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(390, 198)
+render_target_update_mode = 0
+
+[node name="Camera3D2" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer2/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634601, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, -93.11, 79.11, 109.005)
+projection = 1
+size = 38.557
+near = 0.001
+far = 847.31
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras"]
+layout_mode = 0
+offset_left = 771.0
+offset_right = 1153.0
+offset_bottom = 244.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer3"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(382, 244)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer3/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634602, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, 21.99, 25.845, 2.595)
+projection = 1
+size = 21.28
+near = 0.001
+far = 847.31
+
+[node name="SubViewportContainer4" type="SubViewportContainer" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras"]
+layout_mode = 0
+offset_right = 382.0
+offset_bottom = 244.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer4"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(382, 244)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/cameras/SubViewportContainer4/SubViewport"]
+transform = Transform3D(0.406737, -0.65715, 0.634601, 0, 0.694658, 0.71934, -0.913545, -0.292582, 0.282543, 20.43, 23.795, -88.74)
+projection = 1
+size = 28.945
+near = 0.001
+far = 847.31
+
+[node name="settings" type="TabBar" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="body" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/settings"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 34.0
+offset_top = 43.0
+offset_right = 393.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "turn fullbody on"
+
+[node name="bean" type="Button" parent="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/settings"]
+editor_description = "the button"
+layout_mode = 0
+offset_left = 34.0
+offset_top = 151.0
+offset_right = 397.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 46
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5lat")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_t0hn5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rv8ap")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qy3r5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gogem")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x1sox")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2sgkl")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1tvlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g0pqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m6o2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ptuod")
+text = "turn fullbody off"
+
+[node name="arm_base" type="Node3D" parent="TwistPivot/PitchPivot"]
+
+[node name="Node3D" type="Node3D" parent="TwistPivot/PitchPivot/arm_base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.626, -0.388, -0.224)
+
+[node name="Node3D2" type="Node3D" parent="TwistPivot/PitchPivot/arm_base/Node3D"]
+visible = false
+
+[node name="Node3D3" type="Node3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.59507)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.248871)
+layers = 495
+sorting_offset = 2.415
+mesh = SubResource("BoxMesh_vxjax")
+skeleton = NodePath("../../..")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.248871)
+layers = 495
+radius = 0.0449379
+height = 0.323302
+material = SubResource("StandardMaterial3D_vtvg5")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3/MeshInstance3D/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, -0.00794112, 0.999968, 0, -0.999968, -0.00794112, 0, 0.18854, 0)
+layers = 495
+radius = 0.048
+height = 0.369025
+material = SubResource("StandardMaterial3D_juxmi")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2/Node3D3/MeshInstance3D/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.481441, 0)
+layers = 495
+radius = 0.0420961
+height = 0.572683
+cone = true
+material = SubResource("StandardMaterial3D_s1un8")
+
+[node name="Node3D2_2" type="Node3D" parent="TwistPivot/PitchPivot/arm_base/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22, 0, 0)
+visible = false
+
+[node name="Node3D3_2" type="Node3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.59507)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.249)
+layers = 495
+sorting_offset = 2.415
+mesh = SubResource("BoxMesh_vxjax")
+skeleton = NodePath("../../..")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.248871)
+layers = 495
+radius = 0.0449379
+height = 0.323302
+material = SubResource("StandardMaterial3D_vtvg5")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2/MeshInstance3D2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, -0.00794112, 0.999968, 0, -0.999968, -0.00794112, 0, 0.18854, 0)
+layers = 495
+radius = 0.048
+height = 0.369025
+material = SubResource("StandardMaterial3D_juxmi")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="TwistPivot/PitchPivot/arm_base/Node3D/Node3D2_2/Node3D3_2/MeshInstance3D2/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.481441, 0)
+layers = 495
+radius = 0.0420961
+height = 0.572683
+cone = true
+material = SubResource("StandardMaterial3D_s1un8")
+
+[node name="touch" type="Area3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.078, 0)
+script = ExtResource("2_w1hkq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TwistPivot/PitchPivot/touch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00852966, -0.0144044, -0.940933)
+shape = SubResource("BoxShape3D_3820h")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+spring_length = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/PitchPivot/SpringArm3D"]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -1.77128e-07, 0, 2.0261)
+mesh = SubResource("SphereMesh_3lvem")
+
+[node name="SpringArm3D2" type="SpringArm3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+spring_length = 1.875
+
+[node name="object pickup regoin" type="Node3D" parent="TwistPivot/PitchPivot/SpringArm3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.875)
+
+[node name="Marker3D" type="Marker3D" parent="TwistPivot/PitchPivot/SpringArm3D2/object pickup regoin"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78677, 0)
+mesh = SubResource("CapsuleMesh_jxj0d")
+skeleton = NodePath("../../..")
+
+[node name="skeleton" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.769795, 0)
+
+[node name="torso" type="MeshInstance3D" parent="TwistPivot/skeleton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.618316, 0.38)
+visible = false
+mesh = SubResource("BoxMesh_p315d")
+
+[node name="hip joint" type="Node3D" parent="TwistPivot/skeleton/torso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.308339, 0)
+
+[node name="hips" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00351888, 0)
+skeleton = NodePath("../../..")
+
+[node name="leg joint left" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips"]
+transform = Transform3D(1, -4.25959e-12, 1.54197e-17, 0, -3.61999e-06, -1, 4.25959e-12, 1, -3.61999e-06, 0.200079, -0.128982, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.291782, 0)
+mesh = SubResource("BoxMesh_7nwua")
+
+[node name="loint" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D"]
+transform = Transform3D(1, -5.83287e-10, -2.11149e-15, 0, -3.61999e-06, 1, -5.83287e-10, -1, -3.61999e-06, 0, -0.310389, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.283505, 0)
+mesh = SubResource("BoxMesh_dfd6d")
+
+[node name="loint" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315231, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint left/MeshInstance3D/loint/MeshInstance3D/loint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0863156)
+mesh = SubResource("BoxMesh_uabqs")
+
+[node name="leg joint right" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips"]
+transform = Transform3D(1, -1.48943e-09, 5.39172e-15, 0, -3.61999e-06, -1, 1.48943e-09, 1, -3.61999e-06, -0.189988, -0.128982, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.291782, 0)
+mesh = SubResource("BoxMesh_7nwua")
+
+[node name="loint" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, -0.310389, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.283505, 0)
+mesh = SubResource("BoxMesh_dfd6d")
+
+[node name="loint" type="Node3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315231, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/hip joint/hips/leg joint right/MeshInstance3D/loint/MeshInstance3D/loint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0863156)
+mesh = SubResource("BoxMesh_uabqs")
+
+[node name="head joint" type="Node3D" parent="TwistPivot/skeleton/torso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.332231, 0)
+
+[node name="head" type="MeshInstance3D" parent="TwistPivot/skeleton/torso/head joint"]
+transform = Transform3D(1.08, 0, 0, 0, 1.08, 0, 0, 0, 1.08, 0, 0.114399, 0)
+mesh = SubResource("SphereMesh_57i0r")
+skeleton = NodePath("../..")
+
+[node name="base_rot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787, 0)
+
+[node name="strafe_left_rot" type="Marker3D" parent="."]
+transform = Transform3D(0.992332, -0.123601, 0, 0.123601, 0.992332, 0, 0, 0, 1, 0, 0.787, 0)
+gizmo_extents = 0.8
+
+[node name="strafe_right_rot" type="Marker3D" parent="."]
+transform = Transform3D(0.99223, 0.124415, 0, -0.124415, 0.99223, 0, 0, 0, 1, 0, 0.787, 0)
+gizmo_extents = 0.8
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412191, 0)
+shape = SubResource("SphereShape3D_qcw20")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1.045, 0)
+hit_from_inside = true
+
+[node name="slide" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aqqdg")
+}
+
+[node name="slash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ky8k6")
+}
+speed_scale = 2.5
+
+[node name="walk" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p6nbg")
+}
+speed_scale = 2.0
+
+[node name="view" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wgmsu")
+}
+
+[node name="hue-shift" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d51p7")
+}
+speed_scale = 10.0
+
+[node name="crouch" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6rlfp")
+}
+
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables/table" to="." method="_on_table_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables/bean" to="." method="_on_bean_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/spawnables/flashbang" to="." method="_on_flashbang_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/utilities/carbut" to="." method="_on_carbut_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/utilities/chairbutt" to="." method="_on_carbut_2_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/settings/body" to="." method="_on_body_pressed"]
+[connection signal="pressed" from="TwistPivot/PitchPivot/Camera3D/spawn menu/Node2D/TabContainer/settings/bean" to="." method="_on_playerbean_pressed"]
+[connection signal="area_entered" from="TwistPivot/PitchPivot/touch" to="." method="_on_touch_area_entered"]
+[connection signal="body_entered" from="TwistPivot/PitchPivot/touch" to="." method="_on_touch_body_entered"]
+[connection signal="body_exited" from="TwistPivot/PitchPivot/touch" to="." method="_on_touch_body_exited"]
+[connection signal="animation_finished" from="view" to="." method="_on_view_animation_finished"]

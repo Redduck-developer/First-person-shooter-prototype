@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=3 uid="uid://8r5yfnn1kyts"]
+
+[ext_resource type="Script" path="res://Scripts/Props/prop.gd" id="1_2f7mm"]
+[ext_resource type="Material" uid="uid://da2k0h5ebt4fa" path="res://Assets/Materials/Recycled_wood.tres" id="2_2up2m"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_u17f1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ickfu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wysxg"]
+
+[sub_resource type="Curve" id="Curve_20ihv"]
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.306667, 74.1504), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s1i7h"]
+curve = SubResource("Curve_20ihv")
+
+[sub_resource type="Curve" id="Curve_atcnq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_unlfx"]
+curve = SubResource("Curve_atcnq")
+
+[sub_resource type="Curve" id="Curve_y15fg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.491979, 0.406593), 1.66353, 1.66353, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w3nth"]
+curve = SubResource("Curve_y15fg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hnss7"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, -17.325, 0)
+scale_curve = SubResource("CurveTexture_w3nth")
+emission_curve = SubResource("CurveTexture_unlfx")
+anim_speed_curve = SubResource("CurveTexture_s1i7h")
+collision_mode = 1
+collision_friction = 0.02
+collision_bounce = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_ub0x1"]
+material = ExtResource("2_2up2m")
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_2f7mm")
+is_breakable = true
+is_RigidBody3D = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_2up2m")
+mesh = SubResource("BoxMesh_ickfu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wysxg")
+
+[node name="hurtbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+shape = SubResource("BoxShape3D_wysxg")
+
+[node name="Mele_hit_particals" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.68893, 0, 0, 0, 1.68893, 0, 0, 0, 1.68893, 0, 0, 0)
+emitting = false
+amount = 46
+sub_emitter = NodePath("../Mele_hit_particals2")
+lifetime = 0.3
+one_shot = true
+collision_base_size = 1.05
+process_material = SubResource("ParticleProcessMaterial_hnss7")
+draw_pass_1 = SubResource("BoxMesh_ub0x1")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_u17f1")
+unit_size = 5.0
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

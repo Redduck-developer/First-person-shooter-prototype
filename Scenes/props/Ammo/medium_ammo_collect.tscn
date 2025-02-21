@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://gcedaf63qnuw"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Collectible_Ammo_Controller.gd" id="1_ubqhw"]
+[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="2_ewhl7"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_5ocb6"]
+[ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="4_0mlhq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ybmbg"]
+points = PackedVector3Array(-0.0324014, -0.352164, -0.342016, -0.0469855, -0.346114, -0.347944, 0.0323842, -0.352164, -0.342016, -0.0309568, -0.0784762, 0.49369, -0.0536412, -0.339999, -0.353873, 0.0469683, -0.346114, -0.347944, -0.046332, -0.0688097, 0.496131, 0.0309396, -0.0784762, 0.49369, -0.0385928, 0.067837, 0.567972, -0.0474498, 0.0681001, 0.566926, -0.0777187, -0.285156, -0.406649, -0.0777187, -0.171919, -0.51569, 0.053624, -0.339999, -0.353873, -0.0541227, -0.0580252, 0.498805, -0.076532, 0.0142436, 0.517869, 0.0463148, -0.0688097, 0.496131, 0.0474326, 0.0681001, 0.566926, 0.0385584, 0.067837, 0.567972, -0.0385928, 0.0826985, 0.571692, -0.0474498, 0.0829616, 0.570646, -0.0576312, 0.0838822, 0.566809, -0.0576312, 0.0690864, 0.56309, -0.0790085, -0.266086, -0.378866, -0.0878484, -0.156269, -0.323532, -0.0878484, -0.151731, -0.331088, -0.0777187, -0.115761, -0.569745, 0.0777015, -0.171919, -0.51569, 0.0777015, -0.285156, -0.406649, 0.0765148, 0.0142436, 0.517869, 0.0541056, -0.0580252, 0.498805, -0.0667806, 0.0709935, 0.555417, -0.0720777, 0.0731635, 0.546815, -0.076532, 0.0256199, 0.520775, -0.0878484, 0.0886168, 0.395344, -0.0878484, 0.0800682, 0.389415, 0.057614, 0.0690864, 0.56309, 0.057614, 0.0838822, 0.566809, 0.0474326, 0.0829616, 0.570646, 0.0385584, 0.0826985, 0.571692, -0.0385928, 0.238941, 0.610519, -0.0474498, 0.239204, 0.609356, -0.0576312, 0.239796, 0.605636, -0.0576312, 0.211783, 0.598661, -0.0667806, 0.0857892, 0.559137, -0.0667806, 0.241309, 0.597964, -0.0667806, 0.213361, 0.590989, -0.0878484, -0.111224, -0.35922, -0.0777187, -0.107936, -0.560561, -0.07237, -0.100242, -0.568001, -0.07237, -0.108002, -0.577069, 0.0777015, -0.115761, -0.569745, -0.0878484, -0.0732155, -0.385609, -0.0878484, -0.0655217, -0.386887, 0.0878484, -0.151731, -0.331088, 0.0789914, -0.266086, -0.378866, 0.0878484, -0.156269, -0.323532, 0.0878484, 0.0800682, 0.389415, 0.0878484, 0.0886168, 0.395344, 0.0765148, 0.0256199, 0.520775, 0.0720433, 0.0731635, 0.546815, 0.0667634, 0.0709935, 0.555417, -0.076532, 0.244728, 0.576574, -0.0878484, 0.139251, 0.40383, 0.0667634, 0.0857892, 0.559137, 0.0667634, 0.213361, 0.590989, 0.0667634, 0.241309, 0.597964, 0.057614, 0.211783, 0.598661, 0.057614, 0.239796, 0.605636, 0.0474326, 0.239204, 0.609356, 0.0385584, 0.238941, 0.610519, -0.0135178, 0.316076, 0.45742, -0.0665055, 0.253145, 0.578318, -0.0878484, 0.0308149, -0.241229, -0.0716821, 0.0936802, -0.269477, -0.0665055, 0.103149, -0.273662, -0.00529704, -0.0222525, -0.475817, -0.00529704, -0.0667711, -0.532546, -0.00529704, -0.0897867, -0.560561, -0.0665055, -0.00430033, -0.436525, -0.00529704, 0.00484014, -0.441059, -0.00576139, -0.107936, -0.577069, 0.0723529, -0.108002, -0.577069, 0.0723529, -0.100242, -0.568001, 0.0777015, -0.107936, -0.560561, 0.0878484, -0.0655217, -0.386887, 0.0878484, -0.0732155, -0.385609, 0.0878484, -0.111224, -0.35922, 0.0878484, 0.139251, 0.40383, 0.0765148, 0.244728, 0.576574, 0.0742791, 0.0730977, 0.53984, -0.076532, 0.259129, 0.488575, -0.0878484, 0.194028, 0.40848, -0.0878484, 0.186663, 0.411735, 0.0664883, 0.253145, 0.578318, 0.0134834, 0.316076, 0.45742, -0.0135178, 0.319627, 0.443587, -0.0878484, 0.0963763, -0.110334, -0.0716821, 0.163187, -0.128468, -0.0665055, 0.173248, -0.131258, -0.00529704, 0.184888, -0.13556, -0.00529704, 0.114789, -0.275871, 0.00527985, -0.0222525, -0.475817, 0.00527985, -0.0667711, -0.532546, 0.00527985, -0.0897867, -0.560561, 0.00527985, 0.00484014, -0.441059, 0.0057442, -0.107936, -0.577069, 0.0664883, -0.00430033, -0.436525, 0.0664883, 0.103149, -0.273662, 0.0716477, 0.0936802, -0.269477, 0.0878484, 0.0308149, -0.241229, 0.0878484, 0.186663, 0.411735, 0.0878484, 0.194028, 0.40848, 0.0765148, 0.259129, 0.488575, -0.0665055, 0.27044, 0.466023, -0.0665055, 0.277213, 0.389648, -0.0665055, 0.275766, 0.28084, -0.0716821, 0.265113, 0.280142, -0.0878484, 0.194686, 0.275609, -0.0878484, 0.19633, 0.377326, 0.0134834, 0.319627, 0.443587, -0.00529704, 0.274911, 0.144249, -0.0665055, 0.259853, 0.143086, -0.0878484, 0.146419, 0.0197474, -0.0716821, 0.215794, 0.0102151, -0.0665055, 0.22625, 0.00882012, -0.00529704, 0.239599, 0.00637895, 0.00527985, 0.184888, -0.13556, 0.00527985, 0.114789, -0.275871, 0.0664883, 0.173248, -0.131258, 0.0716477, 0.163187, -0.128468, 0.0878484, 0.0963763, -0.110334, 0.0878484, 0.19633, 0.377326, 0.0664883, 0.27044, 0.466023, 0.0878484, 0.194686, 0.275609, 0.0716477, 0.265113, 0.280142, 0.0664883, 0.275766, 0.28084, 0.0664883, 0.277213, 0.389648, -0.0716821, 0.2492, 0.143435, -0.0878484, 0.178838, 0.145993, 0.0664883, 0.259853, 0.143086, 0.00527985, 0.274911, 0.144249, 0.00527985, 0.239599, 0.00637895, 0.0664883, 0.22625, 0.00882012, 0.0716477, 0.215794, 0.0102151, 0.0878484, 0.146419, 0.0197474, 0.0878484, 0.178838, 0.145993, 0.0716477, 0.2492, 0.143435)
+
+[sub_resource type="Curve" id="Curve_xj4sy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_k3hkw"]
+curve = SubResource("Curve_xj4sy")
+
+[sub_resource type="Curve" id="Curve_tixe3"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_b2aqm"]
+curve = SubResource("Curve_tixe3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fn775"]
+spread = 180.0
+initial_velocity_min = 22.22
+initial_velocity_max = 22.22
+scale_curve = SubResource("CurveTexture_k3hkw")
+scale_over_velocity_min = 122.22
+scale_over_velocity_max = 122.22
+scale_over_velocity_curve = SubResource("CurveTexture_b2aqm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp1wt"]
+blend_mode = 4
+albedo_color = Color(0.00999999, 1, 0.8185, 1)
+emission_enabled = true
+emission = Color(1, 0.833333, 0, 1)
+emission_energy_multiplier = 26.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_t0d4x"]
+material = SubResource("StandardMaterial3D_hp1wt")
+radius = 0.25
+height = 0.5
+
+[node name="medium_ammo_collect" type="RigidBody3D"]
+top_level = true
+script = ExtResource("1_ubqhw")
+is_light_ammo = false
+is_medium_ammo = true
+collected_ammo_amount = 30
+is_RigidBody3D = true
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ewhl7")]
+transform = Transform3D(0.276778, 0, 0, 0, 0.276778, 0, 0, 0, 0.276778, -2.96357e-09, -0.0637898, 0.0490649)
+
+[node name="grip_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="0"]
+visible = false
+
+[node name="bow_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="1"]
+visible = false
+
+[node name="magazine fuse_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="2"]
+visible = false
+
+[node name="rear sights_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="3"]
+visible = false
+
+[node name="base_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="4"]
+visible = false
+
+[node name="forearm_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="5"]
+visible = false
+
+[node name="stock_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="6"]
+visible = false
+
+[node name="front sight_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="7"]
+visible = false
+
+[node name="barrel_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="8"]
+visible = false
+
+[node name="trigger_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="10"]
+visible = false
+
+[node name="selector_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="11"]
+visible = false
+
+[node name="charging handle1_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="12"]
+visible = false
+
+[node name="charging handle_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="13"]
+visible = false
+
+[node name="charging handle_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/charging handle_low" index="0"]
+visible = false
+
+[node name="ammo_003_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="14"]
+visible = false
+
+[node name="ammo_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="15"]
+visible = false
+
+[node name="ammo_001_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="16"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.276778, 0, 0, 0, -0.067942, 0.268309, 0, -0.268309, -0.067942, -5.23188e-09, -0.112615, 0.0866193)
+shape = SubResource("ConvexPolygonShape3D_ybmbg")
+
+[node name="hurtbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+transform = Transform3D(0.280534, 0, 0, 0, -0.0688641, 0.271951, 0, -0.271951, -0.0688641, -8.19545e-09, -0.110811, 0.081744)
+shape = SubResource("ConvexPolygonShape3D_ybmbg")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013868, 0.010694)
+emitting = false
+amount = 71
+lifetime = 0.15
+one_shot = true
+trail_lifetime = 19.25
+process_material = SubResource("ParticleProcessMaterial_fn775")
+draw_pass_1 = SubResource("SphereMesh_t0d4x")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5ocb6")
+unit_size = 5.0
+
+[node name="Collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0mlhq")
+volume_db = -16.46
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="finished" from="Collect_sound" to="." method="_on_collect_sound_finished"]
+
+[editable path="Sketchfab_Scene"]

@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://du4aeytu46j26"]
+
+[ext_resource type="Texture2D" uid="uid://3trcltbjh8fg" path="res://Assets/Textures/material_textures/concrete-9843-in-architextures.jpg" id="1_erauj"]
+[ext_resource type="Texture2D" uid="uid://cwdbt7s1hm0or" path="res://Assets/Textures/material_textures/concrete-9843-in-architextures_Normal.png" id="2_5asxw"]
+
+[resource]
+diffuse_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.75, 0.75, 0.75, 1)
+albedo_texture = ExtResource("1_erauj")
+metallic_specular = 1.0
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 3.59
+normal_texture = ExtResource("2_5asxw")
+detail_enabled = true
+detail_blend_mode = 3
+detail_normal = ExtResource("2_5asxw")
+uv1_scale = Vector3(0.565, 0.565, 0.565)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 2.54912
+uv2_triplanar = true
+texture_filter = 4

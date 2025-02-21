@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://da2k0h5ebt4fa"]
+
+[ext_resource type="Texture2D" uid="uid://dspejmw2lp1al" path="res://Assets/Textures/material_textures/Recycled_Wood.jpg" id="1_8yjy3"]
+[ext_resource type="Texture2D" uid="uid://ch4slm6to6p56" path="res://Assets/Textures/material_textures/Recycled_Wood_normal.png" id="2_q2dy1"]
+
+[resource]
+albedo_texture = ExtResource("1_8yjy3")
+metallic_specular = 0.0
+roughness = 0.0
+normal_enabled = true
+normal_scale = 1.84
+normal_texture = ExtResource("2_q2dy1")
+backlight_enabled = true
+backlight = Color(0.49, 0.334833, 0, 1)
+detail_enabled = true
+detail_blend_mode = 3
+detail_albedo = ExtResource("1_8yjy3")
+uv1_triplanar_sharpness = 0.0647043

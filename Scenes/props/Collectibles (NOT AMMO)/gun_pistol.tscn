@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkte380n6a0yy"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Gun_controller.gd" id="1_3ub6d"]
+[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="2_c2yop"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_752ku"]
+[ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="4_go5ap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hieuf"]
+size = Vector3(0.196992, 0.126577, 0.025)
+
+[node name="Gun_pistol" type="RigidBody3D"]
+mass = 5.0
+script = ExtResource("1_3ub6d")
+ID = "pistol"
+delete_on_collect = true
+is_RigidBody3D = true
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_c2yop")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="9x19_0" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
+visible = false
+
+[node name="919_1" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
+visible = false
+
+[node name="919 glock 17rnd mag _7" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00599609, -0.0369012, 0)
+shape = SubResource("BoxShape3D_hieuf")
+
+[node name="hurtbox" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00599609, -0.0192114, 0)
+shape = SubResource("BoxShape3D_hieuf")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_752ku")
+unit_size = 5.0
+
+[node name="Collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_go5ap")
+volume_db = -16.46
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="finished" from="Collect_sound" to="." method="_on_collect_sound_finished"]
+
+[editable path="Sketchfab_Scene"]

@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cw65xo4a0sk7h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_alckk"]
+load_path = "res://.godot/imported/Recycled_Wood.jpg-45035006d4563e068c3e5aed9d156678.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cdpsy"]
+load_path = "res://.godot/imported/Recycled_Wood.jpg-45035006d4563e068c3e5aed9d156678.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6l52v"]
+load_path = "res://.godot/imported/Recycled_Wood.jpg-45035006d4563e068c3e5aed9d156678.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c21wb"]
+load_path = "res://.godot/imported/Recycled_Wood_normal.png-f93f27f7a3573db53edfc1b7cb965bbe.s3tc.ctex"
+
+[resource]
+albedo_texture = SubResource("CompressedTexture2D_alckk")
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 0.04
+normal_texture = SubResource("CompressedTexture2D_c21wb")
+detail_enabled = true
+detail_mask = SubResource("CompressedTexture2D_6l52v")
+detail_blend_mode = 3
+detail_albedo = SubResource("CompressedTexture2D_cdpsy")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.0647043

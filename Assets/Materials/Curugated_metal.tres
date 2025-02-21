@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://vvr1mayy8hq4"]
+
+[ext_resource type="Texture2D" uid="uid://tc70esa5te3y" path="res://Assets/Textures/material_textures/curageted_metal.jpg" id="1_fxh3j"]
+[ext_resource type="Texture2D" uid="uid://qfoddxsqpl0q" path="res://Assets/Textures/material_textures/curageted_metal_normal.png" id="2_tc0br"]
+
+[resource]
+albedo_texture = ExtResource("1_fxh3j")
+metallic_specular = 1.0
+metallic_texture = ExtResource("1_fxh3j")
+roughness = 0.49
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_tc0br")
+uv1_scale = Vector3(0.28, 0.28, 0.28)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 119.428

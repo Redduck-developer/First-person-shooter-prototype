@@ -1,0 +1,117 @@
+[gd_scene load_steps=18 format=3 uid="uid://cwvrm8inc2svw"]
+
+[ext_resource type="Script" path="res://Scripts/Props/prop.gd" id="1_fgn73"]
+[ext_resource type="PackedScene" uid="uid://2kn171xo707h" path="res://Assets/3D Models/Target.glb" id="2_5napl"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_x2y5o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dbypb"]
+rough = true
+absorbent = true
+
+[sub_resource type="Gradient" id="Gradient_1cpfy"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.174242, 0.25, 0.477273, 0.628788, 0.666667)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mdbm7"]
+gradient = SubResource("Gradient_1cpfy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnihn"]
+albedo_texture = SubResource("GradientTexture2D_mdbm7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vg4bk"]
+material = SubResource("StandardMaterial3D_rnihn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s847a"]
+size = Vector3(1, 4.28522, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddygr"]
+size = Vector3(1.34326, 4.47379, 1.42926)
+
+[sub_resource type="Curve" id="Curve_yhhhg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7adk1"]
+curve = SubResource("Curve_yhhhg")
+
+[sub_resource type="Curve" id="Curve_qsf10"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_adl02"]
+curve = SubResource("Curve_qsf10")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_26dtw"]
+spread = 180.0
+initial_velocity_min = 22.22
+initial_velocity_max = 22.22
+scale_curve = SubResource("CurveTexture_7adk1")
+scale_over_velocity_min = 122.22
+scale_over_velocity_max = 122.22
+scale_over_velocity_curve = SubResource("CurveTexture_adl02")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqrkp"]
+blend_mode = 4
+albedo_color = Color(0.00999999, 1, 0.8185, 1)
+emission_enabled = true
+emission = Color(1, 0.833333, 0, 1)
+emission_energy_multiplier = 26.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_kmv7t"]
+material = SubResource("StandardMaterial3D_fqrkp")
+radius = 0.25
+height = 0.5
+
+[node name="Target" type="RigidBody3D"]
+mass = 15.0
+physics_material_override = SubResource("PhysicsMaterial_dbypb")
+script = ExtResource("1_fgn73")
+is_RigidBody3D = true
+hit_particle = true
+
+[node name="Target" parent="." instance=ExtResource("2_5napl")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.936868, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Target"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00905541, 2.73919, 0.141397)
+mesh = SubResource("QuadMesh_vg4bk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Target"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0123821, 3.99158, 0.244265)
+mesh = SubResource("QuadMesh_vg4bk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.507421, 0)
+shape = SubResource("BoxShape3D_s847a")
+
+[node name="hurtbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.900749, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.0124756, 1.47417, 0.0098053)
+shape = SubResource("BoxShape3D_ddygr")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.986132, 0.010694)
+emitting = false
+amount = 71
+lifetime = 0.15
+one_shot = true
+trail_lifetime = 19.25
+process_material = SubResource("ParticleProcessMaterial_26dtw")
+draw_pass_1 = SubResource("SphereMesh_kmv7t")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_x2y5o")
+unit_size = 5.0
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+
+[editable path="Target"]

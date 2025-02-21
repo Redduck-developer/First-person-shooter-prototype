@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=3 uid="uid://boo74sjvsxr6e"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Collectible_Ammo_Controller.gd" id="1_ib2te"]
+[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="2_a8q0c"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_k4mql"]
+[ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="4_pipi2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s8rua"]
+points = PackedVector3Array(0.0334556, 0.0491163, -0.00455926, -0.0398397, -0.0636397, -0.0158397, -0.0398397, -0.0636397, 0.0161095, 0.00150009, -0.0636397, -0.013957, -0.000379639, 0.0547559, -0.0101979, 0.0278164, 0.039721, 0.0123504, 0.00150009, -0.0636397, 0.01423, -0.000379639, 0.0566397, 0.00859133, 0.0246782, 0.0420982, -0.0108415, -0.0398397, -0.0580001, -0.0158397, -0.000379639, -0.0542326, -0.0158397, -0.00226655, 0.0472326, -0.0120775, -0.0398397, -0.0580001, 0.0161095, -0.000379639, -0.0542326, 0.0161095, -0.00412476, 0.0472326, 0.0104709, 0.0278164, 0.0472326, 0.0123504, 0.0315758, 0.0416048, 0.0104709, -0.00226655, 0.0528721, -0.00831836, 0.0315758, 0.0510001, 0.0104709, 0.0175806, 0.0543293, -0.00799361, 0.0291325, 0.0436672, -0.00947175, -0.000379639, -0.0636397, 0.0161095, -0.000379639, -0.0636397, -0.0158397, -0.0379599, -0.0542326, 0.0161095, -0.00226655, 0.0510001, 0.0104709, -0.000379639, 0.0566397, -0.00831836, -0.0379599, -0.0542326, -0.0158397, -0.00788422, 0.0359652, -0.0120775, 0.0308371, 0.0436077, -0.00771438, 0.020333, 0.0505365, -0.00944952, 0.0174598, 0.053993, 0.00821917, -0.00226655, 0.0528721, 0.00859133)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_niaju"]
+size = Vector3(0.0613843, 0.126577, 0.025)
+
+[sub_resource type="Curve" id="Curve_wkic8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bc1ns"]
+curve = SubResource("Curve_wkic8")
+
+[sub_resource type="Curve" id="Curve_5such"]
+max_value = 3.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_lbi4e"]
+curve = SubResource("Curve_5such")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hjwpe"]
+spread = 180.0
+initial_velocity_min = 22.22
+initial_velocity_max = 22.22
+scale_curve = SubResource("CurveTexture_bc1ns")
+scale_over_velocity_min = 122.22
+scale_over_velocity_max = 122.22
+scale_over_velocity_curve = SubResource("CurveTexture_lbi4e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwj0h"]
+blend_mode = 4
+albedo_color = Color(0.00999999, 1, 0.8185, 1)
+emission_enabled = true
+emission = Color(1, 0.833333, 0, 1)
+emission_energy_multiplier = 26.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_a4xep"]
+material = SubResource("StandardMaterial3D_iwj0h")
+radius = 0.25
+height = 0.5
+
+[node name="Glock_AMMO_mag" type="RigidBody3D"]
+script = ExtResource("1_ib2te")
+is_RigidBody3D = true
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_a8q0c")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="9x19_0" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
+visible = false
+
+[node name="919_1" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
+visible = false
+
+[node name="glock 17 gen5 barrel_2" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="2"]
+visible = false
+
+[node name="glock 17 gen 5 trigga_3" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="3"]
+visible = false
+
+[node name="glock 17 gen 5 slide release_4" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="4"]
+visible = false
+
+[node name="glock 17 gen5 frame_5" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="5"]
+visible = false
+
+[node name="glock 17 gen 5 mag releasse_6" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="6"]
+visible = false
+
+[node name="919 glock 17rnd mag _7" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
+transform = Transform3D(1, 2.12299e-07, 0, -2.12299e-07, 1, 0, 0, 0, 1, -0.00565276, -0.0158259, 0)
+
+[node name="glock 17 gen5 mos slide_8" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="8"]
+visible = false
+
+[node name="glock 17 gen5 mos slide cover_9" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="9"]
+visible = false
+
+[node name="919 glock 17rnd mag empty_10" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="10"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 4.24598e-07, 0, -4.24598e-07, 2, 0, 0, 0, 2, -0.0113055, -0.0316517, -0.00140877)
+shape = SubResource("ConvexPolygonShape3D_s8rua")
+
+[node name="hurtbox" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00492677, -0.0192114, 0)
+shape = SubResource("BoxShape3D_niaju")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013868, 0.010694)
+emitting = false
+amount = 71
+lifetime = 0.15
+one_shot = true
+trail_lifetime = 19.25
+process_material = SubResource("ParticleProcessMaterial_hjwpe")
+draw_pass_1 = SubResource("SphereMesh_a4xep")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_k4mql")
+unit_size = 5.0
+
+[node name="Collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pipi2")
+volume_db = -16.46
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="finished" from="Collect_sound" to="." method="_on_collect_sound_finished"]
+
+[editable path="Sketchfab_Scene"]

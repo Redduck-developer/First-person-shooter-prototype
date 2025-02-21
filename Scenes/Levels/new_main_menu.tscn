@@ -1,0 +1,275 @@
+[gd_scene load_steps=13 format=3 uid="uid://y4xhhggmkdip"]
+
+[ext_resource type="Material" uid="uid://djhg5fwbnorro" path="res://Assets/Materials/Concrette_black_metal.tres" id="1_ufpf3"]
+[ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="2_jrnyd"]
+[ext_resource type="FontFile" uid="uid://c5ejikhp8dyp5" path="res://Assets/Fonts/Pixellari.ttf" id="3_3v1v5"]
+[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="4_e8gvc"]
+[ext_resource type="Texture2D" uid="uid://cb7c5cl58foob" path="res://Assets/Textures/GUN_RANGE_FILE_PHOTO.png" id="6_q41u0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ct8dj"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_50mva"]
+sky_material = SubResource("ProceduralSkyMaterial_ct8dj")
+
+[sub_resource type="Environment" id="Environment_gsty0"]
+background_mode = 2
+sky = SubResource("Sky_50mva")
+ambient_light_source = 1
+reflected_light_source = 2
+tonemap_mode = 2
+ssr_max_steps = 512
+ssr_fade_in = 0.409811
+ssr_fade_out = 1.8025
+ssr_depth_tolerance = 81.11
+sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 0.0953125
+sdfgi_cascade0_distance = 6.1
+sdfgi_max_distance = 97.6
+sdfgi_energy = 1.51
+glow_enabled = true
+glow_intensity = 0.1
+glow_strength = 0.83
+glow_bloom = 1.0
+glow_blend_mode = 1
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 256.0
+glow_map_strength = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.079
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 0.15
+adjustment_brightness = 8.0
+
+[sub_resource type="Curve3D" id="Curve3D_enrs5"]
+_data = {
+"points": PackedVector3Array(-0.707173, 0.267353, 1.9651, 0.707173, -0.267353, -1.9651, -6.99386, -1.79684, 0.178975, -2.811, -0.575, -1.949, 3.23644, 0.787731, 2.0288, 0, -0.15, 0.676),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Animation" id="Animation_qx4qo"]
+resource_name = "Opening"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(2.63902, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.4, 5.4),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D/Sketchfab_Scene:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.39997, 5.41369),
+"transitions": PackedFloat32Array(0.112656, 1),
+"update": 0,
+"values": [Vector3(-0.957872, 0.224337, -0.0288367), Vector3(-5.04198, 0.224337, -0.0288367)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label3D/Sketchfab_Scene2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.4, 5.4),
+"transitions": PackedFloat32Array(0.112656, 1),
+"update": 0,
+"values": [Vector3(0.713262, 0.224337, -0.0288367), Vector3(5.12086, 0.224337, -0.0288367)]
+}
+
+[sub_resource type="Animation" id="Animation_ulcvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3u5k"]
+_data = {
+"Opening": SubResource("Animation_qx4qo"),
+"RESET": SubResource("Animation_ulcvm")
+}
+
+[node name="New Main Menu" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+use_collision = true
+radius = 10.0
+height = 14.0
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991174, 0)
+operation = 2
+radius = 9.08279
+height = 11.4894
+material = ExtResource("1_ufpf3")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991174, 0)
+operation = 2
+radius = 9.6321
+height = 11.2163
+material = ExtResource("2_jrnyd")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 5.01336, 4.55601)
+light_energy = 7.46
+light_volumetric_fog_energy = 2.4
+shadow_enabled = true
+spot_range = 102.427
+spot_angle = 89.99
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gsty0")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 7)
+transparency = 1.0
+ignore_occlusion_culling = true
+alpha_scissor_threshold = 1.0
+alpha_hash_scale = 2.0
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 1.0
+outline_render_priority = -96
+text = "FPS Proto"
+font = ExtResource("3_3v1v5")
+font_size = 377
+outline_size = 52
+
+[node name="Sketchfab_Scene" parent="Label3D" instance=ExtResource("4_e8gvc")]
+transform = Transform3D(8.06, 0, 0, 0, 8.06, 0, 0, 0, 8.06, -0.957872, 0.224337, -0.0288367)
+
+[node name="9x19_0" parent="Label3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
+visible = false
+
+[node name="919_1" parent="Label3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
+visible = false
+
+[node name="919 glock 17rnd mag _7" parent="Label3D/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
+visible = false
+
+[node name="Sketchfab_Scene2" parent="Label3D" instance=ExtResource("4_e8gvc")]
+transform = Transform3D(-8.06, 0, 7.04628e-07, 0, 8.06, 0, -7.04628e-07, 0, -8.06, 0.713262, 0.224337, -0.0288367)
+
+[node name="9x19_0" parent="Label3D/Sketchfab_Scene2/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
+visible = false
+
+[node name="919_1" parent="Label3D/Sketchfab_Scene2/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
+visible = false
+
+[node name="919 glock 17rnd mag _7" parent="Label3D/Sketchfab_Scene2/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
+visible = false
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_enrs5")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.940847, 0.0429913, -0.335842, 0, 0.991807, 0.126968, 0.338579, -0.119465, 0.93324, -6.99386, -1.79684, 0.178975)
+loop = false
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(0.580814, 0.0142129, -0.814018, 0.147966, 0.981451, 0.122712, 0.800575, -0.191699, 0.567875, -2.01133, 0.851621, 1.27095)
+fov = 85.4453
+size = 0.065
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w3u5k")
+}
+autoplay = "Opening"
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Buttons"]
+
+[node name="Button" type="Button" parent="Buttons/Node2D"]
+offset_top = 370.0
+offset_right = 211.0
+offset_bottom = 401.0
+text = "Story"
+
+[node name="Button2" type="Button" parent="Buttons/Node2D"]
+offset_top = 407.0
+offset_right = 211.0
+offset_bottom = 438.0
+text = "Sandbox"
+
+[node name="Button3" type="Button" parent="Buttons/Node2D"]
+offset_top = 443.0
+offset_right = 211.0
+offset_bottom = 474.0
+text = "Settings
+"
+
+[node name="Window" type="Window" parent="Buttons"]
+canvas_item_default_texture_filter = 0
+title = "SANDBOX"
+position = Vector2i(345, 220)
+size = Vector2i(794, 415)
+unresizable = true
+content_scale_mode = 1
+content_scale_aspect = 4
+theme_override_colors/title_color = Color(0, 1, 0.616667, 1)
+theme_override_constants/close_h_offset = 35
+
+[node name="Node2D" type="Node2D" parent="Buttons/Window"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Window/Node2D"]
+position = Vector2(22.105, 156.59)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("6_q41u0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Window"]
+offset_right = 793.535
+offset_bottom = 383.885
+alignment = 1
+
+[node name="Button" type="Button" parent="Buttons/Window/VBoxContainer"]
+layout_mode = 2
+text = "GUN RANGE"
+
+[node name="Button2" type="Button" parent="Buttons/Window/VBoxContainer"]
+layout_mode = 2
+text = "TESTSITE"
+
+[node name="Button3" type="Button" parent="Buttons/Window/VBoxContainer"]
+layout_mode = 2
+text = "ISLAND"
+
+[editable path="Label3D/Sketchfab_Scene"]
+[editable path="Label3D/Sketchfab_Scene2"]

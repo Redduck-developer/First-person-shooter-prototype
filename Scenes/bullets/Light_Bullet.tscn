@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://ggs1wdwpylxx"]
+
+[ext_resource type="Script" path="res://Scripts/misc/Bullet_movement.gd" id="1_3b2kh"]
+[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="2_5gg75"]
+[ext_resource type="Script" path="res://Scripts/misc/light_bullet_hurtbox.gd" id="3_27eu7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_api3h"]
+albedo_color = Color(0.68, 0.306, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0.116667, 0, 1)
+emission_energy_multiplier = 16.0
+emission_on_uv2 = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y38i0"]
+points = PackedVector3Array(-0.00498, -0.0145544, -9.74629e-07, -0.00431314, -0.0145544, 0.00248903, -0.00498, -0.0139452, -9.74629e-07, -0.00431314, -0.0145544, -0.00249097, -0.00467777, -0.014845, -9.74629e-07, -0.00249097, -0.0145544, 0.00431217, -0.00431314, -0.0139452, 0.00248903, -0.00405088, -0.014845, 0.00233888, -0.00482596, 0.004305, -9.74629e-07, -0.00431314, -0.0139452, -0.00249097, -0.00249097, -0.0145544, -0.00431314, -0.00405088, -0.014845, -0.00233986, -9.74629e-07, -0.0145544, 0.00497903, -0.00249097, -0.0139452, 0.00431217, -0.00233888, -0.014845, 0.00405088, -9.74629e-07, -0.014845, 0.00467777, -0.0041786, 0.004305, 0.00240421, -0.0041786, 0.004305, -0.00240518, -0.00249097, -0.0139452, -0.00431314, -9.74629e-07, -0.0145544, -0.00498, -9.74629e-07, -0.014845, -0.00467874, -0.00233888, -0.014845, -0.00405186, 0.00248903, -0.0145544, 0.00431217, -9.74629e-07, -0.0139452, 0.00497903, -0.00241298, 0.004305, 0.00416495, 0.00233791, -0.014845, 0.00405088, -0.00241298, 0.004305, -0.00416592, -9.74629e-07, -0.0139452, -0.00498, 0.00248903, -0.0145544, -0.00431314, 0.00233791, -0.014845, -0.00405186, 0.00431217, -0.0145544, 0.00248903, 0.00248903, -0.0139452, 0.00431217, 0.002412, 0.004305, 0.00416495, -9.74629e-07, 0.004305, 0.00480939, 0.00404991, -0.014845, 0.00233888, -9.74629e-07, 0.004305, -0.00481036, 0.002412, 0.004305, -0.00416592, 0.00248903, -0.0139452, -0.00431314, 0.00431217, -0.0145544, -0.00249097, 0.00404991, -0.014845, -0.00233986, 0.00467679, -0.014845, -9.74629e-07, 0.00497903, -0.0145544, -9.74629e-07, 0.00431217, -0.0139452, 0.00248903, 0.00417762, 0.004305, 0.00240421, 0.00417762, 0.004305, -0.00240518, 0.00431217, -0.0139452, -0.00249097, 0.00497903, -0.0139452, -9.74629e-07, 0.00482498, 0.004305, -9.74629e-07)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c4dc5"]
+points = PackedVector3Array(-0.004515, 0.004305, 0, -0.00391041, 0.004305, -0.0022575, -0.00391041, 0.004305, 0.0022575, -0.00434264, 0.00714015, 0, -0.00376103, 0.00714015, -0.00217176, -0.00225838, 0.004305, -0.00391041, -0.00225838, 0.004305, 0.00390952, -0.00376103, 0.00714015, 0.00217088, -0.00349851, 0.0109926, 0, -0.00303004, 0.0109926, -0.00174925, -0.00217176, 0.00714015, -0.00376103, -8.83359e-07, 0.00714015, -0.00434264, -8.83359e-07, 0.004305, -0.004515, -8.83359e-07, 0.004305, 0.004515, -0.00217176, 0.00714015, 0.00376014, -0.00303004, 0.0109926, 0.00174837, -0.0028948, 0.0125721, 0, -0.00250676, 0.0125721, -0.00144784, -0.00174925, 0.0109926, -0.00303004, -8.83359e-07, 0.0109926, -0.00349851, 0.0022575, 0.004305, -0.00391041, 0.00217088, 0.00714015, -0.00376103, 0.0022575, 0.004305, 0.00390952, 0.00217088, 0.00714015, 0.00376014, -8.83359e-07, 0.00714015, 0.00434175, -8.83359e-07, 0.0109926, 0.00349762, -0.00174925, 0.0109926, 0.00302915, -0.00250676, 0.0125721, 0.00144696, -0.00164672, 0.0141517, 0.0009502, -0.00190129, 0.0141517, 0, -0.00164672, 0.0141517, -0.000951085, -0.00144784, 0.0125721, -0.00250676, -8.83359e-07, 0.0125721, -0.0028948, 0.00174837, 0.0109926, -0.00303004, 0.00376014, 0.00714015, -0.00217176, 0.00390952, 0.004305, -0.0022575, 0.00390952, 0.004305, 0.0022575, 0.00376014, 0.00714015, 0.00217088, 0.00174837, 0.0109926, 0.00302915, -8.83359e-07, 0.0125721, 0.00289391, -0.00144784, 0.0125721, 0.00250588, -0.000951084, 0.0141517, 0.00164584, -0.000685912, 0.014845, 0.000395107, -0.000791097, 0.014845, 0, -0.000685912, 0.014845, -0.000395991, -0.000951084, 0.0141517, -0.00164672, -8.83359e-07, 0.0141517, -0.00190129, 0.000950201, 0.0141517, -0.00164672, 0.00144696, 0.0125721, -0.00250676, 0.00302915, 0.0109926, -0.00174925, 0.00434176, 0.00714015, 0, 0.00451412, 0.004305, 0, 0.00349762, 0.0109926, 0, 0.00302915, 0.0109926, 0.00174837, 0.00144696, 0.0125721, 0.00250588, 0.000950201, 0.0141517, 0.00164584, -8.83359e-07, 0.0141517, 0.0019004, -0.00039599, 0.014845, 0.000685028, -0.00039599, 0.014845, -0.000685912, -8.83359e-07, 0.014845, -0.000791098, 0.000395107, 0.014845, -0.000685912, 0.00164584, 0.0141517, -0.000951085, 0.00250588, 0.0125721, -0.00144784, 0.00289391, 0.0125721, 0, 0.00250588, 0.0125721, 0.00144696, 0.00164584, 0.0141517, 0.0009502, 0.000395107, 0.014845, 0.000685028, -8.83359e-07, 0.014845, 0.000790213, 0.000685029, 0.014845, -0.000395991, 0.0019004, 0.0141517, 0, 0.000685029, 0.014845, 0.000395107, 0.000790214, 0.014845, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+top_level = true
+script = ExtResource("1_3b2kh")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_5gg75")]
+transform = Transform3D(-7.40908e-08, 0, 1.695, 0, 1.695, 0, -1.695, 0, -7.40908e-08, 0, 0, 0)
+
+[node name="9x19_0" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
+transform = Transform3D(-9.57279e-08, 2.19, 0, -2.19, -9.57279e-08, 0, 0, 0, 2.19, 0, 0, 0)
+
+[node name="Object_5" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/9x19_0" index="1"]
+material_overlay = SubResource("StandardMaterial3D_api3h")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/9x19_0/Object_5" index="0"]
+light_color = Color(1, 0.283333, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_specular = 16.0
+omni_range = 0.404945
+
+[node name="919_1" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
+visible = false
+
+[node name="glock 17 gen5 barrel_2" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="2"]
+visible = false
+
+[node name="glock 17 gen 5 trigga_3" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="3"]
+visible = false
+
+[node name="glock 17 gen 5 slide release_4" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="4"]
+visible = false
+
+[node name="glock 17 gen5 frame_5" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="5"]
+visible = false
+
+[node name="glock 17 gen 5 mag releasse_6" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="6"]
+visible = false
+
+[node name="919 glock 17rnd mag _7" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
+visible = false
+
+[node name="glock 17 gen5 mos slide_8" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="8"]
+visible = false
+
+[node name="glock 17 gen5 mos slide cover_9" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="9"]
+visible = false
+
+[node name="919 glock 17rnd mag empty_10" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode" index="10"]
+visible = false
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("3_27eu7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-1.67633e-07, 3.835, 0, -3.835, -1.67633e-07, 0, 0, 0, 3.835, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_y38i0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-1.67633e-07, 3.835, 0, -3.835, -1.67633e-07, 0, 0, 0, 3.835, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_c4dc5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Sketchfab_Scene"]

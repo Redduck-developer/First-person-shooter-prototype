@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://c52eir1ryb4ld"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Gun_controller.gd" id="1_54fyo"]
+[ext_resource type="PackedScene" uid="uid://dmffekometl8e" path="res://Assets/3D Models/KEY.glb" id="2_rvv8k"]
+[ext_resource type="Material" uid="uid://bgs0x6aoubc5f" path="res://Assets/Materials/Gold.tres" id="3_d0dto"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="4_7fk5v"]
+[ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="5_ybtjv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8m844"]
+size = Vector3(1, 1.90283, 4.53809)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yjph1"]
+points = PackedVector3Array(-3.5353e-06, -1, -0.000334144, -0.00998239, -0.850822, -0.000334144, -0.00308591, -0.850822, -0.500167, 0.00807357, -0.850822, -0.309054, 0.00807357, -0.850822, 0.308806, 0.000169672, 0.486296, 3.291, -0.0130683, -0.525842, 0.499919, -0.0169814, -0.447338, -0.000334144, -0.0130683, -0.525842, -0.500167, -0.00524924, -0.447338, -0.85089, 0.00498766, -0.525842, -0.809307, 0.0161471, -0.525842, -0.000334144, 0.0137364, -0.447338, -0.525789, 0.0137364, -0.447338, 0.52554, 0.018056, 0, 0.308806, 0.0169778, 0.447142, -0.000334144, 0.00997885, 0.850626, -0.000334144, -3.5353e-06, 1, -0.000334144, -0.00807711, 0.850626, 0.308806, -0.0161507, 0.525646, -0.000334144, -0.018056, 0, 0.308806, -0.018056, 0, -0.309054, -0.0111595, 0, -0.809307, -3.5353e-06, 0, -1, 0.011156, 0, -0.809307, 0.018056, 0, -0.309054, 0.0130648, 0.525646, -0.500167, 0.00308238, 0.850626, -0.500167, -0.00807711, 0.850626, -0.309054, -0.0137399, 0.447142, -0.525789, -0.00499119, 0.525646, -0.809307, 0.0052457, 0.447142, -0.85089)
+
+[node name="key" type="RigidBody3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 0, 0)
+script = ExtResource("1_54fyo")
+ID = "key"
+delete_on_collect = true
+is_RigidBody3D = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-3.14722e-09, 0, -0.072, 0, 0.072, 0, 0.072, 0, -3.14722e-09, -0.0664717, -8.78908e-05, 0.0221572)
+shape = SubResource("BoxShape3D_8m844")
+
+[node name="KEY" parent="." instance=ExtResource("2_rvv8k")]
+transform = Transform3D(-3.14722e-09, 0, -0.072, 0, 0.072, 0, 0.072, 0, -3.14722e-09, 0.0221572, 0, 0.0221572)
+
+[node name="Icosphere" parent="KEY" index="0"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone" parent="KEY" index="1"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone_001" parent="KEY" index="2"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone_002" parent="KEY" index="3"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone_003" parent="KEY" index="4"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone_004" parent="KEY" index="5"]
+material_override = ExtResource("3_d0dto")
+
+[node name="Cone_005" parent="KEY" index="6"]
+material_override = ExtResource("3_d0dto")
+
+[node name="hurtbox" type="Area3D" parent="."]
+transform = Transform3D(-3.14722e-09, 0, -0.072, 0, 0.072, 0, 0.072, 0, -3.14722e-09, 0.0221572, 0, 0.0221572)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+shape = SubResource("ConvexPolygonShape3D_yjph1")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0221572, 0, 0.0221572)
+stream = ExtResource("4_7fk5v")
+unit_size = 5.0
+
+[node name="Collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ybtjv")
+volume_db = -16.46
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="finished" from="Collect_sound" to="." method="_on_collect_sound_finished"]
+
+[editable path="KEY"]

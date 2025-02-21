@@ -1,0 +1,167 @@
+[gd_scene load_steps=8 format=3 uid="uid://qiosq0nhqh4w"]
+
+[ext_resource type="Script" path="res://Scripts/misc/Bullet_movement.gd" id="1_f0egg"]
+[ext_resource type="Script" path="res://Scripts/misc/Medium_Bullet.gd" id="2_ncksl"]
+[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="3_0r2l6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gdfc4"]
+radius = 0.0399785
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_okiar"]
+noise_type = 4
+frequency = 0.2075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1hq8g"]
+noise = SubResource("FastNoiseLite_okiar")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4mgi"]
+albedo_color = Color(0, 0, 0, 0)
+emission_enabled = true
+emission = Color(1, 0.166667, 0, 1)
+emission_energy_multiplier = 36.25
+emission_operator = 1
+emission_on_uv2 = true
+emission_texture = SubResource("NoiseTexture2D_1hq8g")
+
+[node name="Medium_Bullet" type="CharacterBody3D"]
+top_level = true
+script = ExtResource("1_f0egg")
+SPEED = 55
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_ncksl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_gdfc4")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_0r2l6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.00820259)
+
+[node name="grip_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="0"]
+visible = false
+
+[node name="grip_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/grip_low" index="0"]
+visible = false
+
+[node name="bow_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="1"]
+visible = false
+
+[node name="bow_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/bow_low" index="0"]
+visible = false
+
+[node name="magazine fuse_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="2"]
+visible = false
+
+[node name="rear sights_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="3"]
+visible = false
+
+[node name="rear sights_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/rear sights_low" index="0"]
+visible = false
+
+[node name="base_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="4"]
+visible = false
+
+[node name="base_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/base_low" index="0"]
+visible = false
+
+[node name="forearm_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="5"]
+visible = false
+
+[node name="forearm_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/forearm_low" index="0"]
+visible = false
+
+[node name="stock_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="6"]
+visible = false
+
+[node name="stock_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/stock_low" index="0"]
+visible = false
+
+[node name="front sight_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="7"]
+visible = false
+
+[node name="front sight_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/front sight_low" index="0"]
+visible = false
+
+[node name="barrel_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="8"]
+visible = false
+
+[node name="barrel_low_Base_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/barrel_low" index="0"]
+visible = false
+
+[node name="magazine_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="9"]
+visible = false
+
+[node name="magazine_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/magazine_low" index="0"]
+visible = false
+
+[node name="trigger_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="10"]
+visible = false
+
+[node name="trigger_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/trigger_low" index="0"]
+visible = false
+
+[node name="selector_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="11"]
+visible = false
+
+[node name="selector_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/selector_low" index="0"]
+visible = false
+
+[node name="charging handle1_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="12"]
+visible = false
+
+[node name="charging handle1_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/charging handle1_low" index="0"]
+visible = false
+
+[node name="charging handle_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="13"]
+visible = false
+
+[node name="charging handle_low_Movable_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/charging handle_low" index="0"]
+visible = false
+
+[node name="ammo_003_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="14"]
+transform = Transform3D(-1.62921e-05, 100, -4.37114e-06, -100, -1.62921e-05, 7.12149e-13, 3.25261e-19, 4.37114e-06, 100, -1.66768e-07, 4.23573e-16, 1.9076)
+
+[node name="ammo_003_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_003_low" index="0"]
+material_overlay = SubResource("StandardMaterial3D_j4mgi")
+
+[node name="ammo_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="15"]
+visible = false
+
+[node name="ammo_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_low" index="0"]
+visible = false
+
+[node name="ammo_001_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="16"]
+visible = false
+
+[node name="ammo_001_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_001_low" index="0"]
+visible = false
+
+[node name="ammo_004_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="17"]
+visible = false
+
+[node name="ammo_004_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_004_low" index="0"]
+visible = false
+
+[node name="ammo_002_low" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="18"]
+visible = false
+
+[node name="ammo_002_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_002_low" index="0"]
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.283333, 0, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 16.0
+light_specular = 16.0
+omni_range = 0.404945
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Sketchfab_Scene"]

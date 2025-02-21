@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://8wmwxidov0gv"]
+
+[ext_resource type="Material" uid="uid://b2f4inq64xrw1" path="res://Assets/Materials/Rope.tres" id="1_2w1bo"]
+[ext_resource type="Script" path="res://Scripts/misc/Ladder.gd" id="2_lj6ca"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gibmb"]
+material = ExtResource("1_2w1bo")
+top_radius = 0.08
+bottom_radius = 0.08
+height = 17.87
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tsr01"]
+height = 17.9083
+radius = 0.205184
+
+[sub_resource type="Curve3D" id="Curve3D_1w4cu"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -1.11, 0, 0, 0, 0, 0, 0, 0, 0, 8.8798, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkgef"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_sxisu"]
+lightmap_size_hint = Vector2i(9, 5)
+material = SubResource("StandardMaterial3D_kkgef")
+flip_faces = true
+radius = 0.25
+height = 0.5
+radial_segments = 4
+rings = 1
+
+[node name="ROPE" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85694, -43.9969)
+top_level = true
+mesh = SubResource("CylinderMesh_gibmb")
+script = ExtResource("2_lj6ca")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_tsr01")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.38316)
+curve = SubResource("Curve3D_1w4cu")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -1.11, 0)
+cubic_interp = false
+loop = false
+tilt_enabled = false
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
+remote_path = NodePath("../../../MeshInstance3D")
+update_rotation = false
+update_scale = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0.74694, -43.6137)
+top_level = true
+mesh = SubResource("SphereMesh_sxisu")
+skeleton = NodePath("../Path3D/PathFollow3D")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
