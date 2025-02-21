@@ -1,0 +1,9 @@
+/// FPS PROTOTYPE ///
+
+currently an experimental GODOT project including:
+INVENTORY
+FPS CHARACTER CONTROLS
+AMMO
+SANDBOX MODE
+HEALTH
+STAMINA
