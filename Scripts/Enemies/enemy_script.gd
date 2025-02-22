@@ -16,7 +16,7 @@ const JUMP_VELOCITY = 6
 
 
 func _physics_process(delta: float) -> void:
-	$MeshInstance3D/arms.rotation.y = $MeshInstance3D/head.rotation.y
+	$MeshInstance3D/ARMS.rotation.y = $MeshInstance3D/head.rotation.y
 	
 	if Health < 1:
 		$death_animation.play("death")
@@ -24,9 +24,9 @@ func _physics_process(delta: float) -> void:
 		axis_lock_linear_z = true
 	
 	if Mele == true:
-		$MeshInstance3D/arms/Axe.visible = true
+		$MeshInstance3D/ARMS/arms/Axe.visible = true
 	else:
-		$MeshInstance3D/arms/Axe.visible = false
+		$MeshInstance3D/ARMS/arms/Axe.visible = false
 	
 	var current_position = global_transform.origin
 	var next_position = nav.get_next_path_position()
