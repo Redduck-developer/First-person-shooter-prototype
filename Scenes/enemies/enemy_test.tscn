@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c1qe4q0mgoclp"]
+[gd_scene load_steps=29 format=4 uid="uid://c1qe4q0mgoclp"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/enemy_script.gd" id="1_v3f0n"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="2_6d0qf"]
@@ -145,6 +145,42 @@ _data = {
 "reset_axe": SubResource("Animation_2jug2")
 }
 
+[sub_resource type="Animation" id="Animation_15btc"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.129408, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.0012, 0.0012, 0.0012)]
+}
+
+[sub_resource type="Animation" id="Animation_k2tvb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubs8g"]
+_data = {
+"RESET": SubResource("Animation_k2tvb"),
+"death": SubResource("Animation_15btc")
+}
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hs1k0"]
 particle_flag_align_y = true
 direction = Vector3(0, 0, 0)
@@ -198,6 +234,11 @@ height = 0.11
 script = ExtResource("1_v3f0n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6dx8v")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape3D_6dx8v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -270,6 +311,11 @@ libraries = {
 "": SubResource("AnimationLibrary_331t3")
 }
 
+[node name="death_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ubs8g")
+}
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457355, 0)
 gi_mode = 2
@@ -295,8 +341,10 @@ one_shot = true
 process_material = SubResource("ParticleProcessMaterial_go10j")
 draw_pass_1 = SubResource("SphereMesh_fwgrd")
 
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="body_entered" from="MeshInstance3D/head/VISION" to="." method="_on_vision_body_entered"]
 [connection signal="body_exited" from="MeshInstance3D/head/VISION" to="." method="_on_vision_body_exited"]
 [connection signal="animation_finished" from="Attack_Animation_player" to="." method="_on_attack_animation_player_animation_finished"]
+[connection signal="animation_finished" from="death_animation" to="." method="_on_death_animation_animation_finished"]
 
 [editable path="MeshInstance3D/arms/Axe"]

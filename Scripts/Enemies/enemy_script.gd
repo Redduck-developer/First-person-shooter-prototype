@@ -4,7 +4,7 @@ class_name enemy
 @onready var nav = $NavigationAgent3D
 
 @export var Mele : bool = false
-@export var Health : int = 20
+@export var Health : int = 100
 
 var SPEED = 3.5
 var SPRINT_SPEED = 8.0
@@ -17,6 +17,11 @@ const JUMP_VELOCITY = 6
 
 func _physics_process(delta: float) -> void:
 	$MeshInstance3D/arms.rotation.y = $MeshInstance3D/head.rotation.y
+	
+	if Health < 1:
+		$death_animation.play("death")
+		axis_lock_linear_x = true
+		axis_lock_linear_z = true
 	
 	if Mele == true:
 		$MeshInstance3D/arms/Axe.visible = true
@@ -44,7 +49,8 @@ func _physics_process(delta: float) -> void:
 				if is_on_floor():
 					if $RayCast3D.get_collider() is not player:
 						if $RayCast3D.get_collider() is not prop:
-							velocity.y = JUMP_VELOCITY
+							if $RayCast3D.get_collider() is not enemy:
+								velocity.y = JUMP_VELOCITY
 			
 			if %SPRINT_CAST.is_colliding():
 				if $%SPRINT_CAST.get_collider() is player:
@@ -114,3 +120,15 @@ func  _hurt(amount):
 	Health = Health - amount
 	$GPUParticles3D.emitting = true
 	$GPUParticles3D2.emitting = true
+
+
+func _on_death_animation_animation_finished(anim_name: StringName) -> void:
+	$death_animation.stop()
+	queue_free()
+
+
+func _on_hurtbox_area_entered(area: Area3D) -> void:
+	if area is light_bullet:
+		_hurt(5)
+	if area is Medium_bullet:
+		_hurt(10)

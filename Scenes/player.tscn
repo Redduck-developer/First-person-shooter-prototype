@@ -1804,7 +1804,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_gpxci")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v8bac")
 value = 100.0
 rounded = true
-fill_mode = 3
 show_percentage = false
 
 [node name="Health_indicator" type="Label" parent="Head/Camera3D/STATUS_MANAGER/ANIM_AND_STATUS_LAYER/HealthTexture"]
