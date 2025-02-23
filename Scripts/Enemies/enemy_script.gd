@@ -3,7 +3,7 @@ class_name enemy
 
 @onready var nav = $NavigationAgent3D
 
-@export var Mele : bool = false
+@export var AXE : bool = true
 @export var Health : int = 100
 
 var SPEED = 3.5
@@ -17,13 +17,14 @@ const JUMP_VELOCITY = 6
 
 func _physics_process(delta: float) -> void:
 	$MeshInstance3D/ARMS.rotation.y = $MeshInstance3D/head.rotation.y
+	$MeshInstance3D/LEGS.rotation.y = $MeshInstance3D/head.rotation.y
 	
 	if Health < 1:
 		$death_animation.play("death")
 		axis_lock_linear_x = true
 		axis_lock_linear_z = true
 	
-	if Mele == true:
+	if AXE == true:
 		$MeshInstance3D/ARMS/arms/Axe.visible = true
 	else:
 		$MeshInstance3D/ARMS/arms/Axe.visible = false
@@ -41,6 +42,9 @@ func _physics_process(delta: float) -> void:
 			spotted = false
 		
 		if spotted == true:
+			$"Walking(concrete)".playing = true
+			$"Walking(concrete)".volume_db = 80
+			$walk_run_animation_player.play("move")
 			update_target_location(null)
 			
 			if not is_on_floor():
@@ -55,8 +59,12 @@ func _physics_process(delta: float) -> void:
 			if %SPRINT_CAST.is_colliding():
 				if $%SPRINT_CAST.get_collider() is player:
 					SPEED = WALK_SPEED
+					$walk_run_animation_player.speed_scale = 2.5
+					$"Walking(concrete)".pitch_scale = 1
 			else:
 				SPEED = SPRINT_SPEED
+				$walk_run_animation_player.speed_scale = 5
+				$"Walking(concrete)".pitch_scale = 2
 			
 			if %HURT_CAST.is_colliding():
 				if %HURT_CAST.get_collider() is player:
@@ -68,7 +76,9 @@ func _physics_process(delta: float) -> void:
 			_push_away_rigid_bodies()
 			move_and_slide()
 		else:
-			pass
+			$walk_run_animation_player.stop()
+			$"Walking(concrete)".volume_db = -80
+			$"Walking(concrete)".playing = false
 	else:
 		pass
 
@@ -120,6 +130,9 @@ func  _hurt(amount):
 	Health = Health - amount
 	$GPUParticles3D.emitting = true
 	$GPUParticles3D2.emitting = true
+	$MeshInstance3D/head.look_at(global.headpos)
+	$HitSound.stop()
+	$HitSound.play()
 
 
 func _on_death_animation_animation_finished(anim_name: StringName) -> void:
@@ -129,6 +142,6 @@ func _on_death_animation_animation_finished(anim_name: StringName) -> void:
 
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	if area is light_bullet:
-		_hurt(5)
-	if area is Medium_bullet:
 		_hurt(10)
+	if area is Medium_bullet:
+		_hurt(15)

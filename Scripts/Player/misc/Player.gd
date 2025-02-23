@@ -79,8 +79,8 @@ func _physics_process(delta):
 		_Blood_decal_inst($Head.global_position + Vector3(0,4,0))
 		$"Bloodparticles 1".emitting = true
 		$"Bloodparticles 2".emitting = true
-	
-	print(speed + additive_speed)
+		$Hurt.stop()
+		$Hurt.play()
 	
 	if is_on_floor():
 		if cayote == false:
@@ -293,9 +293,9 @@ func _Crouch_Control():
 
 
 func _on_hurtbox_area_entered(area: Area3D) -> void:
-	if area is light_bullet:
+	if area is light_bullet_enemy:
 		StatusManager._hurt(10)
-	if area is Medium_bullet:
+	if area is Medium_bullet_enemy:
 		StatusManager._hurt(20)
 	if area is water:
 		$Splash.play(0.0)

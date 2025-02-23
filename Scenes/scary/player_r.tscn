@@ -1,6 +1,5 @@
-[gd_scene load_steps=60 format=3 uid="uid://dvmtoc4v7jnod"]
+[gd_scene load_steps=59 format=3 uid="uid://dvmtoc4v7jnod"]
 
-[ext_resource type="Script" path="res://Scripts/Player/Unused/player_r.gd" id="1_6374o"]
 [ext_resource type="Script" path="res://Scripts/Props/touch.gd" id="2_w1hkq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ddw5d"]
@@ -845,7 +844,6 @@ physics_material_override = SubResource("PhysicsMaterial_ddw5d")
 gravity_scale = 2.0
 lock_rotation = true
 linear_damp = 1.0
-script = ExtResource("1_6374o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7tuqx")

@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	if StatusManager.Health > 25:
 		if not StatusManager.Health == 100:
 			$HealthTexture/Health_indicator.text = str("HURT")
-	if StatusManager.Health == 25:
+	if StatusManager.Health < 26:
 		$HealthTexture/Health_indicator.text = str("CRITICAL")
 	if StatusManager.Health == 1:
 		$HealthTexture/Health_indicator.text = str("CRITICAL")

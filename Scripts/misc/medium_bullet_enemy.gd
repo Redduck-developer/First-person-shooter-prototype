@@ -1,0 +1,2 @@
+extends Area3D
+class_name Medium_bullet_enemy
