@@ -11,27 +11,37 @@ func _process(delta: float) -> void:
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = false
+		$Flashlight.visible = false
 	if SlotBase.current_slot_data == "pistol":
 		$Pistol.visible = true
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = false
+		$Flashlight.visible = false
 	if SlotBase.current_slot_data == "rifle":
 		$Pistol.visible = false
 		$AK.visible = true
 		$Axe.visible = false
 		$KEY.visible = false
+		$Flashlight.visible = false
 	if SlotBase.current_slot_data == "axe":
 		$Pistol.visible = false
 		$AK.visible = false
 		$Axe.visible = true
 		$KEY.visible = false
+		$Flashlight.visible = false
 	if SlotBase.current_slot_data == "key":
 		$Pistol.visible = false
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = true
-	
+		$Flashlight.visible = false
+	if SlotBase.current_slot_data == "flashlight":
+		$Pistol.visible = false
+		$AK.visible = false
+		$Axe.visible = false
+		$KEY.visible = false
+		$Flashlight.visible = true
 	
 	if SlotBase.switched == true:
 		$VIEWMODEL_ANIMATION/Swap_animation.stop()

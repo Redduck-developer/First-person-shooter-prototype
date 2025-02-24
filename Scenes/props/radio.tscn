@@ -101,7 +101,7 @@ font_size = 57
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_rdq5r"]
+[sub_resource type="CurveTexture" id="CurveTexture_8qitp"]
 curve = SubResource("Curve_cbpyf")
 
 [sub_resource type="Curve" id="Curve_xl43a"]
@@ -109,19 +109,19 @@ max_value = 3.0
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_yjl4o"]
+[sub_resource type="CurveTexture" id="CurveTexture_4mxry"]
 curve = SubResource("Curve_xl43a")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u7gfh"]
 spread = 180.0
 initial_velocity_min = 22.22
 initial_velocity_max = 22.22
-scale_curve = SubResource("CurveTexture_rdq5r")
+scale_curve = SubResource("CurveTexture_8qitp")
 scale_over_velocity_min = 122.22
 scale_over_velocity_max = 122.22
-scale_over_velocity_curve = SubResource("CurveTexture_yjl4o")
+scale_over_velocity_curve = SubResource("CurveTexture_4mxry")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0t53"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5633a"]
 blend_mode = 4
 albedo_color = Color(0.00999999, 1, 0.8185, 1)
 emission_enabled = true
@@ -129,7 +129,7 @@ emission = Color(1, 0.833333, 0, 1)
 emission_energy_multiplier = 26.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_khijo"]
-material = SubResource("StandardMaterial3D_s0t53")
+material = SubResource("StandardMaterial3D_5633a")
 radius = 0.25
 height = 0.5
 
@@ -141,23 +141,23 @@ is_breakable = true
 is_RigidBody3D = true
 
 [node name="Radio" parent="." instance=ExtResource("2_qe280")]
-transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.0974604, 0, -0.014619)
+transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.00541407, -0.00608414, -0.014619)
 
 [node name="radio" parent="Radio" index="0"]
 mesh = SubResource("ArrayMesh_ix1r3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.0974604, 0, -0.014619)
+transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.00541407, -0.00608414, -0.014619)
 shape = SubResource("ConvexPolygonShape3D_1o65h")
 
 [node name="hurtbox" type="Area3D" parent="."]
-transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.0974604, 0, -0.014619)
+transform = Transform3D(-1.39876e-08, 0, -0.32, 0, 0.32, 0, 0.32, 0, -1.39876e-08, 0.00541407, -0.00608414, -0.014619)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
 shape = SubResource("ConvexPolygonShape3D_1o65h")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0974604, 0, 0.141318)
+[node name="music" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00541407, -0.00608414, 0.141318)
 stream = ExtResource("4_sooi5")
 max_db = 6.0
 autoplay = true
@@ -169,19 +169,19 @@ emission_angle_filter_attenuation_db = -33.0
 attenuation_filter_cutoff_hz = 9830.0
 doppler_tracking = 1
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="AudioStreamPlayer3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="music"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.000675555, 0.315106, -0.00474305)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_kxptb")
 draw_pass_1 = SubResource("TextMesh_kwosc")
 
 [node name="Impact" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0974604, 0, -0.0974604)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00541407, -0.00608414, -0.0974604)
 stream = ExtResource("5_lhpvp")
 unit_size = 5.0
 
 [node name="Mele_hit_particals" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.257297, 0, 0, 0, 0.257297, 0, 0, 0, 0.257297, 0.058068, 0.0221314, 0.010694)
+transform = Transform3D(0.257297, 0, 0, 0, 0.257297, 0, 0, 0, 0.257297, -0.0339783, 0.0160473, 0.010694)
 emitting = false
 amount = 71
 lifetime = 0.15

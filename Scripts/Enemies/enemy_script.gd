@@ -4,22 +4,23 @@ class_name enemy
 @onready var nav = $NavigationAgent3D
 
 @export var AXE : bool = true
-@export var Health : int = 100
+@export var Health : float = 100
 
-var SPEED = 3.5
-var SPRINT_SPEED = 8.0
-var WALK_SPEED = 3.0
+var SPEED : float
 var gravity = 9.8
 var in_sight = false
 var spotted = false
-const JUMP_VELOCITY = 6
+var blood = preload("res://Scenes/misc/blood_decal.tscn")
 
+const JUMP_VELOCITY = 6
+const WALK_SPEED = 3.0
+const SPRINT_SPEED = 8.0
 
 func _physics_process(delta: float) -> void:
 	$MeshInstance3D/ARMS.rotation.y = $MeshInstance3D/head.rotation.y
 	$MeshInstance3D/LEGS.rotation.y = $MeshInstance3D/head.rotation.y
 	
-	if Health < 1:
+	if Health < 1.0:
 		$death_animation.play("death")
 		axis_lock_linear_x = true
 		axis_lock_linear_z = true
@@ -133,6 +134,7 @@ func  _hurt(amount):
 	$MeshInstance3D/head.look_at(global.headpos)
 	$HitSound.stop()
 	$HitSound.play()
+	_blood_instantiate(self.global_position)
 
 
 func _on_death_animation_animation_finished(anim_name: StringName) -> void:
@@ -145,3 +147,8 @@ func _on_hurtbox_area_entered(area: Area3D) -> void:
 		_hurt(10)
 	if area is Medium_bullet:
 		_hurt(15)
+
+func _blood_instantiate(pos):
+	var blood_inst = blood.instantiate()
+	blood_inst.position = pos
+	get_parent().add_child(blood_inst)

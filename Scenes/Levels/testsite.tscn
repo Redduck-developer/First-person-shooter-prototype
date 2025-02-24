@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://8hjed4tw4oh0"]
+[gd_scene load_steps=61 format=3 uid="uid://8hjed4tw4oh0"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/LEVEL_DELETER.gd" id="1_6dfxa"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Assets/Materials/Pink.tres" id="1_7m11j"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://bhixdem5q0ody" path="res://Scenes/props/Special/double_door.tscn" id="28_1jhg7"]
 [ext_resource type="PackedScene" uid="uid://c1qe4q0mgoclp" path="res://Scenes/enemies/enemy_mele.tscn" id="29_8kahj"]
 [ext_resource type="Material" uid="uid://vvr1mayy8hq4" path="res://Assets/Materials/Curugated_metal.tres" id="31_pbsoh"]
+[ext_resource type="PackedScene" uid="uid://2yassif5dplj" path="res://Scenes/props/radio.tscn" id="33_52fq4"]
+[ext_resource type="PackedScene" uid="uid://b43fxqai4g5eg" path="res://Scenes/props/Collectibles (NOT AMMO)/flashlight.tscn" id="34_14yyo"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_o275n"]
 albedo = Color(0, 0.5, 1, 1)
@@ -1292,6 +1294,12 @@ size = Vector3(58.4629, 1.74457, 65.2432)
 [node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0354, 2.9386, 21.1889)
 size = Vector3(4.6958, 7.81763, 7.25061)
+
+[node name="Radio" parent="." instance=ExtResource("33_52fq4")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 10.3563, 1.10603, -1.19649)
+
+[node name="flashlight" parent="." instance=ExtResource("34_14yyo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.483, 0.98528, 3.45878)
 
 [connection signal="area_entered" from="ROPE/Area3D" to="ROPE" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="ROPE/Area3D" to="ROPE" method="_on_area_3d_area_exited"]
