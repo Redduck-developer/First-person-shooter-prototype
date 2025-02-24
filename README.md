@@ -1,9 +1,16 @@
 /// FPS PROTOTYPE ///
 
 currently an experimental GODOT project including:
-INVENTORY
+------------
+INVENTORY SYSTEM
+------------
 FPS CHARACTER CONTROLS
-AMMO
+------------
+AMMO SYSTEM 
+------------
 SANDBOX MODE
-HEALTH
-STAMINA
+------------
+HEALTH AND STAMINA SYSTEMS
+------------
+ENEMIES
+------------
