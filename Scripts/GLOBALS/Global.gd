@@ -11,13 +11,13 @@ var Climbing_Pos : Vector3
 var headpos : Vector3
 
 
-#number variables
+#float variables
 var jump = 10
 var speed = 1
 var ckookpint = 0
 
 
-#true false variables
+#bolean variables
 var retract = false
 var sleepy_eepy = false
 var obj_is_pickuped = false
