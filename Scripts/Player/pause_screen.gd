@@ -52,14 +52,13 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	get_parent().get_parent().get_parent().get_node("LOADING_MANAGER")._load_level("res://Scenes/Levels/main_menu.tscn")
-	print("DONE")
 	global.sleepy_eepy = true #honk mimimimi
 	AmmoManager._delete_ammo()
 	SlotBase._delete_all_slot_data()
 	$pause.visible = false
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().change_scene_to_file("res://Scenes/Levels/NEW_main_menu.tscn")
 
 
 func _on_button_4_pressed() -> void:

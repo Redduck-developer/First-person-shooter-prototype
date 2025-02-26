@@ -9,7 +9,6 @@ signal load_testsite
 
 func _ready() -> void:
 	var player_inst = player_node.instantiate()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area is light_bullet:

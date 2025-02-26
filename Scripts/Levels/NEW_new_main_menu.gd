@@ -1,0 +1,115 @@
+extends Node3D
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func _on_back_button_pressed() -> void:
+	$ui/title.visible = true
+	$ui/gamode.visible = false
+
+func _on_play_button_pressed() -> void:
+	$ui/title.visible = false
+	$ui/gamode.visible = true
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+func _on_sandbox_button_pressed() -> void:
+	$ui/gamode.visible = false
+	$ui/sandbox.visible = true
+
+func _on_back_2_button_pressed() -> void:
+	$ui/gamode.visible = true
+	$ui/sandbox.visible = false
+
+func _on_testsite_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/testsite.tscn")
+
+func _on_gunrange_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/gun_range.tscn")
+
+func _on_island_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/ISLAND.tscn")
+
+#actual functions above
+#-------------------------------------------
+#outline functions below
+
+func _on_play_button_mouse_entered() -> void:
+	$ui/title/PLAY/OUTLINE.visible = true
+
+
+func _on_play_button_mouse_exited() -> void:
+	$ui/title/PLAY/OUTLINE.visible = false
+
+
+func _on_quit_button_mouse_entered() -> void:
+	$ui/title/QUIT/OUTLINE.visible = true
+
+
+func _on_quit_button_mouse_exited() -> void:
+	$ui/title/QUIT/OUTLINE.visible = false
+
+
+func _on_sandbox_button_mouse_entered() -> void:
+	$ui/gamode/SANDBOX/OUTLINE.visible = true
+
+
+func _on_sandbox_button_mouse_exited() -> void:
+	$ui/gamode/SANDBOX/OUTLINE.visible = false
+
+
+func _on_story_button_mouse_entered() -> void:
+	$ui/gamode/STORY/OUTLINE.visible = true
+
+
+func _on_story_button_mouse_exited() -> void:
+	$ui/gamode/STORY/OUTLINE.visible = false
+
+
+func _on_back_button_mouse_entered() -> void:
+	$ui/gamode/BACK/OUTLINE.visible = true
+
+
+func _on_back_button_mouse_exited() -> void:
+	$ui/gamode/BACK/OUTLINE.visible = false
+
+
+func _on_testsite_button_mouse_entered() -> void:
+	$ui/sandbox/TESTSITE/OUTLINE.visible = true
+
+
+func _on_testsite_button_mouse_exited() -> void:
+	$ui/sandbox/TESTSITE/OUTLINE.visible = false
+
+
+func _on_gunrange_button_mouse_entered() -> void:
+	$ui/sandbox/GUNRANGE/OUTLINE.visible = true
+
+
+func _on_gunrange_button_mouse_exited() -> void:
+	$ui/sandbox/GUNRANGE/OUTLINE.visible = false
+
+
+func _on_island_button_mouse_entered() -> void:
+	$ui/sandbox/ISLAND/OUTLINE.visible = true
+
+
+func _on_island_button_mouse_exited() -> void:
+	$ui/sandbox/ISLAND/OUTLINE.visible = false
+
+
+func _on_oldmainmenu_button_mouse_entered() -> void:
+	$ui/sandbox/OLD_MAIN_MENU/OUTLINE.visible = true
+
+
+func _on_oldmainmenu_button_mouse_exited() -> void:
+	$ui/sandbox/OLD_MAIN_MENU/OUTLINE.visible = false
+
+
+func _on_back_2_button_mouse_entered() -> void:
+	$ui/sandbox/BACK/OUTLINE.visible = true
+
+
+func _on_back_2_button_mouse_exited() -> void:
+	$ui/sandbox/BACK/OUTLINE.visible = false
