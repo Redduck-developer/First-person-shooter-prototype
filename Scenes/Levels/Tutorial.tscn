@@ -812,6 +812,7 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -1.95495
 
 [node name="Player" parent="." instance=ExtResource("2_xhb80")]
 dev_mode = true
+MOVEABLE = false
 
 [node name="ROPE" parent="." instance=ExtResource("11_sklvj")]
 

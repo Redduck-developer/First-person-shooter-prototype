@@ -76,8 +76,10 @@ func _fire():
 func _aim_down():
 	if Input.is_action_just_pressed("rmb"):
 		$VIEWMODEL_ANIMATION/Aim_down_Sights.play("Aimdown")
+		get_parent().get_parent().get_parent().BASE_FOV = get_parent().get_parent().get_parent().ZOOM_FOV
 	elif Input.is_action_just_released("rmb"):
 		$VIEWMODEL_ANIMATION/Aim_down_Sights.play_backwards("Aimdown")
+		get_parent().get_parent().get_parent().BASE_FOV = get_parent().get_parent().get_parent().NORMAL_FOV
 
 
 

@@ -2,6 +2,7 @@ extends Node3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_back_button_pressed() -> void:
 	$ui/title.visible = true
@@ -30,6 +31,17 @@ func _on_gunrange_button_pressed() -> void:
 
 func _on_island_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/ISLAND.tscn")
+
+func _on_oldmainmenu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/main_menu.tscn")
+
+func _on_settings_button_pressed() -> void:
+	$ui/title.visible = false
+	$ui/settings.visible = true
+
+func _on_back_3_button_pressed() -> void:
+	$ui/title.visible = true
+	$ui/settings.visible = false
 
 #actual functions above
 #-------------------------------------------
@@ -113,3 +125,19 @@ func _on_back_2_button_mouse_entered() -> void:
 
 func _on_back_2_button_mouse_exited() -> void:
 	$ui/sandbox/BACK/OUTLINE.visible = false
+
+
+func _on_settings_button_mouse_entered() -> void:
+	$ui/title/SETTINGS/OUTLINE.visible = true
+
+
+func _on_settings_button_mouse_exited() -> void:
+	$ui/title/SETTINGS/OUTLINE.visible = false
+
+
+func _on_back_3_button_mouse_entered() -> void:
+	$ui/settings/BACK/OUTLINE.visible = true
+
+
+func _on_back_3_button_mouse_exited() -> void:
+	$ui/settings/BACK/OUTLINE.visible = false

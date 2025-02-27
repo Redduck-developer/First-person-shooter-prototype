@@ -39,8 +39,9 @@ var Vt_bob = 0.0
 var Blood = preload("res://Scenes/misc/blood_decal.tscn")
 
 #fov variables
-const ZOOM_FOV = 10.0
+const ZOOM_FOV = 40.0
 var BASE_FOV = 90.0
+const NORMAL_FOV = 90.0
 const FOV_CHANGE = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -105,51 +106,8 @@ func _physics_process(delta):
 		if is_in_water == true:
 			velocity.y -= (gravity * 2) * delta
 		# Handle Jump.
-		if flight == false:
-			if Input.is_action_just_pressed("SPACE") and is_on_floor(): 
-				$Jump.play(0.0)
-				velocity.y = JUMP_VELOCITY
-				cayote = false
-			elif Input.is_action_just_pressed("SPACE") and cayote == true:
-				$Jump.play(0.0)
-				velocity.y = JUMP_VELOCITY
-				cayote = false
-		elif flight == true:
-			if Input.is_action_just_pressed("SPACE"): 
-				velocity.y = JUMP_VELOCITY
-				speed = FLIGHT_SPEED
 		
 		# Handle Sprint.
-		if not Input.is_action_pressed("CTRL"):
-			if Input.is_action_pressed("SHIFT"):
-				if StatusManager.depleted == false:
-					if not Input.is_action_pressed("rmb"):
-						speed = SPRINT_SPEED
-						$Footsteps.pitch_scale = 2
-					else:
-						speed = WALK_SPEED
-						$Footsteps.pitch_scale = 1
-					if flight == true:
-						velocity.y = -JUMP_VELOCITY
-				else:
-					if not Input.is_action_pressed("rmb"):
-						speed = WALK_SPEED
-						$Footsteps.pitch_scale = 1
-					else:
-						speed = WALK_SPEED
-						$Footsteps.pitch_scale = 1
-					if flight == true:
-						velocity.y = -JUMP_VELOCITY
-			elif not Input.is_action_pressed("CTRL"):
-				speed = WALK_SPEED
-				
-		#Handle Crouch
-		if Input.is_action_pressed("CTRL"):
-			speed = CROUCH_SPEED
-			$Footsteps.pitch_scale = 0.4
-		elif not Input.is_action_pressed("SHIFT"):
-			speed = WALK_SPEED
-			$Footsteps.pitch_scale = 1
 		
 		
 		#additive_speed stuff
@@ -165,23 +123,8 @@ func _physics_process(delta):
 		else:
 			pass
 		
-		if lunging == false:
-			if is_on_floor():
-				if Input.is_action_just_pressed("CTRL + SPACE"):
-					velocity.y = JUMP_VELOCITY
-					cayote = false
-					if StatusManager.depleted == false:
-						LUNGE_SPEED = 30.0
-						StatusManager.stamina = 0
-						StatusManager.depleted = true
-						lunging = true
-						print(additive_speed)
-		else:
-			if is_on_floor():
-				lunging = false
-				LUNGE_SPEED = 0.0
-			else:
-				LUNGE_SPEED = 30.0
+		
+		
 		
 		# Get the input direction and handle the movement/deceleration.
 		var input_dir = Input.get_vector("a", "d", "w", "s")
@@ -215,23 +158,12 @@ func _physics_process(delta):
 		
 		global.playtrans = self.transform
 		
-		
-		
-		_push_away_rigid_bodies()
+		_Jump_control()
+		_Dive_control()
+		_Sprint_control()
 		_Crouch_Control()
+		_push_away_rigid_bodies()
 		move_and_slide()
-	
-	
-	if dev_mode == true:
-		if Input.is_action_just_pressed("V"):
-			flight = !flight
-	
-	if flight == true:
-		if not Input.is_action_pressed("SPACE"):
-			if not Input.is_action_pressed("SHIFT"):
-				velocity.y = 0
-	
-	
 
 func _process(delta: float) -> void:
 	if StatusManager.Health == 0:
@@ -246,6 +178,16 @@ func _process(delta: float) -> void:
 	
 	global.headpos = $Head.global_position
 	global.playpos = self.global_position
+	
+	if dev_mode == true:
+		if Input.is_action_just_pressed("V"):
+			flight = !flight
+	
+	if flight == true:
+		if not Input.is_action_pressed("SPACE"):
+			if not Input.is_action_pressed("SHIFT"):
+				velocity.y = 0
+	
 
 
 func _push_away_rigid_bodies():
@@ -275,14 +217,13 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 
-
 func _VIEWMODEL_headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * VBOB_FREQ) * VBOB_AMP
 	pos.x = cos(time * VBOB_FREQ / 2) * VBOB_AMP
 	return pos
 
-
+#Movement_controls
 
 func _Crouch_Control():
 	if Input.is_action_just_pressed("CTRL"):
@@ -291,6 +232,73 @@ func _Crouch_Control():
 		if $RayCast3D.is_colliding() == false:
 			$Crouch_animation.play_backwards("crouch")
 
+func _Sprint_control():
+	if not Input.is_action_pressed("CTRL"):
+		if Input.is_action_pressed("SHIFT"):
+			if StatusManager.depleted == false:
+				if not Input.is_action_pressed("rmb"):
+					speed = SPRINT_SPEED
+					$Footsteps.pitch_scale = 2
+				else:
+					speed = WALK_SPEED
+					$Footsteps.pitch_scale = 1
+				if flight == true:
+					velocity.y = -JUMP_VELOCITY
+			else:
+				if not Input.is_action_pressed("rmb"):
+					speed = WALK_SPEED
+					$Footsteps.pitch_scale = 1
+				else:
+					speed = WALK_SPEED
+					$Footsteps.pitch_scale = 1
+				if flight == true:
+					velocity.y = -JUMP_VELOCITY
+		elif not Input.is_action_pressed("CTRL"):
+			speed = WALK_SPEED
+			
+	#Handle Crouch
+	if Input.is_action_pressed("CTRL"):
+		speed = CROUCH_SPEED
+		$Footsteps.pitch_scale = 0.4
+	elif not Input.is_action_pressed("SHIFT"):
+		speed = WALK_SPEED
+		$Footsteps.pitch_scale = 1
+
+func _Dive_control():
+	if lunging == false:
+		if is_on_floor():
+			if Input.is_action_just_pressed("CTRL + SPACE"):
+				velocity.y = JUMP_VELOCITY
+				cayote = false
+				if StatusManager.depleted == false:
+					LUNGE_SPEED = 30.0
+					StatusManager.stamina = 0
+					StatusManager.depleted = true
+					lunging = true
+					print(additive_speed)
+	else:
+		if is_on_floor():
+			lunging = false
+			LUNGE_SPEED = 0.0
+		else:
+			LUNGE_SPEED = 30.0
+
+func _Jump_control():
+	if flight == false:
+		if Input.is_action_just_pressed("SPACE") and is_on_floor(): 
+			$Jump.play(0.0)
+			velocity.y = JUMP_VELOCITY
+			cayote = false
+		elif Input.is_action_just_pressed("SPACE") and cayote == true:
+			$Jump.play(0.0)
+			velocity.y = JUMP_VELOCITY
+			cayote = false
+	elif flight == true:
+		if Input.is_action_just_pressed("SPACE"): 
+			velocity.y = JUMP_VELOCITY
+			speed = FLIGHT_SPEED
+
+#IDK
 
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	if area is light_bullet_enemy:

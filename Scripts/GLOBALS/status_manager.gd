@@ -5,9 +5,10 @@ var Health = 100
 var HURT_ANIM = false
 
 #Stamina vars
-var stamina = 100   #FULL = 10 / EMPTY = 0
-var stamina_loss = 1
-var depleted = false
+var stamina : float = 100   #FULL = 10 / EMPTY = 0
+var stamina_loss : float = 1
+var using_stamina : bool = false
+var depleted : bool = false
 
 #Status/Visibility vars
 var Show_Stats = false
@@ -21,7 +22,7 @@ func _process(delta: float) -> void:
 		Health = 0
 	
 	#STAMINA
-	if Input.is_action_pressed("SHIFT"):
+	if using_stamina == true:
 		if depleted == false:
 			if IS_MOVING:
 				stamina = stamina - stamina_loss
@@ -43,6 +44,11 @@ func _process(delta: float) -> void:
 		stamina = 100
 	if stamina < 0:
 		stamina = 0
+	
+	if Input.is_action_just_pressed("SHIFT"):
+		using_stamina = true
+	elif Input.is_action_just_released("SHIFT"):
+		using_stamina = false
 	
 
 func _hurt(amount : int):

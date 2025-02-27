@@ -1846,7 +1846,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol"]
-transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.58323e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
+transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.64821e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2033,6 +2033,7 @@ mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="Flashlight" parent="Head/Camera3D/VIEWMODEL" instance=ExtResource("9_yo1xl")]
 transform = Transform3D(-6.49114e-10, 0, -0.01485, 0, 0.01485, 0, 0.01485, 0, -6.49114e-10, 0.102, 0.00100005, -0.137)
+visible = false
 
 [node name="base" parent="Head/Camera3D/VIEWMODEL/Flashlight" index="0"]
 mesh = SubResource("ArrayMesh_b0cl7")
@@ -2045,10 +2046,10 @@ mesh = SubResource("ArrayMesh_hlxt5")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.18236, -0.0232473, -0.0834364)
 light_energy = 4.665
 light_indirect_energy = 1.21
-light_volumetric_fog_energy = 0.74
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_range = 15.3583
-spot_angle = 31.983
+spot_angle = 43.8477
 spot_angle_attenuation = 0.366021
 
 [node name="arm right" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Flashlight"]
@@ -3083,6 +3084,17 @@ label_settings = SubResource("LabelSettings_532hj")
 [node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D"]
 current = true
 
+[node name="wall_run_right_cast" type="RayCast3D" parent="Head"]
+unique_name_in_owner = true
+target_position = Vector3(0.575, 0, 0)
+debug_shape_custom_color = Color(1, 0.866667, 0, 0.054902)
+
+[node name="wall_run_left_cast" type="RayCast3D" parent="Head"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0.575, 0, 0)
+debug_shape_custom_color = Color(1, 0.866667, 0, 0.054902)
+
 [node name="LOADING_MANAGER" parent="." instance=ExtResource("18_onml8")]
 visible = false
 z_index = 13
@@ -3099,11 +3111,6 @@ texture_filter = 1
 position = Vector2(1038, 564)
 scale = Vector2(1.92453, 2.02632)
 texture = ExtResource("18_eq4v2")
-
-[node name="coyete_time_Timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.07
-one_shot = true
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_yv3nf")
@@ -3183,7 +3190,6 @@ draw_pass_1 = SubResource("SphereMesh_2oah0")
 [connection signal="pressed" from="Head/Camera3D/PAUSE_SCREEN/pause/Control/Debug_container/Node2D/AMMO/Medium_ammo_count/SUBTRACT_M" to="Head/Camera3D/PAUSE_SCREEN" method="_on_subtract_m_pressed"]
 [connection signal="pressed" from="Head/Camera3D/PAUSE_SCREEN/pause/Control/Debug_container/Node2D/AMMO/Heavy_ammo_count/ADD_H" to="Head/Camera3D/PAUSE_SCREEN" method="_on_add_h_pressed"]
 [connection signal="pressed" from="Head/Camera3D/PAUSE_SCREEN/pause/Control/Debug_container/Node2D/AMMO/Heavy_ammo_count/SUBTRACT_H" to="Head/Camera3D/PAUSE_SCREEN" method="_on_subtract_h_pressed"]
-[connection signal="timeout" from="coyete_time_Timer" to="." method="_on_coyete_time_timer_timeout"]
 
 [editable path="Head/Camera3D/VIEWMODEL/Pistol"]
 [editable path="Head/Camera3D/VIEWMODEL/AK"]
