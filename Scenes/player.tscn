@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=4 uid="uid://tlj2arrv4yen"]
+[gd_scene load_steps=148 format=4 uid="uid://tlj2arrv4yen"]
 
 [ext_resource type="Script" path="res://Scripts/Player/misc/Player.gd" id="1_pn5hc"]
 [ext_resource type="Script" path="res://Scripts/Player/misc/viewmodel.gd" id="2_3u7lg"]
@@ -1304,18 +1304,6 @@ height = 0.07
 
 [sub_resource type="Animation" id="Animation_x78rl"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.75, 0.75)]
-}
 
 [sub_resource type="Animation" id="Animation_n5e0v"]
 resource_name = "grow"
@@ -1339,12 +1327,122 @@ _data = {
 "grow": SubResource("Animation_n5e0v")
 }
 
+[sub_resource type="QuadMesh" id="QuadMesh_yfsnf"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_v8yyj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gwwc4"]
 font_size = 36
 outline_size = 14
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_x4afm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SLOTS:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(378, 883)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(511, 883)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(642, 883)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(774, 883)]
+}
+
+[sub_resource type="Animation" id="Animation_1brm5"]
+resource_name = "startup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SLOTS:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.329877, 1),
+"update": 0,
+"values": [Vector2(378, 883), Vector2(378, 585)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icon2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.435275, 1),
+"update": 0,
+"values": [Vector2(511, 883), Vector2(511, 585)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Icon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.594604, 1),
+"update": 0,
+"values": [Vector2(642, 883), Vector2(642, 585)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Icon4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.812252, 1),
+"update": 0,
+"values": [Vector2(774, 883), Vector2(774, 585)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipdcw"]
+_data = {
+"RESET": SubResource("Animation_x4afm"),
+"startup": SubResource("Animation_1brm5")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_3i561"]
 font_size = 36
@@ -1560,6 +1658,66 @@ font_size = 14
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_wqmgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AMMO_MANAGER/AMMO_VISUALIZER:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(508.83, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("STATUS_MANAGER/ANIM_AND_STATUS_LAYER:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(508.83, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ohplo"]
+resource_name = "startup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("STATUS_MANAGER/ANIM_AND_STATUS_LAYER:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(508.83, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AMMO_MANAGER/AMMO_VISUALIZER:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.25, 1),
+"update": 0,
+"values": [Vector2(508.83, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3grer"]
+_data = {
+"RESET": SubResource("Animation_wqmgp"),
+"startup": SubResource("Animation_ohplo")
+}
+
 [sub_resource type="Animation" id="Animation_x2ehn"]
 length = 0.001
 tracks/0/type = "value"
@@ -1761,6 +1919,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00475494, -2.38419e-07, -0
 fov = 90.0
 near = 0.001
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D"]
+current = true
+
 [node name="Face" type="MeshInstance3D" parent="Head/Camera3D"]
 transform = Transform3D(-1, 0, 8.9407e-08, -8.9407e-08, -4.37114e-08, -1, 3.9081e-15, -1, 4.37114e-08, 0, 0, -0.509)
 cast_shadow = 0
@@ -1846,7 +2007,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol"]
-transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.64821e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
+transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.58977e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2180,7 +2341,7 @@ script = ExtResource("3_281tj")
 layer = 0
 
 [node name="SLOTS" type="Sprite2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
-position = Vector2(378, 585)
+position = Vector2(378, 883)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("5_iqaqv")
 
@@ -2211,6 +2372,22 @@ visible = false
 texture_filter = 1
 scale = Vector2(1.715, 1.715)
 texture = ExtResource("21_wr1rg")
+
+[node name="Arrow" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS"]
+visible = false
+position = Vector2(0, -8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS/Arrow"]
+position = Vector2(-7.87576, -63.586)
+rotation = 0.785397
+scale = Vector2(23.1667, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS/Arrow"]
+position = Vector2(7.75133, -63.2131)
+rotation = -0.785397
+scale = Vector2(25.0413, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS"]
 position = Vector2(0.5, 54.5)
@@ -2245,7 +2422,7 @@ text = "1"
 label_settings = SubResource("LabelSettings_gwwc4")
 
 [node name="Icon2" type="Sprite2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
-position = Vector2(511, 585)
+position = Vector2(511, 883)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("6_hnv6o")
 Local_Slot_Numb = 2
@@ -2277,6 +2454,22 @@ visible = false
 texture_filter = 1
 scale = Vector2(1.715, 1.715)
 texture = ExtResource("21_wr1rg")
+
+[node name="Arrow" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2"]
+visible = false
+position = Vector2(0, -8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2/Arrow"]
+position = Vector2(-7.87576, -63.586)
+rotation = 0.785397
+scale = Vector2(23.1667, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2/Arrow"]
+position = Vector2(7.75133, -63.2131)
+rotation = -0.785397
+scale = Vector2(25.0413, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2"]
 position = Vector2(0.5, 54.5)
@@ -2311,7 +2504,7 @@ text = "2"
 label_settings = SubResource("LabelSettings_gwwc4")
 
 [node name="Icon3" type="Sprite2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
-position = Vector2(642, 585)
+position = Vector2(642, 883)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("6_hnv6o")
 Local_Slot_Numb = 3
@@ -2343,6 +2536,22 @@ visible = false
 texture_filter = 1
 scale = Vector2(1.715, 1.715)
 texture = ExtResource("21_wr1rg")
+
+[node name="Arrow" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3"]
+visible = false
+position = Vector2(0, -8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3/Arrow"]
+position = Vector2(-7.87576, -63.586)
+rotation = 0.785397
+scale = Vector2(23.1667, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3/Arrow"]
+position = Vector2(7.75133, -63.2131)
+rotation = -0.785397
+scale = Vector2(25.0413, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3"]
 position = Vector2(0.5, 54.5)
@@ -2377,7 +2586,7 @@ text = "3"
 label_settings = SubResource("LabelSettings_gwwc4")
 
 [node name="Icon4" type="Sprite2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
-position = Vector2(774, 585)
+position = Vector2(774, 883)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("6_hnv6o")
 Local_Slot_Numb = 4
@@ -2409,6 +2618,22 @@ visible = false
 texture_filter = 1
 scale = Vector2(1.715, 1.715)
 texture = ExtResource("21_wr1rg")
+
+[node name="Arrow" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4"]
+visible = false
+position = Vector2(0, -8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4/Arrow"]
+position = Vector2(-7.87576, -63.586)
+rotation = 0.785397
+scale = Vector2(23.1667, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4/Arrow"]
+position = Vector2(7.75133, -63.2131)
+rotation = -0.785397
+scale = Vector2(25.0413, 3.58335)
+mesh = SubResource("QuadMesh_yfsnf")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4"]
 position = Vector2(0.5, 54.5)
@@ -2443,12 +2668,19 @@ text = "4
 "
 label_settings = SubResource("LabelSettings_gwwc4")
 
+[node name="startup" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
+libraries = {
+"": SubResource("AnimationLibrary_ipdcw")
+}
+
 [node name="AMMO_MANAGER" type="Node" parent="Head/Camera3D"]
 process_mode = 3
 script = ExtResource("11_8krec")
 
 [node name="AMMO_VISUALIZER" type="CanvasLayer" parent="Head/Camera3D/AMMO_MANAGER"]
 layer = 0
+offset = Vector2(508.83, 0)
+transform = Transform2D(1, 0, 0, 1, 508.83, 0)
 script = ExtResource("13_q1rro")
 
 [node name="AmmoTexture" type="Sprite2D" parent="Head/Camera3D/AMMO_MANAGER/AMMO_VISUALIZER"]
@@ -2508,6 +2740,8 @@ script = ExtResource("22_2uwlj")
 
 [node name="ANIM_AND_STATUS_LAYER" type="CanvasLayer" parent="Head/Camera3D/STATUS_MANAGER"]
 layer = 0
+offset = Vector2(508.83, 0)
+transform = Transform2D(1, 0, 0, 1, 508.83, 0)
 script = ExtResource("22_dcbk6")
 
 [node name="HealthTexture" type="Sprite2D" parent="Head/Camera3D/STATUS_MANAGER/ANIM_AND_STATUS_LAYER"]
@@ -3081,19 +3315,10 @@ offset_bottom = 32.0
 text = "ERROR"
 label_settings = SubResource("LabelSettings_532hj")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D"]
-current = true
-
-[node name="wall_run_right_cast" type="RayCast3D" parent="Head"]
-unique_name_in_owner = true
-target_position = Vector3(0.575, 0, 0)
-debug_shape_custom_color = Color(1, 0.866667, 0, 0.054902)
-
-[node name="wall_run_left_cast" type="RayCast3D" parent="Head"]
-unique_name_in_owner = true
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
-target_position = Vector3(0.575, 0, 0)
-debug_shape_custom_color = Color(1, 0.866667, 0, 0.054902)
+[node name="show_status" type="AnimationPlayer" parent="Head/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_3grer")
+}
 
 [node name="LOADING_MANAGER" parent="." instance=ExtResource("18_onml8")]
 visible = false

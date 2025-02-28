@@ -3,6 +3,8 @@ class_name player
 
 #developer variables
 @export var dev_mode = false
+@export var show_slots_on_ready = true
+@export var show_status_on_ready = true
 
 #movement variables
 var speed : float
@@ -39,7 +41,7 @@ var Vt_bob = 0.0
 var Blood = preload("res://Scenes/misc/blood_decal.tscn")
 
 #fov variables
-const ZOOM_FOV = 40.0
+const ZOOM_FOV = 60.0
 var BASE_FOV = 90.0
 const NORMAL_FOV = 90.0
 const FOV_CHANGE = 1
@@ -62,6 +64,12 @@ func _ready():
 	print(OS.get_memory_info())
 	print(OS.get_video_adapter_driver_info())
 	print(RenderingServer.get_rendering_device().get_device_name())
+	
+	if show_slots_on_ready == true:
+		$Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/startup.play("startup")
+	if show_status_on_ready == true:
+		$Head/Camera3D/show_status.play("startup")
+	
 
 
 func _unhandled_input(event):

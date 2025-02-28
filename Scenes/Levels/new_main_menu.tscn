@@ -322,6 +322,7 @@ script = ExtResource("1_t83cj")
 
 [node name="haha funny" type="Label3D" parent="."]
 transform = Transform3D(0, -0.1, -4.37114e-09, -4.37114e-09, -4.37114e-09, 0.1, -0.1, 0, -4.37114e-09, 7.76121e-07, -0.755571, -5.30436e-07)
+visible = false
 text = "8==D"
 font_size = 1382
 
@@ -344,7 +345,6 @@ material = SubResource("FogMaterial_cu1mm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
-use_collision = true
 size = Vector3(29, 12, 29)
 material = ExtResource("2_g5k6n")
 
@@ -815,7 +815,7 @@ offset_left = 72.0
 offset_top = 234.0
 offset_right = 388.0
 offset_bottom = 286.0
-text = "old main menu"
+text = "old Main Menu"
 label_settings = SubResource("LabelSettings_g3n2q")
 
 [node name="oldmainmenu_button" type="Button" parent="ui/sandbox/OLD_MAIN_MENU"]
@@ -833,6 +833,35 @@ scale = Vector2(256, 135)
 mesh = SubResource("QuadMesh_a6ejv")
 
 [node name="Sprite2D" type="Sprite2D" parent="ui/sandbox/OLD_MAIN_MENU"]
+texture_filter = 4
+position = Vector2(166, 121)
+scale = Vector2(0.23, 0.215)
+texture = ExtResource("11_3aolv")
+
+[node name="OLD_TUTORIAL" type="Label" parent="ui/sandbox"]
+texture_filter = 1
+offset_left = 403.0
+offset_top = 234.0
+offset_right = 719.0
+offset_bottom = 286.0
+text = "  old Tutorial"
+label_settings = SubResource("LabelSettings_g3n2q")
+
+[node name="oldtutorial_button" type="Button" parent="ui/sandbox/OLD_TUTORIAL"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 52.0
+offset_right = 291.0
+offset_bottom = 188.0
+
+[node name="OUTLINE" type="MeshInstance2D" parent="ui/sandbox/OLD_TUTORIAL"]
+visible = false
+position = Vector2(166, 120.5)
+scale = Vector2(256, 135)
+mesh = SubResource("QuadMesh_a6ejv")
+
+[node name="Sprite2D" type="Sprite2D" parent="ui/sandbox/OLD_TUTORIAL"]
 texture_filter = 4
 position = Vector2(166, 121)
 scale = Vector2(0.23, 0.215)
@@ -891,6 +920,9 @@ mesh = SubResource("QuadMesh_a6ejv")
 [connection signal="mouse_entered" from="ui/sandbox/OLD_MAIN_MENU/oldmainmenu_button" to="." method="_on_oldmainmenu_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/sandbox/OLD_MAIN_MENU/oldmainmenu_button" to="." method="_on_oldmainmenu_button_mouse_exited"]
 [connection signal="pressed" from="ui/sandbox/OLD_MAIN_MENU/oldmainmenu_button" to="." method="_on_oldmainmenu_button_pressed"]
+[connection signal="mouse_entered" from="ui/sandbox/OLD_TUTORIAL/oldtutorial_button" to="." method="_on_oldtutorial_button_mouse_entered"]
+[connection signal="mouse_exited" from="ui/sandbox/OLD_TUTORIAL/oldtutorial_button" to="." method="_on_oldtutorial_button_mouse_exited"]
+[connection signal="pressed" from="ui/sandbox/OLD_TUTORIAL/oldtutorial_button" to="." method="_on_oldtutorial_button_pressed"]
 [connection signal="mouse_entered" from="ui/sandbox/BACK/back2_button" to="." method="_on_back_2_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/sandbox/BACK/back2_button" to="." method="_on_back_2_button_mouse_exited"]
 [connection signal="pressed" from="ui/sandbox/BACK/back2_button" to="." method="_on_back_2_button_pressed"]

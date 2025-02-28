@@ -35,6 +35,9 @@ func _on_island_button_pressed() -> void:
 func _on_oldmainmenu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Levels/main_menu.tscn")
 
+func _on_oldtutorial_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/Tutorial.tscn")
+
 func _on_settings_button_pressed() -> void:
 	$ui/title.visible = false
 	$ui/settings.visible = true
@@ -141,3 +144,11 @@ func _on_back_3_button_mouse_entered() -> void:
 
 func _on_back_3_button_mouse_exited() -> void:
 	$ui/settings/BACK/OUTLINE.visible = false
+
+
+func _on_oldtutorial_button_mouse_entered() -> void:
+	$ui/sandbox/OLD_TUTORIAL/OUTLINE.visible = true
+
+
+func _on_oldtutorial_button_mouse_exited() -> void:
+	$ui/sandbox/OLD_TUTORIAL/OUTLINE.visible = false

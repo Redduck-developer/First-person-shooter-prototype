@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://beuexixtoha5w"]
+[gd_scene load_steps=47 format=4 uid="uid://beuexixtoha5w"]
 
 [ext_resource type="Script" path="res://scripts/Levels/tutorial.gd" id="1_flt3b"]
 [ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="1_qsmtd"]
@@ -193,6 +193,14 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_kaap6"]
 size = Vector3(22.6346, 13.402, 11.0388)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t05vg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tej57"]
+invert = true
+in_3d_space = true
+seamless = true
+noise = SubResource("FastNoiseLite_t05vg")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vof7d"]
 render_priority = 0
 shader = ExtResource("14_qvs6w")
@@ -205,12 +213,13 @@ shader_parameter/depth_distance = 25.0
 shader_parameter/beers_law = 4.5
 shader_parameter/displacement_strength = 0.0
 shader_parameter/displacement_scroll_speed = 0.0
-shader_parameter/displacement_scroll_offset = Vector2(-0.2, 0.3)
-shader_parameter/displacement_scale_offset = 0.5
-shader_parameter/displacement_scale = Vector2(0.04, 0.04)
-shader_parameter/edge_thickness = 0.3
-shader_parameter/edge_speed = 0.35
-shader_parameter/edge_noise_scale = Vector2(0.4, 0.4)
+shader_parameter/displacement_scroll_offset = Vector2(0, 0)
+shader_parameter/displacement_scale_offset = 0.0
+shader_parameter/displacement_scale = Vector2(0, 0)
+shader_parameter/edge_thickness = 0.08
+shader_parameter/edge_speed = 1.0
+shader_parameter/edge_noise_scale = Vector2(45.67, 0.4)
+shader_parameter/edge_noise = SubResource("NoiseTexture2D_tej57")
 shader_parameter/influence_size = 1.0
 shader_parameter/player_wave_frequenzy = 10.0
 shader_parameter/player_wave_speed = 5.0
@@ -218,11 +227,11 @@ shader_parameter/caustic_size = 2.0
 shader_parameter/caustic_range = 11.5
 shader_parameter/caustic_strength = 0.08
 shader_parameter/ssr_mix_strength = 0.03
-shader_parameter/ssr_travel = 100.0
+shader_parameter/ssr_travel = 300.0
 shader_parameter/ssr_resolution_near = 1.0
 shader_parameter/ssr_resolution_far = 5.0
-shader_parameter/ssr_tolerance = 1.0
-shader_parameter/refraction_strength = 1.25
+shader_parameter/ssr_tolerance = 2.0
+shader_parameter/refraction_strength = 0.0
 shader_parameter/normal_map_strength = 1.0
 shader_parameter/scroll_speed = 0.3
 shader_parameter/scroll_offset = Vector2(0.1, -0.3)
@@ -231,7 +240,7 @@ shader_parameter/normal_map_scale = Vector2(0.1, 0.1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0llnq"]
 material = SubResource("ShaderMaterial_vof7d")
-size = Vector2(22.96, 12.68)
+size = Vector2(22.96, 13.57)
 subdivide_width = 110
 subdivide_depth = 110
 
@@ -384,6 +393,12 @@ material = SubResource("StandardMaterial3D_l4uk6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144993, 15.4913, -46.3801)
 size = Vector3(12.5312, 0.898926, 8.77002)
 material = SubResource("StandardMaterial3D_l4uk6")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23839, -3.05883, -39.0294)
+operation = 2
+size = Vector3(6.39436, 6.21396, 67.1444)
+material = ExtResource("1_qsmtd")
 
 [node name="Tutorial_room" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.46048, -23.627)
@@ -812,7 +827,6 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -1.95495
 
 [node name="Player" parent="." instance=ExtResource("2_xhb80")]
 dev_mode = true
-MOVEABLE = false
 
 [node name="ROPE" parent="." instance=ExtResource("11_sklvj")]
 

@@ -61,7 +61,7 @@ interpolation_mode = 1
 offsets = PackedFloat32Array(0.961749, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_w831c"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vokkk"]
 gradient = SubResource("Gradient_2oioy")
 fill_from = Vector2(0.333333, 0)
 fill_to = Vector2(0.162393, 0.00854701)
@@ -70,12 +70,12 @@ fill_to = Vector2(0.162393, 0.00854701)
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_n1c3s"]
+[sub_resource type="Sky" id="Sky_t7tk8"]
 sky_material = SubResource("ProceduralSkyMaterial_5lq0h")
 
 [sub_resource type="Environment" id="Environment_g2h84"]
 background_mode = 2
-sky = SubResource("Sky_n1c3s")
+sky = SubResource("Sky_t7tk8")
 ambient_light_sky_contribution = 0.58
 reflected_light_source = 2
 tonemap_mode = 3
@@ -131,7 +131,7 @@ volumetric_fog_temporal_reprojection_amount = 0.99
 adjustment_brightness = 0.69
 adjustment_contrast = 8.0
 adjustment_saturation = 0.36
-adjustment_color_correction = SubResource("GradientTexture2D_w831c")
+adjustment_color_correction = SubResource("GradientTexture2D_vokkk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7gp1f"]
 particle_flag_align_y = true

@@ -12,10 +12,12 @@ func _process(_delta: float) -> void:
 	if SlotBase.Current_slot_selected == Local_Slot_Numb:
 		if lock == false:
 			$anim.play("grow")
+			$Arrow.visible = true
 			lock = true
 	else:
 		if lock == true:
 			$anim.play_backwards("grow")
+			$Arrow.visible = false
 			lock = false
 	
 	
