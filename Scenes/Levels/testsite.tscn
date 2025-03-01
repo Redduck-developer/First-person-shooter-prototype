@@ -149,11 +149,11 @@ collision_use_scale = true
 sub_emitter_mode = 3
 sub_emitter_amount_at_collision = 1
 
-[sub_resource type="Curve" id="Curve_sr3u2"]
+[sub_resource type="Curve" id="Curve_ten57"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.448529, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8n0f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8370b"]
 shading_mode = 0
 albedo_color = Color(0.1204, 0.21328, 0.43, 1)
 billboard_keep_scale = true
@@ -163,12 +163,12 @@ distance_fade_mode = 2
 distance_fade_max_distance = 4.6
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_0otxs"]
-material = SubResource("StandardMaterial3D_k8n0f")
+material = SubResource("StandardMaterial3D_8370b")
 radius = 0.021
 radial_steps = 3
 sections = 2
 section_length = 0.791
-curve = SubResource("Curve_sr3u2")
+curve = SubResource("Curve_ten57")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_nss8j"]
 material = ExtResource("18_1gira")

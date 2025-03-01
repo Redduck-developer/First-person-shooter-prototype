@@ -2007,7 +2007,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol"]
-transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.58977e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
+transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.62553e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
