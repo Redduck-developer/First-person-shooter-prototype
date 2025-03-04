@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://dvi7kmbhiffkg"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Gun_controller.gd" id="1_vnbym"]
+[ext_resource type="Script" uid="uid://dg7ehofsrlroi" path="res://Scripts/Props/Gun_controller.gd" id="1_vnbym"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="2_py0ks"]
 [ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_c717e"]
 [ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="4_3rmlc"]

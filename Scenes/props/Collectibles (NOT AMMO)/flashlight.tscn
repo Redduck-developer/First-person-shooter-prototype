@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://b43fxqai4g5eg"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Gun_controller.gd" id="1_bcuwq"]
+[ext_resource type="Script" uid="uid://dg7ehofsrlroi" path="res://Scripts/Props/Gun_controller.gd" id="1_bcuwq"]
 [ext_resource type="PackedScene" uid="uid://b6hfqepukonkr" path="res://Assets/3D Models/Flashlight.glb" id="2_t5c3c"]
 [ext_resource type="Texture2D" uid="uid://c7pcm0embr0cv" path="res://Assets/Textures/material_textures/Sand_Normal.png" id="3_wb3q5"]
 [ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="4_videj"]

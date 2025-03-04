@@ -1,6 +1,6 @@
 [gd_scene load_steps=52 format=4 uid="uid://c1qe4q0mgoclp"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/enemy_script.gd" id="1_v3f0n"]
+[ext_resource type="Script" uid="uid://cgorbuo7v865t" path="res://Scripts/Enemies/enemy_script.gd" id="1_v3f0n"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="2_6d0qf"]
 [ext_resource type="Texture2D" uid="uid://byh5tfua0n40h" path="res://Assets/Textures/material_textures/Metal_normal.png" id="3_yl4ys"]
 [ext_resource type="AudioStream" uid="uid://bas0dnqdnb0ty" path="res://Assets/Sounds/Walking_(concrete).mp3" id="4_nj5eh"]
@@ -491,9 +491,9 @@ tracks/10/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_331t3"]
 _data = {
-"RESET": SubResource("Animation_ujuey"),
-"attack_axe": SubResource("Animation_fmjlq"),
-"reset_axe": SubResource("Animation_2jug2")
+&"RESET": SubResource("Animation_ujuey"),
+&"attack_axe": SubResource("Animation_fmjlq"),
+&"reset_axe": SubResource("Animation_2jug2")
 }
 
 [sub_resource type="Animation" id="Animation_n6spv"]
@@ -554,8 +554,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qjkhc"]
 _data = {
-"RESET": SubResource("Animation_n6spv"),
-"move": SubResource("Animation_415ud")
+&"RESET": SubResource("Animation_n6spv"),
+&"move": SubResource("Animation_415ud")
 }
 
 [sub_resource type="Animation" id="Animation_k2tvb"]
@@ -590,8 +590,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ubs8g"]
 _data = {
-"RESET": SubResource("Animation_k2tvb"),
-"death": SubResource("Animation_15btc")
+&"RESET": SubResource("Animation_k2tvb"),
+&"death": SubResource("Animation_15btc")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hs1k0"]
@@ -618,7 +618,7 @@ material = SubResource("StandardMaterial3D_i5kp7")
 radius = 0.03
 
 [sub_resource type="Curve" id="Curve_iflke"]
-max_value = 100.0
+_limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 27.5338), 102.02, 0.0, 0, 0]
 point_count = 2
 
@@ -820,18 +820,18 @@ target_position = Vector3(0, -0.59, 0)
 
 [node name="Attack_Animation_player" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_331t3")
+&"": SubResource("AnimationLibrary_331t3")
 }
 
 [node name="walk_run_animation_player" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_qjkhc")
+&"": SubResource("AnimationLibrary_qjkhc")
 }
 speed_scale = 2.5
 
 [node name="death_animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ubs8g")
+&"": SubResource("AnimationLibrary_ubs8g")
 }
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]

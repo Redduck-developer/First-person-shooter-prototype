@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://fw6tdt6snj5d"]
 
-[ext_resource type="Script" path="res://Scripts/Props/door.gd" id="1_6372r"]
+[ext_resource type="Script" uid="uid://dme3dxaa3ssu7" path="res://Scripts/Props/door.gd" id="1_6372r"]
 [ext_resource type="Material" uid="uid://bgs0x6aoubc5f" path="res://Assets/Materials/Gold.tres" id="2_3vkjk"]
 [ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Assets/Materials/Red.tres" id="3_i04mv"]
 [ext_resource type="Material" uid="uid://da2k0h5ebt4fa" path="res://Assets/Materials/Recycled_wood.tres" id="4_pot4f"]
@@ -42,7 +42,7 @@ radial_segments = 8
 rings = 4
 
 [sub_resource type="Curve" id="Curve_1bukw"]
-max_value = 200.0
+_limits = [0.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.306667, 74.1504), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -113,8 +113,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7w6lh"]
 _data = {
-"RESET": SubResource("Animation_bkf0n"),
-"open": SubResource("Animation_fnmyd")
+&"RESET": SubResource("Animation_bkf0n"),
+&"open": SubResource("Animation_fnmyd")
 }
 
 [node name="Door" type="Node3D"]
@@ -190,7 +190,7 @@ draw_pass_1 = SubResource("BoxMesh_n8pl7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../DOOR")
 libraries = {
-"": SubResource("AnimationLibrary_7w6lh")
+&"": SubResource("AnimationLibrary_7w6lh")
 }
 
 [node name="DoorOpenClose" type="AudioStreamPlayer" parent="."]

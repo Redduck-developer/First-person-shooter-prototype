@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://qiosq0nhqh4w"]
 
-[ext_resource type="Script" path="res://Scripts/misc/Bullet_movement.gd" id="1_f0egg"]
-[ext_resource type="Script" path="res://Scripts/misc/Medium_Bullet.gd" id="2_ncksl"]
-[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="3_0r2l6"]
+[ext_resource type="Script" uid="uid://dcqei00d2fj2q" path="res://Scripts/misc/Bullet_movement.gd" id="1_f0egg"]
+[ext_resource type="Script" uid="uid://4emkf4fcrk5l" path="res://Scripts/misc/Medium_Bullet.gd" id="2_ncksl"]
+[ext_resource type="PackedScene" uid="uid://bkjw08cm8f1ly" path="res://Assets/3D Models/AK.gltf" id="3_0r2l6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gdfc4"]
 radius = 0.0399785

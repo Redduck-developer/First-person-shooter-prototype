@@ -89,10 +89,9 @@ func _aim_down():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "AK_shoot":
+	if not SlotBase.current_slot_data == "axe":
 		AmmoManager.is_ready_to_be_fired = true
-	AmmoManager.is_ready_to_be_fired = true
-	AmmoManager.is_ready_to_be_fired = true
+		AmmoManager.ammo_left_in_mag = AmmoManager.ammo_left_in_mag - 1
 
 
 func _on_reload_animations_animation_finished(anim_name: StringName) -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://2yassif5dplj"]
 
-[ext_resource type="Script" path="res://Scripts/Props/prop.gd" id="1_y7yey"]
+[ext_resource type="Script" uid="uid://bg54u2s4vwb8k" path="res://Scripts/Props/prop.gd" id="1_y7yey"]
 [ext_resource type="PackedScene" uid="uid://bpjtrbjqgiinc" path="res://Assets/3D Models/Radio.glb" id="2_qe280"]
 [ext_resource type="Texture2D" uid="uid://byh5tfua0n40h" path="res://Assets/Textures/material_textures/Metal_normal.png" id="3_1j2tj"]
 [ext_resource type="AudioStream" uid="uid://brs5jjgslflyk" path="res://Assets/Sounds/Final_Boss_theme_Loop.mp3" id="4_sooi5"]
@@ -105,7 +105,7 @@ point_count = 3
 curve = SubResource("Curve_cbpyf")
 
 [sub_resource type="Curve" id="Curve_xl43a"]
-max_value = 3.0
+_limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 

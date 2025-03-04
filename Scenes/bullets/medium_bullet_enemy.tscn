@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk3vmvfy28mbv"]
 
 [ext_resource type="PackedScene" uid="uid://qiosq0nhqh4w" path="res://Scenes/bullets/medium_bullet.tscn" id="1_7a3pu"]
-[ext_resource type="Script" path="res://Scripts/Misc/medium_bullet_enemy.gd" id="2_7alql"]
+[ext_resource type="Script" uid="uid://cxx66qna4skiy" path="res://Scripts/misc/medium_bullet_enemy.gd" id="2_nvrfp"]
 
 [node name="Medium_Bullet" instance=ExtResource("1_7a3pu")]
+SPEED = 45
 
 [node name="Area3D" parent="." index="0"]
-script = ExtResource("2_7alql")
+script = ExtResource("2_nvrfp")
 
 [editable path="Sketchfab_Scene"]

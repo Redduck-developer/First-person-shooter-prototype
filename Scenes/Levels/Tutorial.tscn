@@ -1,6 +1,6 @@
 [gd_scene load_steps=47 format=4 uid="uid://beuexixtoha5w"]
 
-[ext_resource type="Script" path="res://scripts/Levels/tutorial.gd" id="1_flt3b"]
+[ext_resource type="Script" uid="uid://bmhqce7vhp6er" path="res://Scripts/Levels/tutorial.gd" id="1_flt3b"]
 [ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="1_qsmtd"]
 [ext_resource type="Material" uid="uid://bl37mnyjg53dp" path="res://Assets/Materials/Curugated_metal_Blue.tres" id="2_fmr4g"]
 [ext_resource type="PackedScene" uid="uid://tlj2arrv4yen" path="res://Scenes/player.tscn" id="2_xhb80"]
@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bqn5lgiplpt4e" path="res://Scenes/props/Board.tscn" id="11_ojsj5"]
 [ext_resource type="PackedScene" uid="uid://8wmwxidov0gv" path="res://Scenes/misc/rope.tscn" id="11_sklvj"]
 [ext_resource type="PackedScene" uid="uid://fw6tdt6snj5d" path="res://Scenes/props/Special/door.tscn" id="12_4sktr"]
-[ext_resource type="Script" path="res://Scripts/misc/water.gd" id="13_d6ecr"]
+[ext_resource type="Script" uid="uid://t51tr10bmd7i" path="res://Scripts/misc/water.gd" id="13_d6ecr"]
 [ext_resource type="AudioStream" uid="uid://bh01ytgvskuph" path="res://Assets/Sounds/Ambience_1.mp3" id="13_jrcnk"]
 [ext_resource type="PackedScene" uid="uid://c52eir1ryb4ld" path="res://Scenes/props/Collectibles (NOT AMMO)/key.tscn" id="14_46c31"]
-[ext_resource type="Shader" path="res://Assets/Shaders/WATER.gdshader" id="14_qvs6w"]
+[ext_resource type="Shader" uid="uid://07o7enu0wqqq" path="res://Assets/Shaders/WATER.gdshader" id="14_qvs6w"]
 [ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="17_s3jsu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7eh4v"]
@@ -186,8 +186,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dh047"]
 _data = {
-"RESET": SubResource("Animation_xv7op"),
-"summon": SubResource("Animation_b73vy")
+&"RESET": SubResource("Animation_xv7op"),
+&"summon": SubResource("Animation_b73vy")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kaap6"]
@@ -330,8 +330,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w3gp4"]
 _data = {
-"NIGHT TIME": SubResource("Animation_oq8w0"),
-"RESET": SubResource("Animation_jfh4u")
+&"NIGHT TIME": SubResource("Animation_oq8w0"),
+&"RESET": SubResource("Animation_jfh4u")
 }
 
 [node name="Tutorial" type="Node3D"]
@@ -845,7 +845,7 @@ shape = SubResource("ConcavePolygonShape3D_fv7mt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="doorway"]
 libraries = {
-"": SubResource("AnimationLibrary_dh047")
+&"": SubResource("AnimationLibrary_dh047")
 }
 
 [node name="water" type="Area3D" parent="."]
@@ -876,7 +876,7 @@ material = SubResource("FogMaterial_5a0rg")
 
 [node name="NIGHT" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_w3gp4")
+&"": SubResource("AnimationLibrary_w3gp4")
 }
 
 [node name="AMBIENCE" type="AudioStreamPlayer" parent="."]

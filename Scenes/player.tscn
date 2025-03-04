@@ -1,38 +1,38 @@
 [gd_scene load_steps=148 format=4 uid="uid://tlj2arrv4yen"]
 
-[ext_resource type="Script" path="res://Scripts/Player/misc/Player.gd" id="1_pn5hc"]
-[ext_resource type="Script" path="res://Scripts/Player/misc/viewmodel.gd" id="2_3u7lg"]
-[ext_resource type="Script" path="res://Scripts/GLOBALS/slot_base.gd" id="2_niiaj"]
-[ext_resource type="Script" path="res://Scripts/Player/Slots/id_setting_controls.gd" id="3_281tj"]
-[ext_resource type="Script" path="res://Scripts/Props/touch.gd" id="3_aigvt"]
-[ext_resource type="Script" path="res://Scripts/Player/Bullet Instantiation/bullet_spawn_position.gd" id="3_oneow"]
-[ext_resource type="Script" path="res://Scripts/Player/misc/obj_pos.gd" id="4_lb6i1"]
-[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="5_dtcpu"]
-[ext_resource type="Script" path="res://Scripts/Player/Slots/slot anim.gd" id="5_iqaqv"]
+[ext_resource type="Script" uid="uid://dqw5fvwwfqs5b" path="res://Scripts/Player/misc/Player.gd" id="1_pn5hc"]
+[ext_resource type="Script" uid="uid://c5dgwiq6dgex5" path="res://Scripts/Player/misc/viewmodel.gd" id="2_3u7lg"]
+[ext_resource type="Script" uid="uid://dc0rpvnolu2we" path="res://Scripts/GLOBALS/slot_base.gd" id="2_niiaj"]
+[ext_resource type="Script" uid="uid://ca1hlqds4hebe" path="res://Scripts/Player/Slots/id_setting_controls.gd" id="3_281tj"]
+[ext_resource type="Script" uid="uid://dkk1fp6e2uni0" path="res://Scripts/Props/touch.gd" id="3_aigvt"]
+[ext_resource type="Script" uid="uid://dd20af7qx1v2c" path="res://Scripts/Player/Bullet Instantiation/bullet_spawn_position.gd" id="3_oneow"]
+[ext_resource type="Script" uid="uid://dgbivrjcun4nu" path="res://Scripts/Player/misc/obj_pos.gd" id="4_lb6i1"]
+[ext_resource type="PackedScene" uid="uid://bkjw08cm8f1ly" path="res://Assets/3D Models/AK.gltf" id="5_dtcpu"]
+[ext_resource type="Script" uid="uid://b2vi225v2cev6" path="res://Scripts/Player/Slots/slot anim.gd" id="5_iqaqv"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="6_brwfp"]
-[ext_resource type="Script" path="res://Scripts/Player/misc/icon_2.gd" id="6_hnv6o"]
+[ext_resource type="Script" uid="uid://dge8bfdp78jde" path="res://Scripts/Player/misc/icon_2.gd" id="6_hnv6o"]
 [ext_resource type="PackedScene" uid="uid://dmffekometl8e" path="res://Assets/3D Models/KEY.glb" id="7_1sfi2"]
 [ext_resource type="AudioStream" uid="uid://c6v2ox2uxuifd" path="res://Assets/Sounds/569174__coolabc__makarov-shoot.mp3" id="7_exkf5"]
-[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="7_h4q2e"]
+[ext_resource type="PackedScene" uid="uid://bc1i5nigkuo7s" path="res://Assets/3D Models/Glock.gltf" id="7_h4q2e"]
 [ext_resource type="AudioStream" uid="uid://b2jvn8sedo2mh" path="res://Assets/Sounds/SLASH.mp3" id="8_ncqb0"]
 [ext_resource type="Material" uid="uid://bgs0x6aoubc5f" path="res://Assets/Materials/Gold.tres" id="8_yflue"]
 [ext_resource type="AudioStream" uid="uid://cretbhee6r8m1" path="res://Assets/Sounds/Rifle_Shot.mp3" id="9_41nd7"]
-[ext_resource type="Script" path="res://scripts/player/misc/mele_hurtcast.gd" id="9_50aio"]
+[ext_resource type="Script" uid="uid://cu2krjafkptf6" path="res://Scripts/Player/misc/mele_hurtcast.gd" id="9_50aio"]
 [ext_resource type="Texture2D" uid="uid://bjio7molg3n5v" path="res://Assets/Textures/Pistol.png" id="9_awd38"]
 [ext_resource type="PackedScene" uid="uid://b6hfqepukonkr" path="res://Assets/3D Models/Flashlight.glb" id="9_yo1xl"]
 [ext_resource type="Texture2D" uid="uid://c7pcm0embr0cv" path="res://Assets/Textures/material_textures/Sand_Normal.png" id="10_n6hqk"]
-[ext_resource type="Script" path="res://Scripts/GLOBALS/ammo_manager.gd" id="11_8krec"]
+[ext_resource type="Script" uid="uid://b1ucfakm12nlv" path="res://Scripts/GLOBALS/ammo_manager.gd" id="11_8krec"]
 [ext_resource type="AudioStream" uid="uid://dvijwvgy7sa8e" path="res://Assets/Sounds/Clang.mp3" id="12_cfnpo"]
-[ext_resource type="Script" path="res://Scripts/Player/Ammo/ammo_visualizer.gd" id="13_q1rro"]
+[ext_resource type="Script" uid="uid://hhju51k1dq2x" path="res://Scripts/Player/Ammo/ammo_visualizer.gd" id="13_q1rro"]
 [ext_resource type="Texture2D" uid="uid://b0g146c5o80mc" path="res://Assets/Textures/Axe.png" id="14_573k8"]
-[ext_resource type="Script" path="res://Scripts/player/pause_screen.gd" id="15_e8d68"]
-[ext_resource type="Shader" path="res://Assets/Shaders/Blur.gdshader" id="16_ci7s8"]
+[ext_resource type="Script" uid="uid://cauluts7yp8y5" path="res://Scripts/Player/pause_screen.gd" id="15_e8d68"]
+[ext_resource type="Shader" uid="uid://cv5hkl5vg6u6n" path="res://Assets/Shaders/Blur.gdshader" id="16_ci7s8"]
 [ext_resource type="FontFile" uid="uid://c5ejikhp8dyp5" path="res://Assets/Fonts/Pixellari.ttf" id="17_2063s"]
 [ext_resource type="Texture2D" uid="uid://mlwkf7axlph4" path="res://Assets/Textures/AMMO_TEXTURE.png" id="18_eq4v2"]
 [ext_resource type="PackedScene" uid="uid://dsppk8li3m2ik" path="res://Scenes/loading_manager.tscn" id="18_onml8"]
 [ext_resource type="Texture2D" uid="uid://ca2btw2ea7ydk" path="res://Assets/Textures/key_slots.png" id="21_wr1rg"]
-[ext_resource type="Script" path="res://Scripts/GLOBALS/status_manager.gd" id="22_2uwlj"]
-[ext_resource type="Script" path="res://Scripts/player/misc/anim_and_status_layer.gd" id="22_dcbk6"]
+[ext_resource type="Script" uid="uid://c7ss2p4vuw45x" path="res://Scripts/GLOBALS/status_manager.gd" id="22_2uwlj"]
+[ext_resource type="Script" uid="uid://dbrwilnnq47f8" path="res://Scripts/Player/misc/anim_and_status_layer.gd" id="22_dcbk6"]
 [ext_resource type="Texture2D" uid="uid://bfcaffykac4h2" path="res://Assets/Textures/HEALTH_TEXTURE.png" id="23_g4jm1"]
 [ext_resource type="AudioStream" uid="uid://bas0dnqdnb0ty" path="res://Assets/Sounds/Walking_(concrete).mp3" id="29_yv3nf"]
 [ext_resource type="AudioStream" uid="uid://djenjii8k8vnd" path="res://Assets/Sounds/Land.mp3" id="31_veeaa"]
@@ -767,14 +767,14 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sqlbt"]
 _data = {
-"\"pistol\"_RELOAD": SubResource("Animation_ybiwm"),
-"AK_shoot": SubResource("Animation_t4q3r"),
-"Axe_Swing": SubResource("Animation_s0814"),
-"RESET": SubResource("Animation_4jhr5"),
-"pistol_RELOAD": SubResource("Animation_632ol"),
-"pistol_shoot": SubResource("Animation_nlvnn"),
-"reset": SubResource("Animation_s2o3n"),
-"shoot": SubResource("Animation_takga")
+&"\"pistol\"_RELOAD": SubResource("Animation_ybiwm"),
+&"AK_shoot": SubResource("Animation_t4q3r"),
+&"Axe_Swing": SubResource("Animation_s0814"),
+&"RESET": SubResource("Animation_4jhr5"),
+&"pistol_RELOAD": SubResource("Animation_632ol"),
+&"pistol_shoot": SubResource("Animation_nlvnn"),
+&"reset": SubResource("Animation_s2o3n"),
+&"shoot": SubResource("Animation_takga")
 }
 
 [sub_resource type="Animation" id="Animation_2bg6a"]
@@ -811,8 +811,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yyl72"]
 _data = {
-"Aimdown": SubResource("Animation_2bg6a"),
-"RESET": SubResource("Animation_bgur8")
+&"Aimdown": SubResource("Animation_2bg6a"),
+&"RESET": SubResource("Animation_bgur8")
 }
 
 [sub_resource type="Animation" id="Animation_yr5kx"]
@@ -1164,9 +1164,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_coyy0"]
 _data = {
-"AK_reload": SubResource("Animation_yr5kx"),
-"Pistol_reload": SubResource("Animation_vq8ry"),
-"RESET": SubResource("Animation_trhug")
+&"AK_reload": SubResource("Animation_yr5kx"),
+&"Pistol_reload": SubResource("Animation_vq8ry"),
+&"RESET": SubResource("Animation_trhug")
 }
 
 [sub_resource type="Animation" id="Animation_l8fd4"]
@@ -1239,8 +1239,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0p3oj"]
 _data = {
-"RESET": SubResource("Animation_l8fd4"),
-"Switch": SubResource("Animation_e548k")
+&"RESET": SubResource("Animation_l8fd4"),
+&"Switch": SubResource("Animation_e548k")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytm8p"]
@@ -1273,7 +1273,7 @@ point_count = 3
 curve = SubResource("Curve_kfc4q")
 
 [sub_resource type="Curve" id="Curve_08baq"]
-max_value = 3.0
+_limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -1323,8 +1323,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ikro"]
 _data = {
-"RESET": SubResource("Animation_x78rl"),
-"grow": SubResource("Animation_n5e0v")
+&"RESET": SubResource("Animation_x78rl"),
+&"grow": SubResource("Animation_n5e0v")
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_yfsnf"]
@@ -1440,8 +1440,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ipdcw"]
 _data = {
-"RESET": SubResource("Animation_x4afm"),
-"startup": SubResource("Animation_1brm5")
+&"RESET": SubResource("Animation_x4afm"),
+&"startup": SubResource("Animation_1brm5")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_3i561"]
@@ -1570,8 +1570,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5t3bd"]
 _data = {
-"RESET": SubResource("Animation_ch2ey"),
-"Switched": SubResource("Animation_45vbb")
+&"RESET": SubResource("Animation_ch2ey"),
+&"Switched": SubResource("Animation_45vbb")
 }
 
 [sub_resource type="Animation" id="Animation_8y2ku"]
@@ -1618,8 +1618,8 @@ length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dksy6"]
 _data = {
-"HURT": SubResource("Animation_8y2ku"),
-"RESET": SubResource("Animation_hesng")
+&"HURT": SubResource("Animation_8y2ku"),
+&"RESET": SubResource("Animation_hesng")
 }
 
 [sub_resource type="QuadMesh" id="QuadMesh_1hw0q"]
@@ -1714,8 +1714,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3grer"]
 _data = {
-"RESET": SubResource("Animation_wqmgp"),
-"startup": SubResource("Animation_ohplo")
+&"RESET": SubResource("Animation_wqmgp"),
+&"startup": SubResource("Animation_ohplo")
 }
 
 [sub_resource type="Animation" id="Animation_x2ehn"]
@@ -1835,8 +1835,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8m10h"]
 _data = {
-"RESET": SubResource("Animation_x2ehn"),
-"crouch": SubResource("Animation_all5s")
+&"RESET": SubResource("Animation_x2ehn"),
+&"crouch": SubResource("Animation_all5s")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5is6k"]
@@ -1863,7 +1863,7 @@ material = SubResource("StandardMaterial3D_paycn")
 radius = 0.03
 
 [sub_resource type="Curve" id="Curve_t2q2l"]
-max_value = 100.0
+_limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 27.5338), 102.02, 0.0, 0, 0]
 point_count = 2
 
@@ -1951,7 +1951,6 @@ light_specular = 16.0
 
 [node name="Pistol" parent="Head/Camera3D/VIEWMODEL" instance=ExtResource("7_h4q2e")]
 transform = Transform3D(-4.37114e-08, -8.47033e-22, 1, 7.35137e-08, 1, 3.21339e-15, -1, 7.35137e-08, -4.37114e-08, 0.076, -0.043, -0.275)
-visible = false
 
 [node name="Sketchfab_model" parent="Head/Camera3D/VIEWMODEL/Pistol" index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -2007,7 +2006,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol"]
-transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.62553e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
+transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.60941e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2246,22 +2245,22 @@ mesh = SubResource("ArrayMesh_wbl3y")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
 root_node = NodePath("../../Pistol")
 libraries = {
-"": SubResource("AnimationLibrary_sqlbt")
+&"": SubResource("AnimationLibrary_sqlbt")
 }
 
 [node name="Aim_down_Sights" type="AnimationPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
 libraries = {
-"": SubResource("AnimationLibrary_yyl72")
+&"": SubResource("AnimationLibrary_yyl72")
 }
 
 [node name="Reload_animations" type="AnimationPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
 libraries = {
-"": SubResource("AnimationLibrary_coyy0")
+&"": SubResource("AnimationLibrary_coyy0")
 }
 
 [node name="Swap_animation" type="AnimationPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
 libraries = {
-"": SubResource("AnimationLibrary_0p3oj")
+&"": SubResource("AnimationLibrary_0p3oj")
 }
 
 [node name="Light_Shoot" type="AudioStreamPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
@@ -2347,7 +2346,7 @@ script = ExtResource("5_iqaqv")
 
 [node name="anim" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS"]
 libraries = {
-"": SubResource("AnimationLibrary_7ikro")
+&"": SubResource("AnimationLibrary_7ikro")
 }
 
 [node name="sprite" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/SLOTS"]
@@ -2429,7 +2428,7 @@ Local_Slot_Numb = 2
 
 [node name="anim" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2"]
 libraries = {
-"": SubResource("AnimationLibrary_7ikro")
+&"": SubResource("AnimationLibrary_7ikro")
 }
 
 [node name="sprite" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon2"]
@@ -2511,7 +2510,7 @@ Local_Slot_Numb = 3
 
 [node name="anim" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3"]
 libraries = {
-"": SubResource("AnimationLibrary_7ikro")
+&"": SubResource("AnimationLibrary_7ikro")
 }
 
 [node name="sprite" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon3"]
@@ -2593,7 +2592,7 @@ Local_Slot_Numb = 4
 
 [node name="anim" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4"]
 libraries = {
-"": SubResource("AnimationLibrary_7ikro")
+&"": SubResource("AnimationLibrary_7ikro")
 }
 
 [node name="sprite" type="Node2D" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots/Icon4"]
@@ -2670,7 +2669,7 @@ label_settings = SubResource("LabelSettings_gwwc4")
 
 [node name="startup" type="AnimationPlayer" parent="Head/Camera3D/PLAYERSLOTS/PLAYERSLOTS_SCROLLING/Slots"]
 libraries = {
-"": SubResource("AnimationLibrary_ipdcw")
+&"": SubResource("AnimationLibrary_ipdcw")
 }
 
 [node name="AMMO_MANAGER" type="Node" parent="Head/Camera3D"]
@@ -2863,12 +2862,12 @@ texture = SubResource("NoiseTexture2D_hwp72")
 
 [node name="SWITCH_ANIMATION_PLAYER" type="AnimationPlayer" parent="Head/Camera3D/STATUS_MANAGER/ANIM_AND_STATUS_LAYER"]
 libraries = {
-"": SubResource("AnimationLibrary_5t3bd")
+&"": SubResource("AnimationLibrary_5t3bd")
 }
 
 [node name="Hurt_animation" type="AnimationPlayer" parent="Head/Camera3D/STATUS_MANAGER/ANIM_AND_STATUS_LAYER"]
 libraries = {
-"": SubResource("AnimationLibrary_dksy6")
+&"": SubResource("AnimationLibrary_dksy6")
 }
 
 [node name="Death_Screen" type="Node2D" parent="Head/Camera3D/STATUS_MANAGER/ANIM_AND_STATUS_LAYER"]
@@ -3317,7 +3316,7 @@ label_settings = SubResource("LabelSettings_532hj")
 
 [node name="show_status" type="AnimationPlayer" parent="Head/Camera3D"]
 libraries = {
-"": SubResource("AnimationLibrary_3grer")
+&"": SubResource("AnimationLibrary_3grer")
 }
 
 [node name="LOADING_MANAGER" parent="." instance=ExtResource("18_onml8")]
@@ -3327,7 +3326,7 @@ z_as_relative = false
 
 [node name="Crouch_animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8m10h")
+&"": SubResource("AnimationLibrary_8m10h")
 }
 
 [node name="AmmoTexture" type="Sprite2D" parent="."]

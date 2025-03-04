@@ -1,6 +1,6 @@
 [gd_scene load_steps=61 format=3 uid="uid://8hjed4tw4oh0"]
 
-[ext_resource type="Script" path="res://Scripts/Levels/LEVEL_DELETER.gd" id="1_6dfxa"]
+[ext_resource type="Script" uid="uid://qmc47ywo41by" path="res://Scripts/Levels/LEVEL_DELETER.gd" id="1_6dfxa"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Assets/Materials/Pink.tres" id="1_7m11j"]
 [ext_resource type="Material" uid="uid://cw65xo4a0sk7h" path="res://Assets/Materials/Recycled_wood_Triplinear.tres" id="2_cjjrf"]
 [ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Assets/Materials/Red.tres" id="2_hnem8"]
@@ -20,9 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://cffyquxuwk02n" path="res://Scenes/props/Collectibles (NOT AMMO)/gun_rifle.tscn" id="14_u7wo5"]
 [ext_resource type="PackedScene" uid="uid://gcedaf63qnuw" path="res://Scenes/props/Ammo/medium_ammo_collect.tscn" id="15_2sjwf"]
 [ext_resource type="Material" uid="uid://b2f4inq64xrw1" path="res://Assets/Materials/Rope.tres" id="18_1gira"]
-[ext_resource type="Script" path="res://Scripts/misc/Ladder.gd" id="18_kbktm"]
-[ext_resource type="Shader" path="res://Assets/Shaders/WATER.gdshader" id="21_1mk1q"]
-[ext_resource type="Script" path="res://Scripts/misc/water.gd" id="21_h3dc4"]
+[ext_resource type="Script" uid="uid://drb1u2gfwxip4" path="res://Scripts/misc/Ladder.gd" id="18_kbktm"]
+[ext_resource type="Shader" uid="uid://07o7enu0wqqq" path="res://Assets/Shaders/WATER.gdshader" id="21_1mk1q"]
+[ext_resource type="Script" uid="uid://t51tr10bmd7i" path="res://Scripts/misc/water.gd" id="21_h3dc4"]
 [ext_resource type="PackedScene" uid="uid://dqion5n0cqhf3" path="res://Scenes/misc/Trampoline.tscn" id="23_vkwl8"]
 [ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="24_j07er"]
 [ext_resource type="AudioStream" uid="uid://c0fe5044471pk" path="res://Assets/Sounds/rain_loop.mp3" id="25_2syad"]
@@ -289,8 +289,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bi0qc"]
 _data = {
-"RESET": SubResource("Animation_exhhw"),
-"back_and_fourth": SubResource("Animation_gyoke")
+&"RESET": SubResource("Animation_exhhw"),
+&"back_and_fourth": SubResource("Animation_gyoke")
 }
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0pu1i"]
@@ -1122,7 +1122,7 @@ size = Vector3(3.69928, 2.27148, 7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CSG/CSGCombiner3D2/CSGBox3D11"]
 libraries = {
-"": SubResource("AnimationLibrary_bi0qc")
+&"": SubResource("AnimationLibrary_bi0qc")
 }
 autoplay = "back_and_fourth"
 

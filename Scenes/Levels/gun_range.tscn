@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://c60mvtx1dpcdt"]
 
 [ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="1_43tir"]
-[ext_resource type="Script" path="res://Scripts/Levels/gun_range.gd" id="1_81117"]
+[ext_resource type="Script" uid="uid://dt4dban6o64vt" path="res://Scripts/Levels/gun_range.gd" id="1_81117"]
 [ext_resource type="Material" uid="uid://vvr1mayy8hq4" path="res://Assets/Materials/Curugated_metal.tres" id="2_mneow"]
 [ext_resource type="Material" uid="uid://bl37mnyjg53dp" path="res://Assets/Materials/Curugated_metal_Blue.tres" id="2_r0q7u"]
 [ext_resource type="PackedScene" uid="uid://tlj2arrv4yen" path="res://Scenes/player.tscn" id="3_alpbb"]
@@ -19,10 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="11_vdvdc"]
 [ext_resource type="PackedScene" uid="uid://2yassif5dplj" path="res://Scenes/props/radio.tscn" id="14_7kpdf"]
 [ext_resource type="PackedScene" uid="uid://fw6tdt6snj5d" path="res://Scenes/props/Special/door.tscn" id="15_ra1qf"]
-[ext_resource type="Script" path="res://Scripts/misc/Counter.gd" id="15_rfnoo"]
+[ext_resource type="Script" uid="uid://dselgaovrim5f" path="res://Scripts/misc/Counter.gd" id="15_rfnoo"]
 [ext_resource type="AudioStream" uid="uid://bh01ytgvskuph" path="res://Assets/Sounds/Ambience_1.mp3" id="17_u45j6"]
 [ext_resource type="PackedScene" uid="uid://c52eir1ryb4ld" path="res://Scenes/props/Collectibles (NOT AMMO)/key.tscn" id="18_qc5ho"]
-[ext_resource type="Script" path="res://Scripts/Misc/counter_child.gd" id="21_vu7rd"]
+[ext_resource type="Script" uid="uid://d33a0kakvrmm3" path="res://Scripts/misc/counter_child.gd" id="21_vu7rd"]
 [ext_resource type="PackedScene" uid="uid://c1qe4q0mgoclp" path="res://Scenes/enemies/enemy_mele.tscn" id="22_voyur"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlk5e"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=69 format=4 uid="uid://dopfc2rw6u252"]
+[gd_scene load_steps=71 format=4 uid="uid://dopfc2rw6u252"]
 
-[ext_resource type="Script" path="res://Scripts/Levels/new_tutorial.gd" id="1_jeqtw"]
+[ext_resource type="Script" uid="uid://cs5oj2j3oy2sh" path="res://Scripts/Levels/new_tutorial.gd" id="1_jeqtw"]
 [ext_resource type="PackedScene" uid="uid://tlj2arrv4yen" path="res://Scenes/player.tscn" id="1_q3jd4"]
 [ext_resource type="Material" uid="uid://djhg5fwbnorro" path="res://Assets/Materials/Concrette_black_metal.tres" id="2_50iay"]
 [ext_resource type="PackedScene" uid="uid://beoqjrkx4qve3" path="res://Assets/3D Models/Mountains.glb" id="3_ny5b1"]
@@ -15,8 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="11_4dikt"]
 [ext_resource type="PackedScene" uid="uid://bqn5lgiplpt4e" path="res://Scenes/props/Board.tscn" id="13_at2bk"]
 [ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="13_n2blp"]
-[ext_resource type="PackedScene" uid="uid://btlhrdu76uh3e" path="res://Assets/3D Models/Glock.gltf" id="14_1h7yc"]
-[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="15_36u1p"]
+[ext_resource type="PackedScene" uid="uid://boo74sjvsxr6e" path="res://Scenes/props/Ammo/glock_ammo_mag.tscn" id="14_odpvp"]
+[ext_resource type="PackedScene" uid="uid://dkte380n6a0yy" path="res://Scenes/props/Collectibles (NOT AMMO)/gun_pistol.tscn" id="15_vv4jw"]
+[ext_resource type="PackedScene" uid="uid://bhixdem5q0ody" path="res://Scenes/props/Special/double_door.tscn" id="18_bviax"]
 
 [sub_resource type="Gradient" id="Gradient_iopxl"]
 interpolation_mode = 1
@@ -65,8 +66,8 @@ sky_rotation = Vector3(1.5708, 0, 0)
 ambient_light_source = 1
 ambient_light_sky_contribution = 0.58
 reflected_light_source = 2
-tonemap_mode = 3
-tonemap_white = 16.0
+tonemap_mode = 4
+tonemap_exposure = 1.48
 ssr_enabled = true
 ssr_max_steps = 49
 ssr_fade_in = 1e-05
@@ -215,8 +216,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5gb2"]
 _data = {
-"RESET": SubResource("Animation_y5bhj"),
-"scrolling": SubResource("Animation_0l1gg")
+&"RESET": SubResource("Animation_y5bhj"),
+&"scrolling": SubResource("Animation_0l1gg")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3enq2"]
@@ -289,6 +290,12 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_7ogxt"]
 material = SubResource("StandardMaterial3D_3s71w")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocb2h"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0.631373, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl8ww"]
 shading_mode = 0
 albedo_color = Color(1, 0, 0.0166664, 1)
@@ -310,9 +317,9 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nglcx"]
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(0, 0.883333, 1, 1)
 emission_enabled = true
-emission = Color(1, 0, 0, 1)
+emission = Color(0, 0.983334, 1, 1)
 emission_energy_multiplier = 16.0
 rim_enabled = true
 rim_tint = 1.0
@@ -717,8 +724,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ciwyp"]
 _data = {
-"Jump down": SubResource("Animation_3icpv"),
-"RESET": SubResource("Animation_jkl8q")
+&"Jump down": SubResource("Animation_3icpv"),
+&"RESET": SubResource("Animation_jkl8q")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jdmqa"]
@@ -783,7 +790,7 @@ texture = SubResource("NoiseTexture2D_68ldg")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../clouds2")
 libraries = {
-"": SubResource("AnimationLibrary_k5gb2")
+&"": SubResource("AnimationLibrary_k5gb2")
 }
 speed_scale = 40.0
 
@@ -1083,11 +1090,11 @@ size = Vector3(2.48015, 5.172, 2.7717)
 material = ExtResource("3_oqjhn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS2/interrior7"]
-transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.00392723, -0.0690613, 0.0300732)
+transform = Transform3D(1, 0, 0, 0, 1, -8.35186e-23, 0, -8.35188e-23, 1, 0.00392723, 0.0418239, 0.0300732)
 transparency = 1.0
 cast_shadow = 0
 operation = 2
-size = Vector3(2.30864, 5.31012, 2.66366)
+size = Vector3(2.30864, 5.53189, 2.66366)
 material = ExtResource("4_4hvhj")
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS2"]
@@ -1194,12 +1201,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.92229, -1.73769, -0.062646
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
 spot_attenuation = 0.5
-spot_angle = 86.6695
+spot_angle = 78.5571
 spot_angle_attenuation = 0.0192367
 
 [node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D3" instance=ExtResource("6_6mr83")]
@@ -1232,12 +1238,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 11.9223, -1.73769, -0.062645
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
 spot_attenuation = 0.5
-spot_angle = 86.6695
+spot_angle = 79.6547
 spot_angle_attenuation = 0.0192367
 
 [node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D4" instance=ExtResource("6_6mr83")]
@@ -1270,12 +1275,11 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.92229, -1.73769, -0.062646
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
 spot_attenuation = 0.5
-spot_angle = 86.6695
+spot_angle = 78.2859
 spot_angle_attenuation = 0.0192367
 
 [node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D5" instance=ExtResource("6_6mr83")]
@@ -1462,7 +1466,6 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.9223, -3.58708, -0.0626469
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
@@ -1500,7 +1503,6 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 12.9223, -3.58708, -0.062645
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
@@ -1538,7 +1540,6 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.9223, -3.58708, -0.0626469
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
@@ -1714,7 +1715,6 @@ transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, -0.20938
 light_energy = 6.943
 light_volumetric_fog_energy = 2.585
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 3.965
 shadow_blur = 0.392
 spot_range = 3.97787
@@ -1746,6 +1746,459 @@ visible = false
 
 [node name="Cylinder003_21" parent="CSG/ROOMS4/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
 visible = false
+
+[node name="ROOMS5" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -33.3426, 6.138, 1.494)
+use_collision = true
+size = Vector3(14.8298, 12.3361, 10.4501)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.225016, -2.55581, 1.10105)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(14.2543, 8.19376, 7.26367)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0579486, -4.67823, -5.46048)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.33792, 5.29303, 3.10894)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861282, -4.63131, -5.54798)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 3.19054)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.51669e-22, 0, -7.51669e-22, 1, 0.00564849, -0.218704, 0.237966)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.3052, 5.60941, 3.07945)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior6" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 9.89015, -4.84747, 1.30628)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.22327, 5.29303, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior7" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 9.97764, -4.8018, 1.26347)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 2.7717)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.30864, 5.172, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior8" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.74228e-08, -3.82138e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 11.2944, -4.84747, 2.55493)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.22327, 5.29303, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior9" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 2.64241)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 2.7717)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior9"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.21843, 0.0420456)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.30864, 5.52304, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS5/interrior9"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.3519e-23, 1, 0.124522, 1.43465, 0.0550133)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.54983, 2.21689, 2.66168)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior10" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 7.75425)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 2.7717)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior10"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.0447617, 0.0420456)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.30864, 5.33934, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior11" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 12.9082)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 2.7717)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior11"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.320885, 0.0420456)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.30864, 5.89159, 2.68761)
+material = ExtResource("4_4hvhj")
+
+[node name="interrior12" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 18.0539)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 5.172, 2.7717)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior12"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, 1.28703, 0.0420454)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.30864, 8.05663, 2.68761)
+material = ExtResource("4_4hvhj")
+metadata/_edit_group_ = true
+
+[node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(0.866025, -2.18557e-08, -0.5, -0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, 2.12446, 2.04015, 1.02961)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(9.91039, 8.07913, 3.54346)
+material = ExtResource("3_oqjhn")
+
+[node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS5"]
+transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.8303, 2.14092, 1.0136)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(9.87352, 8.10822, 3.54346)
+material = ExtResource("3_oqjhn")
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, -0.209386, -3.41205, -4.25662)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 3.97787
+spot_attenuation = 0.5
+spot_angle = 86.6695
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D7" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, 0.0661911, 0.997501, -0.482716)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 10.9288
+spot_attenuation = 0.5
+spot_angle = 39.1545
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D8" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, 0.0661906, 0.997501, 3.06293)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 10.9288
+spot_attenuation = 0.5
+spot_angle = 39.1545
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D9" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, 9.06619, -3.59945, 1.27332)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 3.87583
+spot_attenuation = 0.5
+spot_angle = 82.6871
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D10" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, 11.2824, -3.59945, 1.27332)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 3.87583
+spot_attenuation = 0.5
+spot_angle = 82.6871
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D11" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="CSG/ROOMS5"]
+transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, 11.2824, -3.59945, 4.27332)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 3.87583
+spot_attenuation = 0.5
+spot_angle = 82.6871
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D12" instance=ExtResource("6_6mr83")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="Vault demo" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -43.4071, 1.34442, 12.2062)
+material_override = ExtResource("2_50iay")
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(35.9067, 4.1106, 0.711182)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.678087, 0.429867, -0.00738525)
+operation = 2
+size = Vector3(2.04566, 1.67515, 2.1095)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.81796, 0.34841, -0.00738525)
+operation = 2
+size = Vector3(15.8137, 4.43572, 2.1095)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5607, 0.342601, -0.00738525)
+operation = 2
+size = Vector3(16.1858, 4.62981, 2.1095)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60485, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9952, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0975, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0072, 0.0266461, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 3.50181, 2.1095)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8789, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9033, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4369, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(1.80251, 2.18526, 2.1095)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2587, 0.197989, -0.00738525)
+operation = 2
+size = Vector3(3.55234, 3.81005, 2.1095)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89126, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01962, 0.684922, -0.00738525)
+operation = 2
+size = Vector3(2.5308, 2.18526, 2.1095)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSG/Vault demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9048, 0, 0)
+operation = 2
+size = Vector3(1.19043, 5, 1)
 
 [node name="Mountains" parent="." instance=ExtResource("3_ny5b1")]
 transform = Transform3D(997.971, 0, -997.971, 0, 1411.34, 0, 997.971, 0, 997.971, 0, -55.7533, 0)
@@ -1837,6 +2290,34 @@ spot_angle = 45.1562
 spot_angle_attenuation = 0.183011
 
 [node name="Label (E) 1" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -9.88564, 3.12239, -15.2584)
+text = "------------------
+PRESS (E)
+TO
+OPEN
+DOORS
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (E) 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (E) 1"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+visible = false
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (E) 2" type="Label3D" parent="Labels"]
 transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -14.808, 1.89713, -12.6366)
 text = "------------------
 PRESS (E)
@@ -1847,11 +2328,11 @@ OBJECTS
 font_size = 477
 outline_size = 127
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (E) 1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (E) 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
 mesh = SubResource("QuadMesh_ckeyw")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (E) 1"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (E) 2"]
 transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
 light_energy = 0.743
 light_volumetric_fog_energy = 2.585
@@ -1892,6 +2373,33 @@ spot_attenuation = -4.87
 spot_angle = 62.3798
 spot_angle_attenuation = 0.183011
 
+[node name="Label (TAB)" type="Label3D" parent="."]
+transform = Transform3D(-1.33222e-08, 0, 0.13, 0, 0.13, 0, -0.13, 0, -1.33222e-08, -38.5342, 1.89713, 1.66211)
+text = "------------------
+PRESS (TAB)
+TO SWITCH 
+HUD
+ELEMENTS
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Label (TAB)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Label (TAB)"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
 [node name="Props" type="Node3D" parent="."]
 
 [node name="Table" parent="Props" instance=ExtResource("9_mmbr3")]
@@ -1899,15 +2407,18 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.073
 
 [node name="RigidBody3D" parent="Props" instance=ExtResource("10_g7gp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4822, 0.486727, -10.3856)
+mass = 8.0
 
 [node name="RigidBody3D3" parent="Props" instance=ExtResource("10_g7gp3")]
 transform = Transform3D(0.921084, 0, 0.389365, 0, 1, 0, -0.389365, 0, 0.921084, -16.9939, 1.52143, -10.3856)
+mass = 8.0
 
 [node name="RigidBody3D2" parent="Props" instance=ExtResource("10_g7gp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6089, 0.486727, -10.3856)
+mass = 8.0
 
 [node name="Axe" parent="Props" instance=ExtResource("11_4dikt")]
-transform = Transform3D(0.811981, 0.583682, -2.11293e-06, 0, -3.61999e-06, -1, -0.583682, 0.811981, -2.93936e-06, -17.0016, 0, 6.71851)
+transform = Transform3D(0.811981, 0.583682, -2.11293e-06, 0, -3.61999e-06, -1, -0.583682, 0.811981, -2.93937e-06, -17.0016, 0, 6.71851)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
@@ -1936,6 +2447,15 @@ is_super_pickupable = false
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 0.248269, 1.42633)
 is_super_pickupable = false
 
+[node name="Table2" parent="Props" instance=ExtResource("9_mmbr3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.1263, 0.1869, 1.58632)
+
+[node name="Glock_AMMO_mag" parent="Props" instance=ExtResource("14_odpvp")]
+transform = Transform3D(0.965926, 0.258819, -1.13133e-08, 8.57914e-16, -4.37114e-08, -1, -0.258819, 0.965926, -4.2222e-08, -35.9891, 1.10972, 1.55707)
+
+[node name="Gun_pistol" parent="Props" instance=ExtResource("15_vv4jw")]
+transform = Transform3D(0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, 0.707107, -3.09086e-08, -36.2265, 1.10391, 1.6601)
+
 [node name="RAIN" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_hclu1")
 volume_db = -15.0
@@ -1954,6 +2474,7 @@ transform = Transform3D(0.587289, 0, 3.72529e-09, 0, 0.587289, 0, -3.72529e-09, 
 mesh = SubResource("SphereMesh_7ogxt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/head/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_2uhyd")
 
 [node name="Face" type="MeshInstance3D" parent="Helper/head"]
@@ -1962,10 +2483,12 @@ cast_shadow = 0
 mesh = SubResource("CylinderMesh_epsl6")
 
 [node name="Label3D" type="Label3D" parent="Helper/head/Face"]
-transform = Transform3D(0.00074175, 0.0849967, -2.59494e-09, -2.63639e-09, 2.61805e-09, 0.085, 0.0849967, -0.00074175, 2.65913e-09, 0.0288041, 0.00164163, -0.00699997)
+transform = Transform3D(0.0849967, -0.000741754, 2.2496e-07, -2.23119e-07, 2.11898e-07, 0.085, -0.000741754, -0.0849967, 2.09943e-07, -0.0223217, 0.00164175, -0.00610638)
 double_sided = false
-text = ":I"
-font_size = 682
+text = "x.
+ -"
+font_size = 572
+line_spacing = -500.0
 
 [node name="ARMS" type="Node3D" parent="Helper"]
 
@@ -1979,38 +2502,6 @@ visible = false
 [node name="Cone" parent="Helper/ARMS/arms/Axe" index="1"]
 mesh = SubResource("ArrayMesh_blf2i")
 
-[node name="pistol" parent="Helper/ARMS/arms" instance=ExtResource("14_1h7yc")]
-transform = Transform3D(0.371917, -0.886728, 0.717907, 0.878828, 0.704176, 0.414484, -0.727557, 0.397303, 0.867648, 0.528687, 0.209628, -0.213376)
-visible = false
-
-[node name="9x19_0" parent="Helper/ARMS/arms/pistol/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
-visible = false
-
-[node name="919_1" parent="Helper/ARMS/arms/pistol/Sketchfab_model/root/GLTF_SceneRootNode" index="1"]
-visible = false
-
-[node name="919 glock 17rnd mag _7" parent="Helper/ARMS/arms/pistol/Sketchfab_model/root/GLTF_SceneRootNode" index="7"]
-visible = false
-
-[node name="ak" parent="Helper/ARMS/arms" instance=ExtResource("15_36u1p")]
-transform = Transform3D(-0.092227, -0.218973, 0.0777506, -0.0613571, -0.0577329, -0.235377, 0.224119, -0.105915, -0.0324441, 0.121419, -0.33594, 0.234442)
-visible = false
-
-[node name="ammo_003_low" parent="Helper/ARMS/arms/ak/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="14"]
-visible = false
-
-[node name="ammo_low" parent="Helper/ARMS/arms/ak/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="15"]
-visible = false
-
-[node name="ammo_001_low" parent="Helper/ARMS/arms/ak/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="16"]
-visible = false
-
-[node name="ammo_004_low" parent="Helper/ARMS/arms/ak/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="17"]
-visible = false
-
-[node name="ammo_002_low" parent="Helper/ARMS/arms/ak/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="18"]
-visible = false
-
 [node name="pivot left" type="Node3D" parent="Helper/ARMS/arms"]
 transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 1, -0.125676, -0.219002, 0)
 
@@ -2019,6 +2510,7 @@ transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504,
 mesh = SubResource("CylinderMesh_hhhac")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot left/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_hoh06")
 
 [node name="pivot left2" type="Node3D" parent="Helper/ARMS/arms/pivot left"]
@@ -2029,6 +2521,7 @@ transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.12550
 mesh = SubResource("CylinderMesh_hhhac")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot left/pivot left2/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_hoh06")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot left/pivot left2"]
@@ -2037,6 +2530,7 @@ mesh = SubResource("SphereMesh_auole")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot left/pivot left2/MeshInstance3D2"]
 transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0, 1.05998, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_nduw8")
 
 [node name="pivot right" type="Node3D" parent="Helper/ARMS/arms"]
@@ -2047,6 +2541,7 @@ transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504,
 mesh = SubResource("CylinderMesh_hhhac")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot right/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_hoh06")
 
 [node name="pivot left2" type="Node3D" parent="Helper/ARMS/arms/pivot right"]
@@ -2057,6 +2552,7 @@ transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.12550
 mesh = SubResource("CylinderMesh_hhhac")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot right/pivot left2/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_hoh06")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot right/pivot left2"]
@@ -2065,6 +2561,7 @@ mesh = SubResource("SphereMesh_auole")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/ARMS/arms/pivot right/pivot left2/MeshInstance3D2"]
 transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0, 1.05998, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_nduw8")
 
 [node name="LEGS" type="Node3D" parent="Helper"]
@@ -2079,6 +2576,7 @@ mesh = SubResource("CapsuleMesh_dw7xu")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/LEGS/legL/MeshInstance3D2"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_g0vev")
 
 [node name="legR" type="Node3D" parent="Helper/LEGS"]
@@ -2090,15 +2588,17 @@ mesh = SubResource("CapsuleMesh_dw7xu")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Helper/LEGS/legR/MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_g0vev")
 
 [node name="outline" type="MeshInstance3D" parent="Helper"]
 transform = Transform3D(0.925861, 0, 0, 0, 0.925861, 0, 0, 0, 0.925861, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ocb2h")
 mesh = SubResource("ArrayMesh_7fgdw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Helper"]
 libraries = {
-"": SubResource("AnimationLibrary_ciwyp")
+&"": SubResource("AnimationLibrary_ciwyp")
 }
 
 [node name="ANIMATION_START" type="Area3D" parent="."]
@@ -2115,6 +2615,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5.23615)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123535, 4.27217, 0.0559082)
 shape = SubResource("BoxShape3D_lud5i")
 
+[node name="Double_Door" parent="." instance=ExtResource("18_bviax")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -11.5711, 3.11305, -14.7838)
+
 [connection signal="animation_finished" from="Helper/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="ANIMATION_START" to="." method="_on_animation_start_body_entered"]
 
@@ -2129,7 +2632,11 @@ shape = SubResource("BoxShape3D_lud5i")
 [editable path="CSG/ROOMS3/SpotLight3D5/Sketchfab_Scene"]
 [editable path="CSG/ROOMS3/SpotLight3D6/Sketchfab_Scene"]
 [editable path="CSG/ROOMS4/SpotLight3D7/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene"]
+[editable path="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene"]
 [editable path="Mountains"]
 [editable path="Helper/ARMS/arms/Axe"]
-[editable path="Helper/ARMS/arms/pistol"]
-[editable path="Helper/ARMS/arms/ak"]

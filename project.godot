@@ -12,7 +12,7 @@ config_version=5
 
 config/name="First Person Shooter Prototype"
 run/main_scene="res://Scenes/Levels/NEW_main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=1000
 config/icon="res://Assets/Textures/icon.svg"
 
@@ -41,8 +41,7 @@ folder_colors={
 "res://Scenes/": "blue",
 "res://Scenes/props/": "teal",
 "res://Scripts/": "purple",
-"res://Scripts/Player/": "pink",
-"res://addons/": "gray"
+"res://Scripts/Player/": "pink"
 }
 
 [global_group]
@@ -187,7 +186,7 @@ Z={
 
 [physics]
 
-3d/physics_engine="JoltPhysics3D"
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 

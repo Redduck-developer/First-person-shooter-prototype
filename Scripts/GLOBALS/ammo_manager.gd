@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 		if ammo_left_in_mag > 0:
 			if Input.is_action_just_pressed("lmb"):
 				if is_ready_to_be_fired == true:
-					ammo_left_in_mag = ammo_left_in_mag - 1
 					print("SHOOT")
 		elif ammo_left_in_mag < 1:
 			if Input.is_action_just_pressed("R"):
@@ -44,7 +43,6 @@ func _process(delta: float) -> void:
 		if ammo_left_in_mag > 0:
 			if Input.is_action_pressed("lmb"):
 				if is_ready_to_be_fired == true:
-					ammo_left_in_mag = ammo_left_in_mag - 1
 					print("SHOOT")
 					is_ready_to_be_fired = false
 		elif ammo_left_in_mag < 1:

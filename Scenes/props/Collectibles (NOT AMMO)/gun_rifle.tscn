@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cffyquxuwk02n"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Gun_controller.gd" id="1_6im6s"]
-[ext_resource type="PackedScene" uid="uid://cpwfsemapdwft" path="res://Assets/3D Models/AK-47.gltf" id="2_i414g"]
+[ext_resource type="Script" uid="uid://dg7ehofsrlroi" path="res://Scripts/Props/Gun_controller.gd" id="1_6im6s"]
+[ext_resource type="PackedScene" uid="uid://bkjw08cm8f1ly" path="res://Assets/3D Models/AK.gltf" id="2_i414g"]
 [ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_tfjyd"]
 [ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="4_m7cqt"]
 
