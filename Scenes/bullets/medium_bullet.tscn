@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qiosq0nhqh4w"]
+[gd_scene load_steps=10 format=3 uid="uid://qiosq0nhqh4w"]
 
 [ext_resource type="Script" uid="uid://dcqei00d2fj2q" path="res://Scripts/misc/Bullet_movement.gd" id="1_f0egg"]
 [ext_resource type="Script" uid="uid://4emkf4fcrk5l" path="res://Scripts/misc/Medium_Bullet.gd" id="2_ncksl"]
@@ -22,6 +22,18 @@ emission_energy_multiplier = 36.25
 emission_operator = 1
 emission_on_uv2 = true
 emission_texture = SubResource("NoiseTexture2D_1hq8g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0tbb"]
+albedo_color = Color(1, 0.6, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.0333334, 0, 1)
+emission_energy_multiplier = 179.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lgauo"]
+material = SubResource("StandardMaterial3D_n0tbb")
+top_radius = 0.0
+bottom_radius = 0.005
+height = 1.2
 
 [node name="Medium_Bullet" type="CharacterBody3D"]
 top_level = true
@@ -148,6 +160,10 @@ visible = false
 [node name="ammo_002_low_Ammo_0" parent="Sketchfab_Scene/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/ammo_002_low" index="0"]
 visible = false
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.623903)
+mesh = SubResource("CylinderMesh_lgauo")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(1, 0.283333, 0, 1)
 light_energy = 16.0
@@ -161,7 +177,13 @@ wait_time = 20.0
 one_shot = true
 autostart = true
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.014
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 
 [editable path="Sketchfab_Scene"]

@@ -13,10 +13,15 @@ var spotted = false
 var blood = preload("res://Scenes/misc/blood_decal.tscn")
 
 const JUMP_VELOCITY = 6
-const WALK_SPEED = 3.0
-const SPRINT_SPEED = 8.0
+const WALK_SPEED = 5
+const SPRINT_SPEED = 10.0
 
 func _physics_process(delta: float) -> void:
+	if $GPUParticles3D.emitting == true:
+		$Bloodbox/CollisionShape3D2.disabled = false
+	else:
+		$Bloodbox/CollisionShape3D2.disabled = true
+	
 	$MeshInstance3D/ARMS.rotation.y = $MeshInstance3D/head.rotation.y
 	$MeshInstance3D/LEGS.rotation.y = $MeshInstance3D/head.rotation.y
 	
@@ -131,6 +136,7 @@ func  _hurt(amount):
 	Health = Health - amount
 	$GPUParticles3D.emitting = true
 	$GPUParticles3D2.emitting = true
+	$GPUParticles3D3.emitting = true
 	$MeshInstance3D/head.look_at(global.headpos)
 	$HitSound.stop()
 	$HitSound.play()

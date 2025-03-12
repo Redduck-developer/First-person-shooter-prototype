@@ -157,6 +157,7 @@ mesh = SubResource("QuadMesh_gcef5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DOOR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792754, 0, 0)
 shape = SubResource("BoxShape3D_6gjmr")
+debug_color = Color(1, 0.6, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DOOR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792754, 0, 0)
@@ -175,6 +176,7 @@ mesh = SubResource("SphereMesh_uaq0o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DOOR/hurtbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.792754, 0, 0)
 shape = SubResource("BoxShape3D_6gjmr")
+debug_color = Color(1, 0.6, 0, 1)
 
 [node name="Mele_hit_particals" type="GPUParticles3D" parent="DOOR"]
 transform = Transform3D(0.782318, 0, 0, 0, 2.01045, 0, 0, 0, 0.898166, -0.786109, 0, 0.0234909)

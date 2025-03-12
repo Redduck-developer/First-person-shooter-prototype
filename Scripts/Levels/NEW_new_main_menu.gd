@@ -46,6 +46,17 @@ func _on_back_3_button_pressed() -> void:
 	$ui/title.visible = true
 	$ui/settings.visible = false
 
+func _on_story_button_pressed() -> void:
+	$ui/gamode.visible = false
+	$ui/Story.visible = true
+
+func _on_back_5_button_pressed() -> void:
+	$ui/gamode.visible = true
+	$ui/Story.visible = false
+
+func _on_new_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://new_tutorial.tscn")
+
 #actual functions above
 #-------------------------------------------
 #outline functions below
@@ -152,3 +163,19 @@ func _on_oldtutorial_button_mouse_entered() -> void:
 
 func _on_oldtutorial_button_mouse_exited() -> void:
 	$ui/sandbox/OLD_TUTORIAL/OUTLINE.visible = false
+
+
+func _on_back_5_button_mouse_entered() -> void:
+	$ui/Story/BACK/OUTLINE.visible = true
+
+
+func _on_back_5_button_mouse_exited() -> void:
+	$ui/Story/BACK/OUTLINE.visible = false
+
+
+func _on_new_tutorial_mouse_entered() -> void:
+	$ui/Story/NEW_Tutorial/OUTLINE.visible = true
+
+
+func _on_new_tutorial_mouse_exited() -> void:
+	$ui/Story/NEW_Tutorial/OUTLINE.visible = false

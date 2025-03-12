@@ -48,6 +48,9 @@ func _process(delta: float) -> void:
 		$VIEWMODEL_ANIMATION/Swap_animation.play("Switch")
 		SlotBase.switched = false
 	
+	if Input.is_action_just_pressed("G"):
+		$VIEWMODEL_ANIMATION/Kicking_animation.play("kick")
+	
 	
 	_aim_down()
 	_fire()

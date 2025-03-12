@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dohhxjri8g4g6"
-path.s3tc="res://.godot/imported/Axe_Material Base Color.png-d5d7b45657080f616febea726e854ccd.s3tc.ctex"
+uid="uid://c77h7j6mt2e1b"
+path.s3tc="res://.godot/imported/Axe_Plane Base Color.png-e39f5235be6160574f4714a319892447.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ec029d856a0c885f24c3a1529ccd638a"
+"md5": "8f694d68a2b3d1bfb1ea6233977d992f"
 }
 
 [deps]
 
-source_file="res://Assets/3D Models/Axe_Material Base Color.png"
-dest_files=["res://.godot/imported/Axe_Material Base Color.png-d5d7b45657080f616febea726e854ccd.s3tc.ctex"]
+source_file="res://Assets/3D Models/Axe_Plane Base Color.png"
+dest_files=["res://.godot/imported/Axe_Plane Base Color.png-e39f5235be6160574f4714a319892447.s3tc.ctex"]
 
 [params]
 

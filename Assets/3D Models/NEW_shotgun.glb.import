@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgdxnvlkror6s"
-path="res://.godot/imported/Axe.glb-ddfde838609ffd4097c3aeb170b44c35.scn"
+uid="uid://cfbixdcbslabk"
+path="res://.godot/imported/NEW_shotgun.glb-67029a8ab894c625ad5f4fe1d9eb0477.scn"
 
 [deps]
 
-source_file="res://Assets/3D Models/Axe.glb"
-dest_files=["res://.godot/imported/Axe.glb-ddfde838609ffd4097c3aeb170b44c35.scn"]
+source_file="res://Assets/3D Models/NEW_shotgun.glb"
+dest_files=["res://.godot/imported/NEW_shotgun.glb-67029a8ab894c625ad5f4fe1d9eb0477.scn"]
 
 [params]
 
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Empty": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

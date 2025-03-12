@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bqn5lgiplpt4e"]
 
-[ext_resource type="Script" path="res://Scripts/Props/prop.gd" id="1_yk7p6"]
+[ext_resource type="Script" uid="uid://dujpf0xehrvds" path="res://Scripts/Props/prop_node3d_parent.gd" id="1_mdwkx"]
 [ext_resource type="Material" uid="uid://da2k0h5ebt4fa" path="res://Assets/Materials/Recycled_wood.tres" id="2_14sk5"]
 [ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="3_a72n8"]
 
@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_kxxwm"]
 
 [sub_resource type="Curve" id="Curve_awoxj"]
-max_value = 200.0
+_limits = [0.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.306667, 74.1504), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -78,8 +78,9 @@ depth = 0.0
 width = 478.815
 
 [node name="Prop_test" type="CharacterBody3D"]
-script = ExtResource("1_yk7p6")
+script = ExtResource("1_mdwkx")
 is_breakable = true
+mele_hit_partical = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_14sk5")

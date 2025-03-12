@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c60mvtx1dpcdt"]
+[gd_scene load_steps=36 format=3 uid="uid://c60mvtx1dpcdt"]
 
 [ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="1_43tir"]
 [ext_resource type="Script" uid="uid://dt4dban6o64vt" path="res://Scripts/Levels/gun_range.gd" id="1_81117"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c52eir1ryb4ld" path="res://Scenes/props/Collectibles (NOT AMMO)/key.tscn" id="18_qc5ho"]
 [ext_resource type="Script" uid="uid://d33a0kakvrmm3" path="res://Scripts/misc/counter_child.gd" id="21_vu7rd"]
 [ext_resource type="PackedScene" uid="uid://c1qe4q0mgoclp" path="res://Scenes/enemies/enemy_mele.tscn" id="22_voyur"]
+[ext_resource type="PackedScene" uid="uid://b2xqdja0jwgf3" path="res://Scenes/bullets/Shotgun_pellets.tscn" id="25_lxgd0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jlk5e"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -1631,6 +1632,9 @@ stream = ExtResource("17_u45j6")
 volume_db = -0.18
 autoplay = true
 parameters/looping = true
+
+[node name="Node3D" parent="." instance=ExtResource("25_lxgd0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81561, -3)
 
 [connection signal="HIT" from="Props/Misc/targets/Target" to="Labels/Counter" method="_on_target_hit"]
 [connection signal="HIT" from="Props/Misc/targets/Target2" to="Labels/Counter" method="_on_target_hit"]

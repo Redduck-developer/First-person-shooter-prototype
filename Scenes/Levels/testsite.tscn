@@ -712,9 +712,8 @@ transform = Transform3D(5, 0, 0, 0, 2, 0, 0, 0, 5, 53.2578, 0.267455, 21.284)
 transform = Transform3D(-0.520175, 0.85406, 2.27376e-08, 4.37114e-08, 1.91069e-15, 1, 0.85406, 0.520175, -3.73321e-08, 10.1143, 0.94074, 4.63027)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9903, 4.28835, 0.107756)
-size = Vector3(176.244, 145.426, 168.688)
-origin_offset = Vector3(56.37, 5.895, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61509, 4.28835, 0.107756)
+size = Vector3(81.4936, 145.426, 168.688)
 enable_shadows = true
 ambient_color = Color(0, 1, 1, 1)
 ambient_color_energy = 0.0

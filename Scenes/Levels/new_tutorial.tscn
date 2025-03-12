@@ -1,23 +1,26 @@
-[gd_scene load_steps=71 format=4 uid="uid://dopfc2rw6u252"]
+[gd_scene load_steps=82 format=4 uid="uid://dopfc2rw6u252"]
 
-[ext_resource type="Script" uid="uid://cs5oj2j3oy2sh" path="res://Scripts/Levels/new_tutorial.gd" id="1_jeqtw"]
-[ext_resource type="PackedScene" uid="uid://tlj2arrv4yen" path="res://Scenes/player.tscn" id="1_q3jd4"]
-[ext_resource type="Material" uid="uid://djhg5fwbnorro" path="res://Assets/Materials/Concrette_black_metal.tres" id="2_50iay"]
-[ext_resource type="PackedScene" uid="uid://beoqjrkx4qve3" path="res://Assets/3D Models/Mountains.glb" id="3_ny5b1"]
-[ext_resource type="Material" uid="uid://bl37mnyjg53dp" path="res://Assets/Materials/Curugated_metal_Blue.tres" id="3_oqjhn"]
-[ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="4_4hvhj"]
-[ext_resource type="Material" uid="uid://vvr1mayy8hq4" path="res://Assets/Materials/Curugated_metal.tres" id="4_bd2dh"]
-[ext_resource type="PackedScene" uid="uid://bnqqr3fikj54w" path="res://Assets/3D Models/Light.gltf" id="6_6mr83"]
-[ext_resource type="Material" uid="uid://da2k0h5ebt4fa" path="res://Assets/Materials/Recycled_wood.tres" id="8_0x07t"]
-[ext_resource type="PackedScene" uid="uid://k5l3e3fq16p4" path="res://Scenes/props/Table.tscn" id="9_mmbr3"]
-[ext_resource type="PackedScene" uid="uid://8r5yfnn1kyts" path="res://Scenes/props/box.tscn" id="10_g7gp3"]
-[ext_resource type="AudioStream" uid="uid://c0fe5044471pk" path="res://Assets/Sounds/rain_loop.mp3" id="10_hclu1"]
-[ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="11_4dikt"]
-[ext_resource type="PackedScene" uid="uid://bqn5lgiplpt4e" path="res://Scenes/props/Board.tscn" id="13_at2bk"]
-[ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="13_n2blp"]
-[ext_resource type="PackedScene" uid="uid://boo74sjvsxr6e" path="res://Scenes/props/Ammo/glock_ammo_mag.tscn" id="14_odpvp"]
-[ext_resource type="PackedScene" uid="uid://dkte380n6a0yy" path="res://Scenes/props/Collectibles (NOT AMMO)/gun_pistol.tscn" id="15_vv4jw"]
-[ext_resource type="PackedScene" uid="uid://bhixdem5q0ody" path="res://Scenes/props/Special/double_door.tscn" id="18_bviax"]
+[ext_resource type="Script" uid="uid://cs5oj2j3oy2sh" path="res://Scripts/Levels/new_tutorial.gd" id="1_nkhhr"]
+[ext_resource type="PackedScene" uid="uid://tlj2arrv4yen" path="res://Scenes/player.tscn" id="2_x0i2e"]
+[ext_resource type="Material" uid="uid://djhg5fwbnorro" path="res://Assets/Materials/Concrette_black_metal.tres" id="3_v4sbv"]
+[ext_resource type="Material" uid="uid://bl37mnyjg53dp" path="res://Assets/Materials/Curugated_metal_Blue.tres" id="4_ib5xn"]
+[ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="5_cx1vj"]
+[ext_resource type="Material" uid="uid://vvr1mayy8hq4" path="res://Assets/Materials/Curugated_metal.tres" id="6_tpgkr"]
+[ext_resource type="PackedScene" uid="uid://bnqqr3fikj54w" path="res://Assets/3D Models/Light.gltf" id="7_i5efa"]
+[ext_resource type="Texture2D" uid="uid://xoltk4p52dac" path="res://Assets/Textures/material_textures/Rope.jpg" id="8_g1hpd"]
+[ext_resource type="PackedScene" uid="uid://beoqjrkx4qve3" path="res://Assets/3D Models/Mountains.glb" id="9_hnsf3"]
+[ext_resource type="Material" uid="uid://da2k0h5ebt4fa" path="res://Assets/Materials/Recycled_wood.tres" id="10_dwqo0"]
+[ext_resource type="PackedScene" uid="uid://k5l3e3fq16p4" path="res://Scenes/props/Table.tscn" id="11_q4wrt"]
+[ext_resource type="PackedScene" uid="uid://8r5yfnn1kyts" path="res://Scenes/props/box.tscn" id="12_s364s"]
+[ext_resource type="PackedScene" uid="uid://dvi7kmbhiffkg" path="res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn" id="13_sr7yr"]
+[ext_resource type="PackedScene" uid="uid://bqn5lgiplpt4e" path="res://Scenes/props/Board.tscn" id="14_gnkao"]
+[ext_resource type="PackedScene" uid="uid://boo74sjvsxr6e" path="res://Scenes/props/Ammo/glock_ammo_mag.tscn" id="15_kidbu"]
+[ext_resource type="PackedScene" uid="uid://dkte380n6a0yy" path="res://Scenes/props/Collectibles (NOT AMMO)/gun_pistol.tscn" id="16_ytfyn"]
+[ext_resource type="PackedScene" uid="uid://bhixdem5q0ody" path="res://Scenes/props/Special/double_door.tscn" id="17_vou46"]
+[ext_resource type="PackedScene" uid="uid://c1qe4q0mgoclp" path="res://Scenes/enemies/enemy_mele.tscn" id="18_gnabe"]
+[ext_resource type="PackedScene" uid="uid://cgdxnvlkror6s" path="res://Assets/3D Models/Axe.glb" id="19_hl5jp"]
+[ext_resource type="PackedScene" uid="uid://8wmwxidov0gv" path="res://Scenes/misc/rope.tscn" id="20_r5417"]
+[ext_resource type="AudioStream" uid="uid://c0fe5044471pk" path="res://Assets/Sounds/rain_loop.mp3" id="21_u3dv8"]
 
 [sub_resource type="Gradient" id="Gradient_iopxl"]
 interpolation_mode = 1
@@ -114,6 +117,7 @@ fog_depth_curve = 1.41422
 fog_depth_end = 55.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0665
+volumetric_fog_emission = Color(0.433333, 0, 1, 1)
 volumetric_fog_emission_energy = 0.0
 volumetric_fog_sky_affect = 0.0
 volumetric_fog_temporal_reprojection_amount = 0.73
@@ -266,13 +270,39 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 394.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5j5kf"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("8_g1hpd")
+metallic_specular = 0.0
+uv1_scale = Vector3(7.555, 7.555, 7.555)
+uv1_triplanar = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_nbl6t"]
+material = SubResource("StandardMaterial3D_5j5kf")
+size = Vector2(2.14, 29.29)
+
 [sub_resource type="QuadMesh" id="QuadMesh_ckeyw"]
-material = ExtResource("8_0x07t")
+material = ExtResource("10_dwqo0")
 size = Vector2(14.175, 16.885)
 
+[sub_resource type="QuadMesh" id="QuadMesh_5j5kf"]
+material = ExtResource("10_dwqo0")
+size = Vector2(22.915, 16.885)
+
 [sub_resource type="QuadMesh" id="QuadMesh_n127s"]
-material = ExtResource("8_0x07t")
+material = ExtResource("10_dwqo0")
 size = Vector2(23.04, 16.885)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bviax"]
+material = ExtResource("10_dwqo0")
+size = Vector2(17.77, 16.885)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdmqa"]
+size = Vector3(2.40747, 3.23975, 0.252441)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nbl6t"]
+vertices = PackedVector3Array(1.07, -14.645, 0, -1.07, -14.645, 0, 1.07, 14.645, 0, -1.07, 14.645, 0)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og872"]
 albedo_color = Color(0, 0, 0, 1)
@@ -329,57 +359,6 @@ material = SubResource("StandardMaterial3D_nglcx")
 top_radius = 0.125
 bottom_radius = 0.175
 height = 0.001
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt7jk"]
-resource_name = "Material.001"
-cull_mode = 2
-shading_mode = 2
-diffuse_mode = 2
-albedo_color = Color(0.22, 0.22, 0.22, 1)
-metallic_specular = 1.0
-roughness = 0.0
-rim_enabled = true
-rim_tint = 1.0
-uv1_scale = Vector3(-0.595, -0.595, -0.595)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 1e-05
-texture_filter = 4
-grow_amount = 0.01
-point_size = 128.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_vxo0x"]
-_surfaces = [{
-"aabb": AABB(-0.943184, -1.25966, -0.1, 2, 2.32363, 0.2),
-"format": 34359742465,
-"index_count": 471,
-"index_data": PackedByteArray("AAABACAAAQACACAAAgADACAAAwAEACAABAAFACAABQAGACAABgAHACAABwAIACAACAAJACAACQAKACAACgALACAACwAMACAADAANACAADQAOACAADgAPACAADwAQACAAEAARACAAEQASACAAEgATACAAEwAUACAAFAAVACAAFQAWACAAFgAXACAAFwAYACAAGAAZACAAGQAaACAAGgAbACAAGwAcACAAHAAdACAAHQAeACAAFgA4ABcAFgA3ADgAHgAfACAAHwAAACAAIAARABAAEQAOAA8AEQASAA4AHwAAAAEAHgAfAAIAHQAeAAMAGwAcAAQAGgAbAAUAGQAaAAYACAAZAAcAFwAYAAkAGAAZAAgACwAWAAoAFQAWAAsADQAUAAwAEwAUAA0AIAASABEAHwAgAAAAHgAgAB8AIAATABIAIAAUABMAHQAgAB4AHAAgAB0AIAAVABQAIAAWABUAGwAgABwAGgAgABsAIAAXABYAIAAYABcAGQAgABoAIAAZABgAQAAiACEAIgAkACMAJAAmACUAJgAoACcAKAAqACkAKgAsACsALAAuAC0ALgAwAC8AMAAyADEAMgA0ADMANAA2ADUANgA4ADcAOAA6ADkAOgA8ADsAPAA+AD0APgBAAD8AQAAkACIAJAAoACYAKAAsACoALAAwAC4AMAA0ADIANAA4ADYAOAA8ADoAPABAAD4AQAAoACQAKAAwACwAMAA4ADQAOABAADwAQAAwACgAMABAADgAAgAkAAMAAgAjACQAHQA/AB4AHQA+AD8ACQArAAoACQAqACsAEAAyABEAEAAxADIAFwA5ABgAFwA4ADkAAwAlAAQAAwAkACUAHgBAAB8AHgA/AEAACgAsAAsACgArACwAEQAzABIAEQAyADMAGAA6ABkAGAA5ADoABAAmAAUABAAlACYAHwAhAAAAHwBAACEACwAtAAwACwAsAC0AEgA0ABMAEgAzADQAGQA7ABoAGQA6ADsABQAnAAYABQAmACcADAAuAA0ADAAtAC4AEwA1ABQAEwA0ADUAGgA8ABsAGgA7ADwABgAoAAcABgAnACgAAAAiAAEAAAAhACIADQAvAA4ADQAuAC8AFAA2ABUAFAA1ADYAGwA9ABwAGwA8AD0ABwApAAgABwAoACkADgAwAA8ADgAvADAAFQA3ABYAFQA2ADcAAQAjAAIAAQAiACMAHAA+AB0AHAA9AD4ACAAqAAkACAApACoADwAxABAADwAwADEA"),
-"lods": [0.170463, PackedByteArray("AAABACAABwAIACAABgAHACAAHwAAACAAAABAAAEAHwBAAAAAAQACACAAAQBAAAIAHgAfACAAHgBAAB8AHQAeACAAHQBAAB4AHABAAB0AHAAdACAAAgADACAAAgBAAAMAAwAEACAAAwBAAAQABAAFACAABQAGACAABABAAAUABQAnAAYABQBAACcAGwBAABwAGwAcACAAGgAbACAAGgBAABsAGgA7AEAAGQAaACAAGQA7ABoAGQA6ADsAGAA6ABkAGAA5ADoABgAnACgABgAoAAcABwAoACkABwApAAgACAAJACAACQAKACAACgALACAACwAMACAADAANACAADQAOACAADgAPACAADwAQACAAEAARACAAEQASACAAEgATACAAEwAUACAAFAAVACAAFQAWACAAFgAXACAAFwAYACAAGAAZACAAFgA4ABcAFQA4ABYAFAA4ABUAFwA5ABgAFwA4ADkACAA4AAkACQA4AAoACgA4AAsACwA4AAwAEwA4ABQAEgA4ABMAEQA4ABIAEAA4ABEADwA4ABAADgA4AA8ACAApADgADQA4AA4ADAA4AA0AIAARABAAEQAOAA8AEQASAA4AIAASABEAIAATABIAIAAUABMAEwAUAA0ADQAUAAwAIAAVABQAIAAWABUAFQAWAAsACwAWAAoAIAAXABYAFwAYAAkAIAAYABcAIAAZABgAGAAZAAgACAAZAAcAGQAgABoAGQAaAAYAGgAbAAUAGgAgABsAGwAcAAQAGwAgABwAHAAgAB0AHQAgAB4AHQAeAAMAHgAgAB8AHgAfAAIAHwAgAAAAHwAAAAEAQAAoACcAQAA4ACgAKAA4ACkAOABAADoAOgBAADsAOAA6ADkA")],
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 65,
-"vertex_data": PackedByteArray("ELhoPWhpkb/QzMy94/mAPmhpkb9o3ci9GAbhPmhpkb/oNb29W8UcP2hpkb/4SKq9dJBDP2hpkb/I0JC9smZjP2hpkb/Aj2O93w57P2hpkb9Ivxy9INCEP2hpkb9w0Z+8wUWHP2hpkb8Oa1+yINCEP2hpkb9g0Z883w57P2hpkb9Avxw9smZjP2hpkb/Aj2M9dJBDP2hpkb/A0JA9W8UcP2hpkb/wSKo9GAbhPmhpkb/gNb094/mAPmhpkb9g3cg9ELhoPWhpkb/IzMw9v5cNvmhpkb9g3cg9FNimvmhpkb/gNb09slz/vmhpkb/wSKo9cnkmv2hpkb/A0JA9sE9Gv2hpkb/Aj2M93fddv2hpkb9Avxw9PYlsv2hpkb9g0Z88f3Rxv2hpkb8AAGCyPYlsv2hpkb9w0Z+83fddv2hpkb9Ivxy9sE9Gv2hpkb/Aj2O9cnkmv2hpkb/I0JC9slz/vmhpkb/4SKq9FNimvmhpkb/oNb29v5cNvmhpkb9o3ci9ErhoPTEwiD8Oa1+yC7hoPac8ob/QzMy9N5AgPqg8ob9o3ci9loGBPqg8ob/oNb29Lt+uPqg8ob/4SKq9k6LWPqg8ob/I0JC9l0T3Pqg8ob/Aj2O9GMIHP6g8ob9Ivxy9ZzkPP6g8ob9w0Z+8xr4RP6g8ob8Oa1+yZzkPP6g8ob9g0Z88GMIHP6g8ob9Avxw9l0T3Pqg8ob/Aj2M9k6LWPqg8ob/A0JA9Lt+uPqg8ob/wSKo9loGBPqg8ob/gNb09N5AgPqg8ob9g3cg9C7hoPac8ob/IzMw9ytAwvac8ob9g3cg9KKcOvqc8ob/gNb09V2Jpvqc8ob/wSKo9kXScvqc8ob/A0JA9lRa9vqc8ob/Aj2M9LVbVvqc8ob9Avxw9zETkvqc8ob9g0Z88iE/pvqc8ob8AAGCyzETkvqc8ob9w0Z+8LVbVvqc8ob9Ivxy9lRa9vqc8ob/Aj2O9kXScvqc8ob/I0JC9V2Jpvqc8ob/4SKq9KKcOvqc8ob/oNb29ytAwvac8ob9o3ci9")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_blf2i"]
-resource_name = "Axe_Cone"
-_surfaces = [{
-"aabb": AABB(-0.943184, -1.25966, -0.1, 2, 2.32363, 0.2),
-"attribute_data": PackedByteArray("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"),
-"format": 34359742487,
-"index_count": 471,
-"index_data": PackedByteArray("AAAFAKEABwAKAKMADAAPAKUAEQAUAKcAFgAZAKkAGwAeAKsAIQAlAK0AJgArAK8AKgAwAK4ALwA1AKwAMgA5AKoANwA+AKgAPABDAKYAQQBIAKQARgBNAKIASwBQAKAAUwBWALEAWABbALMAXQBgALUAYgBlALcAZwBqALkAbABvALsAcgB2AL0AdwB7AL8AfACBAMAAgACGAL4AgwCKALwAiACPALoAjQCUALgAkgCZALYAcQAHAXQAcQAFAQcBlwCeALQAnAADALIAsABVAFIAVQBKAE8AVQBaAEoAmwACAAkAlgCbAA4AkQCWABMAhwCMABgAggCHAB0AfQCCACIALAB9ACcAcwB4ADEAeAB9ACwAOwBuADYAaQBuADsARQBkAEAAXwBkAEUAsABaAFUAmwCwAAIAlgCwAJsAsABfAFoAsABkAF8AkQCwAJYAjACwAJEAsABpAGQAsABuAGkAhwCwAIwAggCwAIcAsABzAG4AsAB4AHMAfQCwAIIAsAB9AHgAHgHEAMEAxADKAMcAygDQAM0A0ADWANMA1gDcANkA3ADiAN8A4gDoAOUA6ADuAOsA7gD0APEA9AD6APcA+gAAAf0AAAEGAQMBBgEMAQkBDAESAQ8BEgEYARUBGAEeARsBHgHKAMQAygDWANAA1gDiANwA4gDuAOgA7gD6APQA+gAGAQABBgESAQwBEgEeARgBHgHWAMoA1gDuAOIA7gAGAfoABgEeARIBHgHuANYA7gAeAQYBDQDLABAADQDJAMsAkwAdAZoAkwAZAR0BLQDhADQALQDdAOEAVAD1AFcAVADzAPUAdQAKAXkAdQAIAQoBEgDOABUAEgDMAM4AmAAgAZ8AmAAcASABMwDkADoAMwDgAOQAWQD4AFwAWQD2APgAegAOAX8AegALAQ4BFwDRABoAFwDPANEAnQDDAAQAnQAfAcMAOADnAD8AOADjAOcAXgD7AGEAXgD5APsAfgARAYUAfgANAREBHADUAB8AHADSANQAPQDqAEQAPQDmAOoAYwD+AGYAYwD8AP4AhAAUAYsAhAAQARQBIADXACMAIADVANcAAQDFAAYAAQDCAMUAQgDtAEkAQgDpAO0AaAABAWsAaAD/AAEBiQAXAZAAiQATARcBJADbACkAJADYANsARwDwAE4ARwDsAPAAbQAEAXAAbQACAQQBCADIAAsACADGAMgAjgAaAZUAjgAWARoBKADeAC4AKADaAN4ATADyAFEATADvAPIA"),
-"lods": [0.170463, PackedByteArray("AAAFAKEAJQArAKEAIQElAKEAnAAAAKEAAAAfAQUAnAAfAQAABQAKAKEABQAfAQoAlwCcAKEAlwAfAZwAkgCXADkBkgAfAZcAjQAfAZIAjQCSAKEACgAPAKEACgAfAQ8ADwAUAKEADwAfARQAFAAZAKEAGQAhAaEAFAAfARkAGQDUACEBGQAfAdQAiAAfAY0AiACNADgBgwCIADgBMgEfAYgAMgEQAR8BMAExATgBfgAQAYUAfgANARABegANAX4AegALAQ0BIADUANcAIADXACMAIwDXANsAIwDbACkAIwEvAKAALwAyAKAAMgA3AKAANwA8AKAAPABBAKAAQQBGAKAARgBLAKAASwBQAKAAUABWAKAAVgBbAKAAWwBgAKAAYABlAKAAZQApATMBKQEqATQBKgErATUBLAEtATYBLgEvATcBcAA7AXQAawA7AXAAZgA7AWsAdAAKAXkAdAA7AQoBKAA7AS0ALQA7ASQBJAE7ASUBJQE7ASYBYQA8AWYAXAA8AWEAVwA8AVwAUQA8AVcATAA8AVEARwA8AUwAIgE6ATwBKAE9AUcAJwE8ASgBsABVAFIAVQBKAE8AVQBaAEoAsABaAFUAsABfAFoAsABkAF8AXwBkAEUARQBkAEAAsABpAGQAsABuAGkAaQBuADsAOwBuADYAsABzAG4AcwB4ADEAsAB4AHMAsAB9AHgAeAB9ACMBIwF9ACcAfQCwAIIAfQCCACIAggCHAB0AggCwAIcAhwCMABgAhwCwAIwAjACwAJEAkQCwAJYAkQCWABMAlgCwAJsAlgCbAA4AmwCwAAIAmwACAAkAHgHWANMAHgEGAdYA1gAGAdkABgEeAQwBDAEeAQ8BBgEMAQkB")],
-"material": SubResource("StandardMaterial3D_qt7jk"),
-"name": "Material.001",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 318,
-"vertex_data": PackedByteArray("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PYlsv2hpkb9g0Z88f3Rxv2hpkb8AAGCyf3Rxv2hpkb8AAGCyPYlsv2hpkb9w0Z+8PYlsv2hpkb9w0Z+83fddv2hpkb9Ivxy93fddv2hpkb9Ivxy9ErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yErhoPTEwiD8Oa1+yxr4RP6g8ob8Oa1+yzETkvqc8ob9g0Z88zETkvqc8ob9g0Z88zETkvqc8ob9g0Z88e/rO/jPpmbRe/6IB////v1X/qYBdfw8DgwXO/jLpZMugAKIB////v3v6zv4z6Zm0Xv+iAf///79h+mT89s37ppz6uQT///+/Vf+pgDqApqlh+mT89s37ppz6uQT///+/DPrN+a6+Vp8R8ocH////v1X/qYD///+/DPrN+a6+Vp8R8ocH////v275yPZGtaOa6eYTCv///79V/6mA////v275yPZGtaOa6eYTCv///79Y+OvyP6+flxTagAz///+/Vf+pgP///79Y+OvyP6+flxTagAz///+/bPZU7WSrspXmyw0P////v1X/qYD///+/bPZU7WSrspXmyw0P////v9C7KBL///+/kfKX4xWpipRV/6mA////v9C7KBL///+/hqemFv///7+R8pfjFamKlCXoh8v/p/+TVf+pgA2A2LqmloYn////P4anphb///+/d7TZl/+n/5Ml6IfL/6f/k1X/qYANgNi6J5LQO////z+mloYn////P2acbI0VqYqUd7TZl/+n/5NV/6mA////v6mSkolkq7GVDY/mS////z8nktA7////P2acbI0VqYqUVf+pgKiAU4ASjaWHQK+fl4CMFFr///8/qZKSiWSrsZUNj+ZL////P1X/qYCogFOANomPhke1opoSiupm////PxKNpYdAr5+XgIwUWv///z9V/6mAqIBTgDCG8oWtvlafh4cScv///z82iY+GR7WimhKK6mb///8/Vf+pgKiAU4Cag52F9s37priEnHr///8/MIbyha2+Vp+HhxJy////P1X/qYCogFOAMIGChTLpmbShgV5/////P5qDnYX2zfumuIScev///z9V/6mAqIBTgDCBgoUy6Zm0oYFef////z9V/6mAVX9UAM5+goUz6WXLXX5ef////z9V/6mAVX9UAM5+goUz6WXLXX5ef////z9kfJ2F9s0D2UZ7nHr///8/Vf+pgFV/VABkfJ2F9s0D2UZ7nHr///8/znnyha6+qOB4eBJy////P1X/qYBVf1QAznnyha6+qOB4eBJy////P8h2j4ZGtVvl7HXqZv///z9V/6mAVX9UAMh2j4ZGtVvl7HXqZv///z/scqWHP69e6H5zFFr///8/Vf+pgFV/VADscqWHP69e6H5zFFr///8/VW2SiWSrTOrxcOZL////P1X/qYBVf1QAVW2SiWSrTOrxcOZL////P9dt0Dv///8/mGNsjRWpdOtV/6mA932r/9dt0Dv///8/WGmGJ////z+YY2yNFal064dL2Zf/p//rVf+pgPd9q/9YaYYn////P3hYphb///+/h0vZl/+n/+vZF4fL/6f+61X/qYANgNi6LkQoEv///794WKYW////v20Nl+MVqXTr2ReHy/+n/utV/6mA////v5IJVO1kq0zqGDQND////78uRCgS////v20Nl+MVqXTrVf+pgFp/JAKmB+vyQK9e6OolgAz///+/kglU7WSrTOoYNA0P////v1X/qYBYfzMBkAbI9ke1W+UVGRMK////v6YH6/JAr17o6iWADP///79V/6mAVX9UAPIFzfmtvqfg7Q2HB////7+QBsj2R7Vb5RUZEwr///+/Vf+pgFx/Pv2dBWT89s0D2WIFuQT///+/8gXN+a2+p+DtDYcH////v1X/qYBdfw8DgwXO/jLpZMugAKIB////v50FZPz2zQPZYgW5BP///78wgYKFMumZtHv6zv4z6Zm0moOdhfbN+6Zh+mT89s37pjCG8oWtvlafDPrN+a6+Vp82iY+GR7Wimm75yPZGtaOaEo2lh0Cvn5dY+OvyP6+fl6mSkolkq7GVbPZU7WSrspVmnGyNFamKlJHyl+MVqYqUd7TZl/+n/5Ml6IfL/6f/k1X/qYD3fav/zn6ChTPpZcuDBc7+Mulky2R8nYX2zQPZnQVk/PbNA9nOefKFrr6o4PIFzfmtvqfgyHaPhka1W+WQBsj2R7Vb5exypYc/r17opgfr8kCvXuhVbZKJZKtM6pIJVO1kq0zqmGNsjRWpdOttDZfjFal064dL2Zf/p//r2ReHy/+n/uv/fwAA////P17/ogH///+/oACiAf///7//fwAA////P17/ogH///+/nPq5BP///7//fwAA////P5z6uQT///+/EfKHB////7//fwAA////PxHyhwf///+/6eYTCv///7//fwAA////P+nmEwr///+/FNqADP///7//fwAA/v//PxTagAz///+/5ssND////7//fwAA////P+bLDQ////+/0LsoEv///7//fwAA////P9C7KBL///+/hqemFv///7//fwAA/v//P6aWhif///8/hqemFv///7//fwAA////PyeS0Dv///8/ppaGJ////z//fwAA/v//Pw2P5kv///8/J5LQO////z//fwAA////P4CMFFr///8/DY/mS////z//fwAA/v//PxKK6mb///8/gIwUWv///z//fwAA////P4eHEnL///8/EorqZv///z//fwAA/v//P7iEnHr///8/h4cScv///z//fwAA////P6GBXn////8/uIScev///z//fwAA////P6GBXn////8/XX5ef////z//fwAA////P11+Xn////8/Rnucev///z//fwAA////P0Z7nHr///8/eHgScv///z//fwAA////P3h4EnL///8/7HXqZv///z//fwAA////P+x16mb///8/fnMUWv///z//fwAA////P35zFFr///8/8XDmS////z//fwAA////P/Fw5kv///8/123QO////z//fwAA////P9dt0Dv///8/WGmGJ////z//fwAA////P1hphif///8/eFimFv///7//fwAA////Py5EKBL///+/eFimFv///7//fwAA/v//Pxg0DQ////+/LkQoEv///7//fwAA////P+olgAz///+/GDQND////7//fwAA/v//PxUZEwr///+/6iWADP///7//fwAA/v//P+0Nhwf///+/FRkTCv///7//fwAA/v//P2IFuQT///+/7Q2HB////7//fwAA////P6AAogH///+/YgW5BP///79Z8i4XZKuylb6K/F3///8/i90fi/+n/5NNi2c6////PwyIrzv///8/HobvPP///z8ShjRo////P0aFqWr///8/KYO9iT+vXuiBdCKNZKtM6nqskIsVqXTrfaj9mxWpdOs54HOK/6f/6+HnL8v/p/7rDB2u2xWpdOtV/6mAFal061X/qYBkq0zqkCLNC2SrTOrXtTyFMumZtKq2vIYy6Zm03qAXjTLpmbSS3UiLMumZtNfwta4z6Zm0Vf+pgDPpmbTV+/LPM+mZtD+KAGH///8/Lnf7Kf///z9neulp////P6eBezj///8/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_vxo0x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46puk"]
 shading_mode = 0
@@ -728,14 +707,104 @@ _data = {
 &"RESET": SubResource("Animation_jkl8q")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jdmqa"]
-size = Vector3(2.40747, 3.23975, 0.252441)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_lud5i"]
 size = Vector3(4.20801, 6.43496, 0.203613)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j5kf"]
+size = Vector3(10.0792, 1, 8.45215)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qa4ui"]
+
+[sub_resource type="Animation" id="Animation_xd1qi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p3nux"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dxge8"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y8kyb"]
+_data = {
+&"RESET": SubResource("Animation_xd1qi"),
+&"fade_in": SubResource("Animation_p3nux"),
+&"fade_out": SubResource("Animation_dxge8")
+}
+
 [node name="NEW_Tutorial" type="Node3D"]
-script = ExtResource("1_jeqtw")
+script = ExtResource("1_nkhhr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7m8ov")
@@ -766,7 +835,6 @@ directional_shadow_split_2 = 0.181
 directional_shadow_split_3 = 0.514
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.0
-directional_shadow_max_distance = 32.4
 directional_shadow_pancake_size = 0.1
 sky_mode = 1
 
@@ -787,6 +855,23 @@ transform = Transform3D(-386.37, -103.528, -4.52534e-06, 0, -1.74846e-05, 400, -
 modulate = Color(0.48, 0.722667, 1, 1)
 texture = SubResource("NoiseTexture2D_68ldg")
 
+[node name="clouds4" type="Sprite3D" parent="."]
+transform = Transform3D(386.37, 103.528, 4.52534e-06, 0, -1.74846e-05, 400, 103.528, -386.37, -1.68888e-05, 0, -45.4495, -39.1624)
+transparency = 0.26
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("NoiseTexture2D_68ldg")
+
+[node name="clouds5" type="Sprite3D" parent="."]
+transform = Transform3D(-78.6591, -392.19, -1.71432e-05, 0, -1.74846e-05, 400, -392.19, 78.6591, 3.4383e-06, 0, -31.0055, 0)
+transparency = 0.12
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("NoiseTexture2D_68ldg")
+
+[node name="clouds6" type="Sprite3D" parent="."]
+transform = Transform3D(-386.37, -103.528, -4.52534e-06, 0, -1.74846e-05, 400, -103.528, 386.37, 1.68888e-05, 0, -12.8705, 34.0774)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("NoiseTexture2D_68ldg")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../clouds2")
 libraries = {
@@ -794,7 +879,7 @@ libraries = {
 }
 speed_scale = 40.0
 
-[node name="Player" parent="." instance=ExtResource("1_q3jd4")]
+[node name="Player" parent="." instance=ExtResource("2_x0i2e")]
 dev_mode = true
 show_slots_on_ready = false
 show_status_on_ready = false
@@ -818,18 +903,24 @@ draw_pass_1 = SubResource("TubeTrailMesh_by2y8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00234723, 0)
 
 [node name="floor" type="CSGBox3D" parent="CSG"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -3.48505, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -26.9757, 0)
 use_collision = true
 collision_layer = 7
 collision_mask = 7
-size = Vector3(10000, 6.93886, 10000)
-material = ExtResource("2_50iay")
+size = Vector3(10000, 53.9201, 10000)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.735, 0, -12.1439)
+operation = 2
+size = Vector3(6.28145, 352.47, 7.34055)
+material = ExtResource("3_v4sbv")
 
 [node name="ROOMS" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.267868, 6.13824, -0.10083)
 use_collision = true
 size = Vector3(7.4888, 12.3361, 6.27539)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0568304, -2.55581, -0.0138351)
@@ -837,7 +928,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(7.28326, 6.14868, 7.26367)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0433159, -4.84747, -5.46048)
@@ -845,14 +936,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861273, -4.8018, -5.54797)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS/interrior4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
@@ -860,7 +951,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.172, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(0.866025, -2.18557e-08, -0.5, -0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, 1.41562, 2.4494, -0.013835)
@@ -868,7 +959,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.29601, 2.4494, -0.013835)
@@ -876,21 +967,21 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 3.82065, 1.1399, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.16248)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall2" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, -3.72608, 1.10718, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.22791)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="window" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, 0.0760221, 3.48885)
@@ -898,7 +989,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window2" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, -2.09713, 3.48885)
@@ -906,7 +997,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window3" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, 0.0760221, 3.48885)
@@ -914,7 +1005,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window4" type="CSGBox3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, -2.09713, 3.48885)
@@ -922,7 +1013,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CSG/ROOMS"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0424392, 0.919037, 0.0289167)
@@ -936,7 +1027,7 @@ spot_attenuation = 0.5
 spot_angle = 21.4273
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS/SpotLight3D/Sketchfab_Scene" index="0"]
@@ -974,7 +1065,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D2" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D2" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS/SpotLight3D2/Sketchfab_Scene" index="0"]
@@ -1012,7 +1103,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D3" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS/SpotLight3D3" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS/SpotLight3D3/Sketchfab_Scene" index="0"]
@@ -1041,7 +1132,7 @@ visible = false
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.094, 6.138, -16.336)
 use_collision = true
 size = Vector3(7.4888, 12.3361, 6.27539)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0568304, -2.55581, -0.0138351)
@@ -1049,7 +1140,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(7.28326, 6.14868, 7.26367)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0433159, -4.84747, -5.46048)
@@ -1057,14 +1148,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861273, -4.8018, -5.54797)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS2/interrior4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
@@ -1072,7 +1163,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.172, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior6" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 6.23886, -3.00899, 0.116062)
@@ -1080,14 +1171,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.39749, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior7" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 6.27412, -2.96332, 0.0732498)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS2/interrior7"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35186e-23, 0, -8.35188e-23, 1, 0.00392723, 0.0418239, 0.0300732)
@@ -1095,7 +1186,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.53189, 2.66366)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(0.866025, -2.18557e-08, -0.5, -0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, 1.41562, 2.4494, -0.013835)
@@ -1103,7 +1194,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.29601, 2.4494, -0.013835)
@@ -1111,21 +1202,21 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 3.82065, 1.1399, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.16248)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall2" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, -3.72608, 1.10718, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.22791)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="window" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, 0.0760221, 3.48885)
@@ -1133,7 +1224,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window2" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, -2.09713, 3.48885)
@@ -1141,7 +1232,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window3" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, 0.0760221, 3.48885)
@@ -1149,7 +1240,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window4" type="CSGBox3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, -2.09713, 3.48885)
@@ -1157,7 +1248,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CSG/ROOMS2"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.0424392, 0.919037, 0.0289167)
@@ -1171,7 +1262,7 @@ spot_attenuation = 0.5
 spot_angle = 21.4273
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS2/SpotLight3D/Sketchfab_Scene" index="0"]
@@ -1208,7 +1299,7 @@ spot_attenuation = 0.5
 spot_angle = 78.5571
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D3" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D3" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS2/SpotLight3D3/Sketchfab_Scene" index="0"]
@@ -1245,7 +1336,7 @@ spot_attenuation = 0.5
 spot_angle = 79.6547
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D4" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D4" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS2/SpotLight3D4/Sketchfab_Scene" index="0"]
@@ -1282,7 +1373,7 @@ spot_attenuation = 0.5
 spot_angle = 78.2859
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D5" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS2/SpotLight3D5" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS2/SpotLight3D5/Sketchfab_Scene" index="0"]
@@ -1311,7 +1402,7 @@ visible = false
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -16.906, 6.138, -16.326)
 use_collision = true
 size = Vector3(7.4888, 12.3361, 6.27539)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0568304, -2.55581, -0.0138351)
@@ -1319,7 +1410,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(7.28326, 6.14868, 7.26367)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0433159, -3.00899, -5.46048)
@@ -1327,14 +1418,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861282, -2.96332, -5.54797)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS3/interrior4"]
 transform = Transform3D(1, 0, 0, 0, 1, -7.51668e-22, 0, -7.51668e-22, 1, 0.00392723, -0.218704, 0.0311084)
@@ -1342,7 +1433,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.60941, 2.66573)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior6" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 6.18663, -4.84747, 0.116062)
@@ -1350,14 +1441,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior7" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 6.27412, -4.8018, 0.0732498)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS3/interrior7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
@@ -1365,7 +1456,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.172, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(0.866025, -2.18557e-08, -0.5, -0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, 1.41562, 2.4494, -0.013835)
@@ -1373,7 +1464,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.29601, 2.4494, -0.013835)
@@ -1381,21 +1472,21 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 3.82065, 1.1399, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.16248)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall2" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, -3.72608, 1.10718, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.22791)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="window" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, 0.0760221, 3.48885)
@@ -1403,7 +1494,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window2" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10264, -2.09713, 3.48885)
@@ -1411,7 +1502,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window3" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, 0.0760221, 3.48885)
@@ -1419,7 +1510,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window4" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.05089, -2.09713, 3.48885)
@@ -1427,7 +1518,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window5" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.79366, 0.0760221, 1.19823)
@@ -1435,7 +1526,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window6" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.79366, -2.09713, 1.19823)
@@ -1443,7 +1534,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window7" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.79366, 0.0760221, -0.9553)
@@ -1451,7 +1542,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window8" type="CSGBox3D" parent="CSG/ROOMS3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.79366, -2.09713, -0.9553)
@@ -1459,7 +1550,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="CSG/ROOMS3"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.9223, -3.58708, -0.0626469)
@@ -1473,7 +1564,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D4" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D4" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS3/SpotLight3D4/Sketchfab_Scene" index="0"]
@@ -1510,7 +1601,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D5" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D5" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS3/SpotLight3D5/Sketchfab_Scene" index="0"]
@@ -1547,7 +1638,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D6" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS3/SpotLight3D6" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS3/SpotLight3D6/Sketchfab_Scene" index="0"]
@@ -1576,7 +1667,7 @@ visible = false
 transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -17.0448, 6.138, 1.31957)
 use_collision = true
 size = Vector3(7.4888, 12.3361, 6.27539)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0568304, -2.55581, -0.0138351)
@@ -1584,7 +1675,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(7.28326, 6.14868, 7.26367)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0433159, -4.67823, -5.46048)
@@ -1592,14 +1683,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 3.10894)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861282, -4.63131, -5.54798)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 3.19054)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS4/interrior4"]
 transform = Transform3D(1, 0, 0, 0, 1, -2.08797e-21, 0, -2.08797e-21, 1, 0.00392747, -0.218704, 0.237966)
@@ -1607,7 +1698,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.60941, 3.07945)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior6" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 6.18663, -4.84747, 0.116062)
@@ -1615,14 +1706,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior7" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 6.27412, -4.8018, 0.0732498)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS4/interrior7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
@@ -1630,7 +1721,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.172, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(0.866025, -2.18557e-08, -0.5, -0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, 1.41562, 2.4494, -0.013835)
@@ -1638,7 +1729,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.29601, 2.4494, -0.013835)
@@ -1646,21 +1737,21 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(8.27339, 6.14868, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(1, 0, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, 3.82065, 1.1399, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.16248)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="wall2" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(1, 0, -4.37114e-08, -4.37114e-08, 1.91069e-15, -1, 0, 1, 1.91069e-15, -3.72608, 1.10718, -0.013835)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(0.273, 6.14868, 4.22791)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="window" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, 0.299854, 1.08468)
@@ -1668,7 +1759,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window2" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, -1.8733, 1.05247)
@@ -1676,7 +1767,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window3" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, 0.299854, -1.10108)
@@ -1684,7 +1775,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window4" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, -1.8733, -1.10108)
@@ -1692,7 +1783,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window5" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, -4.0316, 1.05247)
@@ -1700,7 +1791,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="window7" type="CSGBox3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -3.73025, -4.0316, -1.10109)
@@ -1708,7 +1799,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2, 1, 2)
-material = ExtResource("4_bd2dh")
+material = ExtResource("6_tpgkr")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="CSG/ROOMS4"]
 transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, -0.209386, -3.41205, -4.25662)
@@ -1722,7 +1813,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS4/SpotLight3D7" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS4/SpotLight3D7" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS4/SpotLight3D7/Sketchfab_Scene" index="0"]
@@ -1751,7 +1842,7 @@ visible = false
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -33.3426, 6.138, 1.494)
 use_collision = true
 size = Vector3(14.8298, 12.3361, 10.4501)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.225016, -2.55581, 1.10105)
@@ -1759,7 +1850,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(14.2543, 8.19376, 7.26367)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0579486, -4.67823, -5.46048)
@@ -1767,14 +1858,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.33792, 5.29303, 3.10894)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0861282, -4.63131, -5.54798)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 3.19054)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior4"]
 transform = Transform3D(1, 0, 0, 0, 1, -7.51669e-22, 0, -7.51669e-22, 1, 0.00564849, -0.218704, 0.237966)
@@ -1782,7 +1873,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.3052, 5.60941, 3.07945)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior6" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 9.89015, -4.84747, 1.30628)
@@ -1790,14 +1881,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior7" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 9.97764, -4.8018, 1.26347)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00392771, 0, 0.0420456)
@@ -1805,7 +1896,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.172, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior8" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, -8.74228e-08, -3.82138e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 11.2944, -4.84747, 2.55493)
@@ -1813,14 +1904,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.22327, 5.29303, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior9" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 2.64241)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior9"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.21843, 0.0420456)
@@ -1828,7 +1919,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.52304, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior5" type="CSGBox3D" parent="CSG/ROOMS5/interrior9"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, -8.3519e-23, 1, 0.124522, 1.43465, 0.0550133)
@@ -1836,14 +1927,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.54983, 2.21689, 2.66168)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior10" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 7.75425)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior10"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.0447617, 0.0420456)
@@ -1851,14 +1942,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.33934, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior11" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 12.9082)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior11"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, -0.320885, 0.0420456)
@@ -1866,14 +1957,14 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 5.89159, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 
 [node name="interrior12" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 11.3372, -4.8018, 18.0539)
 transparency = 1.0
 cast_shadow = 0
 size = Vector3(2.48015, 5.172, 2.7717)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior4" type="CSGBox3D" parent="CSG/ROOMS5/interrior12"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35177e-23, 0, -8.3518e-23, 1, 0.00392818, 1.28703, 0.0420454)
@@ -1881,7 +1972,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(2.30864, 8.05663, 2.68761)
-material = ExtResource("4_4hvhj")
+material = ExtResource("5_cx1vj")
 metadata/_edit_group_ = true
 
 [node name="interrior2" type="CSGBox3D" parent="CSG/ROOMS5"]
@@ -1890,7 +1981,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(9.91039, 8.07913, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="interrior3" type="CSGBox3D" parent="CSG/ROOMS5"]
 transform = Transform3D(0.866025, 2.18557e-08, 0.5, 0.5, -3.78552e-08, -0.866025, 0, 1, -4.37114e-08, -1.8303, 2.14092, 1.0136)
@@ -1898,7 +1989,7 @@ transparency = 1.0
 cast_shadow = 0
 operation = 2
 size = Vector3(9.87352, 8.10822, 3.54346)
-material = ExtResource("3_oqjhn")
+material = ExtResource("4_ib5xn")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="CSG/ROOMS5"]
 transform = Transform3D(-1, -8.7423e-08, 0, 0, 0, 1, -8.7423e-08, 1, 0, -0.209386, -3.41205, -4.25662)
@@ -1912,7 +2003,7 @@ spot_attenuation = 0.5
 spot_angle = 86.6695
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D7" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D7" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D7/Sketchfab_Scene" index="0"]
@@ -1949,7 +2040,7 @@ spot_attenuation = 0.5
 spot_angle = 39.1545
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D8" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D8" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D8/Sketchfab_Scene" index="0"]
@@ -1985,7 +2076,7 @@ spot_attenuation = 0.5
 spot_angle = 39.1545
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D9" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D9" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D9/Sketchfab_Scene" index="0"]
@@ -2022,7 +2113,7 @@ spot_attenuation = 0.5
 spot_angle = 82.6871
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D10" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D10" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene" index="0"]
@@ -2059,7 +2150,7 @@ spot_attenuation = 0.5
 spot_angle = 82.6871
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D11" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D11" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene" index="0"]
@@ -2096,7 +2187,7 @@ spot_attenuation = 0.5
 spot_angle = 82.6871
 spot_angle_attenuation = 0.0192367
 
-[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D12" instance=ExtResource("6_6mr83")]
+[node name="Sketchfab_Scene" parent="CSG/ROOMS5/SpotLight3D12" instance=ExtResource("7_i5efa")]
 transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
 
 [node name="Sketchfab_model" parent="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene" index="0"]
@@ -2124,7 +2215,7 @@ visible = false
 
 [node name="Vault demo" type="CSGBox3D" parent="CSG"]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -43.4071, 1.34442, 12.2062)
-material_override = ExtResource("2_50iay")
+material_override = ExtResource("3_v4sbv")
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -2136,75 +2227,847 @@ operation = 2
 size = Vector3(2.04566, 1.67515, 2.1095)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.81796, 0.34841, -0.00738525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.54715, 0.34841, -0.00738525)
 operation = 2
-size = Vector3(15.8137, 4.43572, 2.1095)
+size = Vector3(17.2721, 4.43572, 2.1095)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSG/Vault demo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5607, 0.342601, -0.00738525)
 operation = 2
 size = Vector3(16.1858, 4.62981, 2.1095)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60485, 0.684922, -0.00738525)
-operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+[node name="Crouch demo" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(-1, 0, -1.39091e-08, 0, 1, 0, 1.39091e-08, 0, -1, -35.1818, 1.34442, 9.22838)
+material_override = ExtResource("3_v4sbv")
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(35.9067, 4.1106, 0.711182)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9952, 0.684922, -0.00738525)
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/Crouch demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57283, -0.691186, -0.00738525)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(2.39398, 1.44654, 2.1095)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0975, 0.684922, -0.00738525)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/Crouch demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.54715, 0.34841, -0.00738525)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(17.2721, 4.43572, 2.1095)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0072, 0.0266461, -0.00738525)
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG/Crouch demo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5607, 0.342601, -0.00738525)
 operation = 2
-size = Vector3(2.5308, 3.50181, 2.1095)
+size = Vector3(16.1858, 4.62981, 2.1095)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8789, 0.684922, -0.00738525)
+[node name="tower" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.9207, 11.3638, 12.4459)
+use_collision = true
+size = Vector3(6.9541, 22.7588, 7.90454)
+material = ExtResource("4_ib5xn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115997, 0, 0.0828857)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(6.32599, 352.47, 7.11523)
+material = ExtResource("4_ib5xn")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9033, 0.684922, -0.00738525)
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17027, -10.0595, 0.367729)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(1, 2.75351, 2.35686)
+material = ExtResource("5_cx1vj")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4369, 0.684922, -0.00738525)
+[node name="SpotLight3D12" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(-0.868308, -0.19191, 0.457397, 0.491482, -0.457397, 0.741103, 0.0669873, 0.868308, 0.491481, 2.86868, -1.27312, 3.45039)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 15.7567
+spot_attenuation = 0.5
+spot_angle = 49.1654
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D12" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.87789, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D13" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.87789, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D14" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D15" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D16" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D17" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -24.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D18" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="CSG/tower"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower/SpotLight3D19" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="interrior5" type="CSGBox3D" parent="CSG/tower"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5.95055, 0.336301, -0.163879)
+transparency = 1.0
+cast_shadow = 0
 operation = 2
-size = Vector3(1.80251, 2.18526, 2.1095)
+size = Vector3(2.3052, 5.60941, 3.04289)
+material = ExtResource("5_cx1vj")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2587, 0.197989, -0.00738525)
+[node name="interrior4" type="CSGBox3D" parent="CSG/tower"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -17.8534, 0.317793, -0.158231)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 29.4151, 3.19054)
+material = ExtResource("4_ib5xn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.00564861, -0.186478, -0.018508)
+transparency = 1.0
+cast_shadow = 0
 operation = 2
-size = Vector3(3.55234, 3.81005, 2.1095)
+size = Vector3(2.3052, 29.9316, 3.04289)
+material = ExtResource("5_cx1vj")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89126, 0.684922, -0.00738525)
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 5.5, -0.0872612)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01962, 0.684922, -0.00738525)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 2.5, -0.0872612)
 operation = 2
-size = Vector3(2.5308, 2.18526, 2.1095)
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSG/Vault demo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9048, 0, 0)
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, -0.5, -0.0872612)
 operation = 2
-size = Vector3(1.19043, 5, 1)
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
 
-[node name="Mountains" parent="." instance=ExtResource("3_ny5b1")]
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, -3.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 11.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, -0.0992556, 8.5, -0.383892)
+operation = 2
+size = Vector3(1.55452, 2, 1.59326)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249691, -6.5, -0.0872602)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249691, -9.5, -0.0872602)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249701, -12.5, -0.0872593)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSG/tower/interrior4"]
+transform = Transform3D(1, 8.74228e-08, -7.64274e-15, 8.74228e-08, -1, 8.74228e-08, -8.47033e-22, -8.74228e-08, -1, 0, 0, 1.49035)
+mesh = SubResource("QuadMesh_nbl6t")
+
+[node name="tower2" type="CSGBox3D" parent="CSG"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -121.853, 11.364, 12.122)
+use_collision = true
+size = Vector3(6.9541, 22.7588, 7.90454)
+material = ExtResource("4_ib5xn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115997, 0, 0.0828857)
+operation = 2
+size = Vector3(6.32599, 352.47, 7.11523)
+material = ExtResource("4_ib5xn")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65759, -10.0595, 0.367728)
+operation = 2
+size = Vector3(1, 2.75351, 2.35686)
+material = ExtResource("5_cx1vj")
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, -0.131317, 13.7269, 0.0818672)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 35.6611
+spot_attenuation = 0.5
+spot_angle = 19.8471
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D12" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D12/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.87789, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D13" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D13/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.87789, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D14" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D14/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D15" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D15/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D16" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D16/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D17" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D17/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -24.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D18" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D18/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="CSG/tower2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -28.8779, 1.767, -0.169699)
+light_color = Color(0.23, 0.23, 0.23, 1)
+light_energy = 6.943
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_blur = 0.392
+spot_range = 4.39574
+spot_attenuation = 0.5
+spot_angle = 81.9853
+spot_angle_attenuation = 0.0192367
+
+[node name="Sketchfab_Scene" parent="CSG/tower2/SpotLight3D19" instance=ExtResource("7_i5efa")]
+transform = Transform3D(-2.83468e-07, 0, 6.485, 2.38419e-07, 6.485, -2.84217e-14, -6.485, 2.38419e-07, -2.83468e-07, 0, -0.0505419, 0.20265)
+
+[node name="Sketchfab_model" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene" index="0"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 5.32907e-15, 1, -1.06581e-14, -1, 0, -0.00251943, 0.017519, 0)
+
+[node name="GLTF_SceneRootNode" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.00872647, 0.999962, 0, -0.999962, -0.00872647, 0, 0, 0)
+
+[node name="red_light_mini_curve_37" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38" index="0"]
+transform = Transform3D(0, -0.657571, 9.31323e-10, 2.06967, 0, 1.86265e-09, 1.39698e-08, 0, -2.3164, 1.64295, 0.339222, 2.29409)
+
+[node name="Object_9" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Box001_9/Box001_8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.32831e-10, -1.16415e-10, 1, -0.0335217, -0.0102615, -0.0886097)
+material_overlay = SubResource("StandardMaterial3D_a36o8")
+
+[node name="Object_18" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36/Object001_15/Object001_14" index="0"]
+transform = Transform3D(1, 1.59595e-15, -1.86265e-09, -2.56462e-14, 1, -2.84217e-14, -1.39698e-09, -2.66454e-15, 1, -0.110596, 0.201523, 0.000862122)
+material_override = SubResource("StandardMaterial3D_23r2r")
+
+[node name="Object003_19" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="5"]
+visible = false
+
+[node name="Cylinder003_21" parent="CSG/tower2/SpotLight3D19/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/lux_root_41/New Model Set 2_38/red_light_mini_curve_37/red_light_mini_curve_obj_36" index="6"]
+visible = false
+
+[node name="interrior5" type="CSGBox3D" parent="CSG/tower2"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -5.95055, 0.336301, -0.163879)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.3052, 5.60941, 3.04289)
+material = ExtResource("5_cx1vj")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/tower2"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -17.8534, 0.317793, -0.158231)
+transparency = 1.0
+cast_shadow = 0
+size = Vector3(2.48015, 29.4151, 3.19054)
+material = ExtResource("4_ib5xn")
+
+[node name="interrior4" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.00564861, -0.186478, -0.018508)
+transparency = 1.0
+cast_shadow = 0
+operation = 2
+size = Vector3(2.3052, 29.9316, 3.04289)
+material = ExtResource("5_cx1vj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 5.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 2.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, -0.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, -3.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249681, 11.5, -0.0872612)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, -0.0992556, 8.5, -0.383892)
+operation = 2
+size = Vector3(1.55452, 2, 1.59326)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249691, -6.5, -0.0872602)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249691, -9.5, -0.0872602)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0.0249701, -12.5, -0.0872593)
+operation = 2
+size = Vector3(3, 2, 1)
+material = ExtResource("3_v4sbv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSG/tower2/interrior4"]
+transform = Transform3D(1, 8.74228e-08, -7.64274e-15, 8.74228e-08, -1, 8.74228e-08, -8.47033e-22, -8.74228e-08, -1, 0, 0, 1.49035)
+mesh = SubResource("QuadMesh_nbl6t")
+
+[node name="Mountains" parent="." instance=ExtResource("9_hnsf3")]
 transform = Transform3D(997.971, 0, -997.971, 0, 1411.34, 0, 997.971, 0, 997.971, 0, -55.7533, 0)
 
 [node name="Plane" parent="Mountains" index="0"]
-surface_material_override/0 = ExtResource("2_50iay")
+surface_material_override/0 = ExtResource("3_v4sbv")
 
 [node name="Labels" type="Node3D" parent="."]
 
@@ -2318,7 +3181,7 @@ spot_angle = 45.1562
 spot_angle_attenuation = 0.183011
 
 [node name="Label (E) 2" type="Label3D" parent="Labels"]
-transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -14.808, 1.89713, -12.6366)
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -14.808, 1.14029, -12.6366)
 text = "------------------
 PRESS (E)
 TO
@@ -2344,8 +3207,116 @@ spot_attenuation = -4.87
 spot_angle = 45.1562
 spot_angle_attenuation = 0.183011
 
+[node name="Label (E) 3" type="Label3D" parent="Labels"]
+transform = Transform3D(-1.33222e-08, 0, 0.13, 0, 0.13, 0, -0.13, 0, -1.33222e-08, -60.1968, 1.37084, 11.2125)
+text = "------------------
+PRESS (E)
+TO CLIMB
+ROPES &
+LADDERS
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (E) 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (E) 3"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (R)" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -65.4204, 11.6933, 13.413)
+text = "------------------
+PRESS (R)
+TO RELOAD 
+YOUR
+GUN
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (R)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (R)"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (SCROLL)" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -57.1308, 1.37084, 16.0679)
+text = "------------------------------
+SCROLL USING
+THE SCROLL WHEEL
+TO SWITCH
+SELECTED SLOTS
+------------------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (SCROLL)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_5j5kf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (SCROLL)"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (G)" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -14.8053, 3.34626, -12.6366)
+text = "------------------
+PRESS (G)
+TO
+KICK 
+OBJECTS
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (G)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (G)"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
 [node name="Label (F)" type="Label3D" parent="Labels"]
-transform = Transform3D(2.46872e-08, 0, -0.13, 0, 0.13, 0, 0.13, 0, 2.46872e-08, -14.0313, 1.89713, 1.19554)
+transform = Transform3D(2.46872e-08, 0, -0.13, 0, 0.13, 0, 0.13, 0, 2.46872e-08, -14.0313, 1.89713, -0.640057)
 modulate = Color(1, 0, 0, 1)
 text = "-----------------------------
 PRESS (F)
@@ -2373,7 +3344,63 @@ spot_attenuation = -4.87
 spot_angle = 62.3798
 spot_angle_attenuation = 0.183011
 
-[node name="Label (TAB)" type="Label3D" parent="."]
+[node name="Label (LMB) 1" type="Label3D" parent="Labels"]
+transform = Transform3D(2.46872e-08, 0, -0.13, 0, 0.13, 0, 0.13, 0, 2.46872e-08, -14.0313, 1.89713, 2.85274)
+modulate = Color(1, 0, 0, 1)
+text = "-----------------------------
+PRESS (LMB)
+TO
+USE YOUR
+SELECTED WEAPON
+------------------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (LMB) 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_n127s")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (LMB) 1"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 2.17911
+spot_attenuation = -4.87
+spot_angle = 62.3798
+spot_angle_attenuation = 0.183011
+
+[node name="Label (LMB) 2" type="Label3D" parent="Labels"]
+transform = Transform3D(0.13, 0, 3.03697e-08, 0, 0.13, 0, -3.03697e-08, 0, 0.13, -65.4204, 11.6933, 11.1376)
+text = "------------------
+PRESS (LMB)
+TO SHOOT 
+YOUR
+GUN
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (LMB) 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (LMB) 2"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (TAB)" type="Label3D" parent="Labels"]
 transform = Transform3D(-1.33222e-08, 0, 0.13, 0, 0.13, 0, -0.13, 0, -1.33222e-08, -38.5342, 1.89713, 1.66211)
 text = "------------------
 PRESS (TAB)
@@ -2384,11 +3411,65 @@ ELEMENTS
 font_size = 477
 outline_size = 127
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Label (TAB)"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (TAB)"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
 mesh = SubResource("QuadMesh_ckeyw")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Label (TAB)"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (TAB)"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (CTRL) 1" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -32.268, 1.39381, 8.83448)
+text = "------------------
+HOLD 
+(CTRL)
+TO  
+CROUCH
+------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (CTRL) 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_ckeyw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (CTRL) 1"]
+transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
+light_energy = 0.743
+light_volumetric_fog_energy = 2.585
+shadow_enabled = true
+shadow_normal_bias = 3.965
+shadow_blur = 0.392
+spot_range = 1.88813
+spot_attenuation = -4.87
+spot_angle = 45.1562
+spot_angle_attenuation = 0.183011
+
+[node name="Label (CTRL) 2" type="Label3D" parent="Labels"]
+transform = Transform3D(-0.13, 0, -1.90047e-08, 0, 0.13, 0, 1.90047e-08, 0, -0.13, -41.661, 1.39381, 13.9773)
+text = "-----------------------
+PRESS 
+(SPACE + CTRL)
+TO  
+DIVE
+-----------------------"
+font_size = 477
+outline_size = 127
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Labels/Label (CTRL) 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.285197, -0.0207863)
+mesh = SubResource("QuadMesh_bviax")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Labels/Label (CTRL) 2"]
 transform = Transform3D(7.69231, -4.51089e-07, -4.52051e-07, 4.52051e-07, 7.69229, 0.0163794, 4.51089e-07, -0.0163794, 7.69229, 0.112612, -0.318072, 9.42447)
 light_energy = 0.743
 light_volumetric_fog_energy = 2.585
@@ -2402,65 +3483,134 @@ spot_angle_attenuation = 0.183011
 
 [node name="Props" type="Node3D" parent="."]
 
-[node name="Table" parent="Props" instance=ExtResource("9_mmbr3")]
+[node name="Table" parent="Props" instance=ExtResource("11_q4wrt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.07383, 0, -16.4388)
 
-[node name="RigidBody3D" parent="Props" instance=ExtResource("10_g7gp3")]
+[node name="RigidBody3D" parent="Props" instance=ExtResource("12_s364s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4822, 0.486727, -10.3856)
-mass = 8.0
+mass = 3.3
 
-[node name="RigidBody3D3" parent="Props" instance=ExtResource("10_g7gp3")]
+[node name="RigidBody3D3" parent="Props" instance=ExtResource("12_s364s")]
 transform = Transform3D(0.921084, 0, 0.389365, 0, 1, 0, -0.389365, 0, 0.921084, -16.9939, 1.52143, -10.3856)
-mass = 8.0
+mass = 3.3
 
-[node name="RigidBody3D2" parent="Props" instance=ExtResource("10_g7gp3")]
+[node name="RigidBody3D2" parent="Props" instance=ExtResource("12_s364s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6089, 0.486727, -10.3856)
-mass = 8.0
+mass = 3.3
 
-[node name="Axe" parent="Props" instance=ExtResource("11_4dikt")]
+[node name="Axe" parent="Props" instance=ExtResource("13_sr7yr")]
 transform = Transform3D(0.811981, 0.583682, -2.11293e-06, 0, -3.61999e-06, -1, -0.583682, 0.811981, -2.93937e-06, -17.0016, 0, 6.71851)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 
-[node name="Prop_test" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 0.634524, 1.42633)
 is_super_pickupable = false
 
-[node name="Prop_test2" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test2" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 1.63452, 1.42633)
 is_super_pickupable = false
 
-[node name="Prop_test3" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test3" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 1.18199, 1.42633)
 is_super_pickupable = false
 
-[node name="Prop_test4" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test4" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 2.105, 1.42633)
 is_super_pickupable = false
 
-[node name="Prop_test5" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test5" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 2.55105, 1.42633)
 is_super_pickupable = false
 
-[node name="Prop_test6" parent="Props" instance=ExtResource("13_at2bk")]
+[node name="Prop_test6" parent="Props" instance=ExtResource("14_gnkao")]
 transform = Transform3D(0.0547427, 0, 0, 0, 0.236127, -1.19209e-07, 0, -2.23517e-08, 2.91438, -22.3941, 0.248269, 1.42633)
 is_super_pickupable = false
 
-[node name="Table2" parent="Props" instance=ExtResource("9_mmbr3")]
+[node name="Table2" parent="Props" instance=ExtResource("11_q4wrt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.1263, 0.1869, 1.58632)
 
-[node name="Glock_AMMO_mag" parent="Props" instance=ExtResource("14_odpvp")]
+[node name="Glock_AMMO_mag" parent="Props" instance=ExtResource("15_kidbu")]
 transform = Transform3D(0.965926, 0.258819, -1.13133e-08, 8.57914e-16, -4.37114e-08, -1, -0.258819, 0.965926, -4.2222e-08, -35.9891, 1.10972, 1.55707)
 
-[node name="Gun_pistol" parent="Props" instance=ExtResource("15_vv4jw")]
+[node name="Gun_pistol" parent="Props" instance=ExtResource("16_ytfyn")]
 transform = Transform3D(0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, 0.707107, -3.09086e-08, -36.2265, 1.10391, 1.6601)
 
-[node name="RAIN" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_hclu1")
-volume_db = -15.0
-autoplay = true
-parameters/looping = true
+[node name="ANIMATION_START" type="Area3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/ANIMATION_START"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0479736, 1.11987, -0.373779)
+shape = SubResource("BoxShape3D_jdmqa")
+
+[node name="Double_Door" parent="Props" instance=ExtResource("17_vou46")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -11.5711, 3.11305, -14.7838)
+
+[node name="Glock_AMMO_mag2" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.6125, 11.4479, 13.4664)
+
+[node name="Glock_AMMO_mag4" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.7795, 11.4479, 13.4692)
+
+[node name="Glock_AMMO_mag5" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.9307, 11.4479, 13.4679)
+
+[node name="Glock_AMMO_mag3" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.4392, 11.4479, 13.4685)
+
+[node name="Glock_AMMO_mag6" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.845, 11.4479, 13.4664)
+
+[node name="Glock_AMMO_mag7" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.012, 11.4479, 13.4692)
+
+[node name="Glock_AMMO_mag8" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1632, 11.4479, 13.4679)
+
+[node name="Glock_AMMO_mag9" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.6717, 11.4479, 13.4685)
+
+[node name="Glock_AMMO_mag10" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.7346, 11.4479, 11.088)
+
+[node name="Glock_AMMO_mag11" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.9016, 11.4479, 11.0907)
+
+[node name="Glock_AMMO_mag12" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.0528, 11.4479, 11.0894)
+
+[node name="Glock_AMMO_mag13" parent="Props" instance=ExtResource("15_kidbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5613, 11.4479, 11.09)
+
+[node name="Navigation" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Navigation"]
+transform = Transform3D(4.37114e-08, -1, 1.31134e-07, -3.82137e-15, 1.31134e-07, 1, -1, -4.37114e-08, 1.91069e-15, -74.7741, 10.1936, 12.2877)
+navigation_mesh = SubResource("NavigationMesh_nbl6t")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="Navigation/NavigationRegion3D"]
+transform = Transform3D(1, 0, 8.47033e-22, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0.714474)
+navigation_mesh = SubResource("NavigationMesh_nbl6t")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="Navigation"]
+transform = Transform3D(4.37114e-08, -1, 1.31134e-07, -3.82137e-15, 1.31134e-07, 1, -1, -4.37114e-08, 1.91069e-15, -103.982, 10.194, 12.288)
+navigation_mesh = SubResource("NavigationMesh_nbl6t")
+
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="Navigation/NavigationRegion3D2"]
+transform = Transform3D(1, 0, 8.47033e-22, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0.714474)
+navigation_mesh = SubResource("NavigationMesh_nbl6t")
+
+[node name="Enemys" type="Node3D" parent="."]
+
+[node name="Enemy_Mele" parent="Enemys" instance=ExtResource("18_gnabe")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -74.1603, 11.227, 12.3561)
+
+[node name="Enemy_Mele2" parent="Enemys" instance=ExtResource("18_gnabe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -117.264, 11.1765, 12.9331)
+
+[node name="Enemy_Mele3" parent="Enemys" instance=ExtResource("18_gnabe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -117.264, 11.1765, 11.7705)
 
 [node name="Helper" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, -17.0695, 13.2629, 4.94754)
@@ -2495,12 +3645,9 @@ line_spacing = -500.0
 [node name="arms" type="Node3D" parent="Helper/ARMS"]
 transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0.536, 0)
 
-[node name="Axe" parent="Helper/ARMS/arms" instance=ExtResource("13_n2blp")]
+[node name="Axe" parent="Helper/ARMS/arms" instance=ExtResource("19_hl5jp")]
 transform = Transform3D(-4.13797e-07, 0.00300653, -0.112856, -1.91995e-07, 0.112856, 0.00300653, 0.112896, 2.02947e-07, -4.08538e-07, 0.248476, -0.161202, -0.361422)
 visible = false
-
-[node name="Cone" parent="Helper/ARMS/arms/Axe" index="1"]
-mesh = SubResource("ArrayMesh_blf2i")
 
 [node name="pivot left" type="Node3D" parent="Helper/ARMS/arms"]
 transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 1, -0.125676, -0.219002, 0)
@@ -2601,12 +3748,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_ciwyp")
 }
 
-[node name="ANIMATION_START" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -2)
+[node name="ROPE" parent="." instance=ExtResource("20_r5417")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -59.9556, 1.85694, 12.5114)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ANIMATION_START"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0479736, 1.11987, -0.373779)
-shape = SubResource("BoxShape3D_jdmqa")
+[node name="PathFollow3D" parent="ROPE/Path3D" index="0"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -1.11, 0)
+
+[node name="MeshInstance3D" parent="ROPE" index="2"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -59.5724, 0.74694, 12.5114)
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5.23615)
@@ -2614,12 +3764,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5.23615)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123535, 4.27217, 0.0559082)
 shape = SubResource("BoxShape3D_lud5i")
+debug_color = Color(0.31, 0.494, 1, 1)
 
-[node name="Double_Door" parent="." instance=ExtResource("18_bviax")]
-transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -11.5711, 3.11305, -14.7838)
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.37761, 0)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.78, -30.9679, 12.0884)
+shape = SubResource("BoxShape3D_5j5kf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(574, 324.5)
+scale = Vector2(1176, 669)
+mesh = SubResource("QuadMesh_qa4ui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_y8kyb")
+}
+autoplay = "fade_out"
+
+[node name="RAIN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_u3dv8")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="body_entered" from="Props/ANIMATION_START" to="." method="_on_animation_start_body_entered"]
 [connection signal="animation_finished" from="Helper/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="ANIMATION_START" to="." method="_on_animation_start_body_entered"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished_end"]
 
 [editable path="CSG/ROOMS/SpotLight3D/Sketchfab_Scene"]
 [editable path="CSG/ROOMS/SpotLight3D2/Sketchfab_Scene"]
@@ -2638,5 +3817,22 @@ transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -11.5711
 [editable path="CSG/ROOMS5/SpotLight3D10/Sketchfab_Scene"]
 [editable path="CSG/ROOMS5/SpotLight3D11/Sketchfab_Scene"]
 [editable path="CSG/ROOMS5/SpotLight3D12/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D12/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D13/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D14/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D15/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D16/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D17/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D18/Sketchfab_Scene"]
+[editable path="CSG/tower/SpotLight3D19/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D12/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D13/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D14/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D15/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D16/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D17/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D18/Sketchfab_Scene"]
+[editable path="CSG/tower2/SpotLight3D19/Sketchfab_Scene"]
 [editable path="Mountains"]
 [editable path="Helper/ARMS/arms/Axe"]
+[editable path="ROPE"]

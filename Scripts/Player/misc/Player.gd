@@ -8,8 +8,8 @@ class_name player
 
 #movement variables
 var speed : float
-const WALK_SPEED = 5.0 #5.0
-const SPRINT_SPEED = 10.0 #10.0
+const WALK_SPEED = 6.0 #5.0
+const SPRINT_SPEED = 12.0 #10.0
 const CROUCH_SPEED = 2.0 #2.0
 const FLIGHT_SPEED = 20.75 #20.75
 const JUMP_VELOCITY = 6 #6
@@ -44,7 +44,7 @@ var Blood = preload("res://Scenes/misc/blood_decal.tscn")
 const ZOOM_FOV = 60.0
 var BASE_FOV = 90.0
 const NORMAL_FOV = 90.0
-const FOV_CHANGE = 1
+const FOV_CHANGE = 1.25
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
@@ -76,7 +76,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90)) #DOES NOT WORK, DONT KNOW WHY, AND NOW I CRY
 	if Input.is_action_just_pressed("lmb"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if Input.is_action_just_pressed("ESC"):
@@ -84,6 +84,7 @@ func _unhandled_input(event):
 
 
 func _physics_process(delta):
+	
 	if StatusManager.HURT_ANIM == true:
 		_Blood_decal_inst($Head.global_position + Vector3(0,4,0))
 		$"Bloodparticles 1".emitting = true
@@ -143,8 +144,8 @@ func _physics_process(delta):
 				velocity.z = direction.z * (speed + additive_speed)
 				$Footsteps.volume_db = 10
 			else:
-				velocity.x = lerp(velocity.x, direction.x * (speed + additive_speed), delta * 7.0)
-				velocity.z = lerp(velocity.z, direction.z * (speed + additive_speed), delta * 7.0)
+				velocity.x = lerp(velocity.x, direction.x * (speed + additive_speed), delta * 5.0)
+				velocity.z = lerp(velocity.z, direction.z * (speed + additive_speed), delta * 5.0)
 				$Footsteps.volume_db = -80
 		else:
 			velocity.x = lerp(velocity.x, direction.x * (speed + additive_speed), delta * 1.0)
@@ -174,6 +175,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _process(delta: float) -> void:
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	if StatusManager.Health == 0:
 		rotation_degrees.z = 90
 		$Head.rotation_degrees.y = 0
@@ -186,6 +188,7 @@ func _process(delta: float) -> void:
 	
 	global.headpos = $Head.global_position
 	global.playpos = self.global_position
+	global.playtrans = $Head.transform
 	
 	if dev_mode == true:
 		if Input.is_action_just_pressed("V"):
@@ -322,6 +325,9 @@ func _on_hurtbox_area_entered(area: Area3D) -> void:
 		$Jump.play()
 		cayote = false
 		velocity.y = global.jump
+	if area is blood_box:
+		$Head/Camera3D/BLOOD_SPLATTER/BLOOD_ANIM.stop()
+		$Head/Camera3D/BLOOD_SPLATTER/BLOOD_ANIM.play("splatter")
 
 func _on_hurtbox_area_exited(area: Area3D) -> void:
 	if area is water:

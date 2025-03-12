@@ -1,5 +1,5 @@
-extends RigidBody3D
-class_name prop
+extends Node3D
+class_name prop_node3d
 
 var is_pickupable = false
 var is_pickuped = false
@@ -83,9 +83,7 @@ func _on_hurtbox_body_entered(body: Node3D) -> void:
 	$Impact.play()
 
 func _kicked():
-	if is_RigidBody3D == true:
-		self.apply_force(-global.playtrans.basis.z * 2500)
-		$Impact.play()
+	pass
 
 func _collect():
 	pass #replace in child script

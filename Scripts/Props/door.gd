@@ -13,7 +13,7 @@ var opened = false
 
 func _process(delta: float) -> void:
 	if is_interactable == true:
-		if Input.is_action_just_pressed("E"):
+		if Input.is_action_just_pressed("E") or Input.is_action_just_pressed("G"):
 				if locked == false:
 					opened = !opened
 					_open_close()
