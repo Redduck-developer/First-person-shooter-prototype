@@ -48,6 +48,10 @@ func _process(_delta: float) -> void:
 			$sprite/Pistol.visible = false
 			$sprite/Axe.visible = true
 			$sprite/KeySlots.visible = false
+		if SlotBase.ID_ONE == "shotgun":
+			$sprite/Pistol.visible = true
+			$sprite/Axe.visible = false
+			$sprite/KeySlots.visible = false
 	if Local_Slot_Numb == 2:
 		if SlotBase.ID_TWO == null:
 			$sprite/Pistol.visible = false
@@ -72,6 +76,10 @@ func _process(_delta: float) -> void:
 		if SlotBase.ID_TWO == "flashlight":
 			$sprite/Pistol.visible = false
 			$sprite/Axe.visible = true
+			$sprite/KeySlots.visible = false
+		if SlotBase.ID_TWO == "shotgun":
+			$sprite/Pistol.visible = true
+			$sprite/Axe.visible = false
 			$sprite/KeySlots.visible = false
 	if Local_Slot_Numb == 3:
 		if SlotBase.ID_THREE == null:
@@ -98,6 +106,10 @@ func _process(_delta: float) -> void:
 			$sprite/Pistol.visible = false
 			$sprite/Axe.visible = true
 			$sprite/KeySlots.visible = false
+		if SlotBase.ID_THREE == "shotgun":
+			$sprite/Pistol.visible = true
+			$sprite/Axe.visible = false
+			$sprite/KeySlots.visible = false
 	if Local_Slot_Numb == 4:
 		if SlotBase.ID_FOUR == null:
 			$sprite/Pistol.visible = false
@@ -122,4 +134,8 @@ func _process(_delta: float) -> void:
 		if SlotBase.ID_FOUR == "flashlight":
 			$sprite/Pistol.visible = false
 			$sprite/Axe.visible = true
+			$sprite/KeySlots.visible = false
+		if SlotBase.ID_FOUR == "shotgun":
+			$sprite/Pistol.visible = true
+			$sprite/Axe.visible = false
 			$sprite/KeySlots.visible = false

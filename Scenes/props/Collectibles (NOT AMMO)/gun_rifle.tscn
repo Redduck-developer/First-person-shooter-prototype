@@ -12,27 +12,27 @@ size = Vector3(0.089447, 0.303085, 1.44373)
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_kn8if"]
+[sub_resource type="CurveTexture" id="CurveTexture_iqcwh"]
 curve = SubResource("Curve_86mwb")
 
 [sub_resource type="Curve" id="Curve_uj6qn"]
-max_value = 3.0
+_limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_1d604"]
+[sub_resource type="CurveTexture" id="CurveTexture_cukje"]
 curve = SubResource("Curve_uj6qn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_awxnb"]
 spread = 180.0
 initial_velocity_min = 22.22
 initial_velocity_max = 22.22
-scale_curve = SubResource("CurveTexture_kn8if")
+scale_curve = SubResource("CurveTexture_iqcwh")
 scale_over_velocity_min = 122.22
 scale_over_velocity_max = 122.22
-scale_over_velocity_curve = SubResource("CurveTexture_1d604")
+scale_over_velocity_curve = SubResource("CurveTexture_cukje")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6bv1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7408"]
 blend_mode = 4
 albedo_color = Color(0.00999999, 1, 0.8185, 1)
 emission_enabled = true
@@ -40,7 +40,7 @@ emission = Color(1, 0.833333, 0, 1)
 emission_energy_multiplier = 26.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_y4pw4"]
-material = SubResource("StandardMaterial3D_x6bv1")
+material = SubResource("StandardMaterial3D_p7408")
 radius = 0.25
 height = 0.5
 

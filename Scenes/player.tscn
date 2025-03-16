@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=4 uid="uid://tlj2arrv4yen"]
+[gd_scene load_steps=172 format=4 uid="uid://tlj2arrv4yen"]
 
 [ext_resource type="Script" uid="uid://dqw5fvwwfqs5b" path="res://Scripts/Player/misc/Player.gd" id="1_pn5hc"]
 [ext_resource type="Script" uid="uid://c5dgwiq6dgex5" path="res://Scripts/Player/misc/viewmodel.gd" id="2_3u7lg"]
@@ -35,6 +35,7 @@
 [ext_resource type="FontFile" uid="uid://c5ejikhp8dyp5" path="res://Assets/Fonts/Pixellari.ttf" id="17_2063s"]
 [ext_resource type="Texture2D" uid="uid://mlwkf7axlph4" path="res://Assets/Textures/AMMO_TEXTURE.png" id="18_eq4v2"]
 [ext_resource type="PackedScene" uid="uid://dsppk8li3m2ik" path="res://Scenes/loading_manager.tscn" id="18_onml8"]
+[ext_resource type="AudioStream" uid="uid://bsb770h1ast16" path="res://Assets/Sounds/128300__xenonn__layered-gunshot-4.mp3" id="19_3vlem"]
 [ext_resource type="Texture2D" uid="uid://ca2btw2ea7ydk" path="res://Assets/Textures/key_slots.png" id="21_wr1rg"]
 [ext_resource type="Script" uid="uid://c7ss2p4vuw45x" path="res://Scripts/GLOBALS/status_manager.gd" id="22_2uwlj"]
 [ext_resource type="Script" uid="uid://dbrwilnnq47f8" path="res://Scripts/Player/misc/anim_and_status_layer.gd" id="22_dcbk6"]
@@ -88,14 +89,10 @@ material = SubResource("StandardMaterial3D_vaa45")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42yl1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eueo2"]
+shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0, 1, 0.85, 1)
-emission_enabled = true
-emission = Color(0, 0.83, 0.774667, 1)
-emission_energy_multiplier = 16.0
-rim_enabled = true
-rim_tint = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oa0qy"]
 material = SubResource("StandardMaterial3D_eueo2")
@@ -104,12 +101,12 @@ bottom_radius = 0.175
 height = 0.001
 cap_bottom = false
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x016f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vlem"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pw8jt"]
-material = SubResource("StandardMaterial3D_x016f")
+material = SubResource("StandardMaterial3D_3vlem")
 top_radius = 0.025
 bottom_radius = 0.035
 height = 0.31
@@ -132,12 +129,12 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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qycVg3yl/7+GLvqClaz/vwM16IJEs/+/RDvdgrG5/79sQdqC/7//v5hH3YJMxv+/5E3ogrrM/79zVPqCadP/v2lbFYOB2v+/9WI5gzTi/79Ua2qDwur/v9l0qoOE9P+//3//g////7//f/+D////vyWLqoP//7zFqpRqg///ncoJnTmD///kzpWkFYP//73Si6v6gv//StYasuiC//+h2Wa43YL//9jckb7agv///9+5xN2C//8l4/vK6IL//1zmeNH6gv//tOlT2BWD//9A7brfOYP//xnx6Odqg///YPUu8aqD//9C+v/7/4P/////U/zQjgAAQvqU/BWYAABg9cT8Q6AAABnx6fyrpwAAQO0E/YauAAC06Rb9ArUAAFzmIP1EuwAAJeMk/WzBAAD/3yD9l8cAANjcFv3kzQAAodkE/XLUAABK1un8aNsAAL3SxPz04gAA5M6U/FPrAACdylP82fQAALzF//v//wAA/7+qA9n0eAv/v2oDU+s7Ff+/OQP04skd/78UA2jbfSX/v/oCctSVLP+/6ALkzUQz/7/eApfHsjn/v9oCbMH/P/+/3gJEu01G/7/oAgK1uUz/v/oChq5oU/+/FAOrp4Ja/785A0OgNWL/v2oDFZjDav+/qgPQjoV0/7//A/+D/3//v9AOqoN5i/+/FRhqgzuV/79DIDmDyZ3/v6snFYN8pf+/hi76gpWs/78DNeiCRLP/v0Q73YKxuf+/bEHagv+//7+YR92CTMb/v+RN6IK6zP+/c1T6gmnT/79pWxWDgdr/v/ViOYM04v+/VGtqg8Lq/7/ZdKqDhPT/v/9//4P///+//3//g////78li6qD//+8xaqUaoP//53KCZ05g///5M6VpBWD//+90our+oL//0rWGrLogv//odlmuN2C///Y3JG+2oL////fucTdgv//JeP7yuiC//9c5njR+oL//7TpU9gVg///QO263zmD//8Z8ejnaoP//2D1LvGqg///Qvr/+/+D/////1P80I4AAEL6lPwVmAAAYPXE/EOgAAAZ8en8q6cAAEDtBP2GrgAAtOkW/QK1AABc5iD9RLsAACXjJP1swQAA/98g/ZfHAADY3Bb95M0AAKHZBP1y1AAAStbp/GjbAAC90sT89OIAAOTOlPxT6wAAncpT/Nn0AAC8xf/7//8AAP+/qgPZ9HgL/79qA1PrOxX/vzkD9OLJHf+/FANo230l/7/6AnLUlSz/v+gC5M1EM/+/3gKXx7I5/7/aAmzB/z//v94CRLtNRv+/6AICtblM/7/6AoauaFP/vxQDq6eCWv+/OQNDoDVi/79qAxWYw2r/v6oD0I6FdP+//wP/g/9//7/QDqqDeYv/vxUYaoM7lf+/QyA5g8md/7+rJxWDfKX/v4Yu+oKVrP+/AzXogkSz/79EO92Csbn/v2xB2oL/v/+/mEfdgkzG/7/kTeiCusz/v3NU+oJp0/+/aVsVg4Ha/7/1YjmDNOL/v1RraoPC6v+/2XSqg4T0/7//f/+D////v/9//4P///+/JYuqg///vMWqlGqD//+dygmdOYP//+TOlaQVg///vdKLq/qC//9K1hqy6IL//6HZZrjdgv//2NyRvtqC////37nE3YL//yXj+8rogv//XOZ40fqC//+06VPYFYP//0Dtut85g///GfHo52qD//9g9S7xqoP//0L6//v/g/////9T/NCOAABC+pT8FZgAAGD1xPxDoAAAGfHp/KunAABA7QT9hq4AALTpFv0CtQAAXOYg/US7AAAl4yT9bMEAAP/fIP2XxwAA2NwW/eTNAACh2QT9ctQAAErW6fxo2wAAvdLE/PTiAADkzpT8U+sAAJ3KU/zZ9AAAvMX/+///AAD/v6oD2fR4C/+/agNT6zsV/785A/TiyR3/vxQDaNt9Jf+/+gJy1JUs/7/oAuTNRDP/v94Cl8eyOf+/2gJswf8//7/eAkS7TUb/v+gCArW5TP+/+gKGrmhT/78UA6unglr/vzkDQ6A1Yv+/agMVmMNq/7+qA9COhXT/v/8D/4P/f/+/0A6qg3mL/78VGGqDO5X/v0MgOYPJnf+/qycVg3yl/7+GLvqClaz/vwM16IJEs/+/RDvdgrG5/79sQdqC/7//v5hH3YJMxv+/5E3ogrrM/79zVPqCadP/v2lbFYOB2v+/9WI5gzTi/79Ua2qDwur/v9l0qoOE9P+//3//g////7//f/+D////vyWLqoP//7zFqpRqg///ncoJnTmD///kzpWkFYP//73Si6v6gv//StYasuiC//+h2Wa43YL//9jckb7agv///9+5xN2C//8l4/vK6IL//1zmeNH6gv//tOlT2BWD//9A7brfOYP//xnx6Odqg///YPUu8aqD//9C+v/7/4P/////U/zQjgAAQvqU/BWYAABg9cT8Q6AAABnx6fyrpwAAQO0E/YauAAC06Rb9ArUAAFzmIP1EuwAAJeMk/WzBAAD/3yD9l8cAANjcFv3kzQAAodkE/XLUAABK1un8aNsAAL3SxPz04gAA5M6U/FPrAACdylP82fQAALzF//v//wAA/7+qA9n0eAv/v2oDU+s7Ff+/OQP04skd/78UA2jbfSX/v/oCctSVLP+/6ALkzUQz/7/eApfHsjn/v9oCbMH/P/+/3gJEu01G/7/oAgK1uUz/v/oChq5oU/+/FAOrp4Ja/785A0OgNWL/v2oDFZjDav+/qgPQjoV0/7//A/+D/3//v9AOqoN5i/+/FRhqgzuV/79DIDmDyZ3/v6snFYN8pf+/hi76gpWs/78DNeiCRLP/v0Q73YKxuf+/bEHagv+//7+YR92CTMb/v+RN6IK6zP+/c1T6gmnT/79pWxWDgdr/v/ViOYM04v+/VGtqg8Lq/7/ZdKqDhPT/v/9//4P///+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AID//////78AgP//////vwCA//////+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/AIAAAP///78AgAAA////vwCAAAD///+/")
 }]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpa5q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eeqe"]
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_h3f40"]
-material = SubResource("StandardMaterial3D_tpa5q")
+material = SubResource("StandardMaterial3D_8eeqe")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1o5b"]
 shading_mode = 0
@@ -328,6 +325,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eyeyp")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x016f"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xwi16"]
 material = SubResource("StandardMaterial3D_x016f")
 radius = 0.05
@@ -394,7 +395,7 @@ normal_texture = ExtResource("16_c1k8q")
 rim_tint = 1.0
 uv1_triplanar_sharpness = 0.170755
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax3m3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5x828"]
 albedo_color = Color(1, 0, 0, 1)
 metallic_specular = 1.0
 roughness = 0.94
@@ -402,74 +403,10 @@ rim_enabled = true
 rim_tint = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3vlem"]
-material = SubResource("StandardMaterial3D_ax3m3")
+material = SubResource("StandardMaterial3D_5x828")
 top_radius = 0.06
 bottom_radius = 0.06
 height = 0.285
-
-[sub_resource type="Animation" id="Animation_ybiwm"]
-resource_name = "\"pistol\"_RELOAD"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5, 1.7, 1.93333, 2.2, 2.33333, 2.5, 2.73333, 3),
-"transitions": PackedFloat32Array(0.233258, 1, 0.25, 0.25, 1, 1, 0.258816, 0.366022, 0.366022, 0.233258),
-"update": 0,
-"values": [Vector3(1.5708, 0, 0), Vector3(2.56389, 0.226893, 0.539307), Vector3(2.56389, 0.226893, 0.539307), Vector3(2.56389, 0.226893, 0.539307), Vector3(0.849975, -0.383972, 0.198968), Vector3(0.849975, -0.383972, 0.731293), Vector3(0.849975, -0.383972, 0.731293), Vector3(0.849975, -0.383972, -0.176278), Vector3(0.849975, -0.383972, -0.176278), Vector3(1.5708, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.7, 1.5, 1.7, 1.93333, 3),
-"transitions": PackedFloat32Array(2.46229, 0.210224, 4.14106, 1.31951, 0.378929, 2.46229, 2.46229),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.07, 0.07), Vector3(0, 0.08, 0), Vector3(0, -0.07, 0.07), Vector3(0, -0.07, 0.07), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2.2, 2.33333, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 0.329877, 1, 1),
-"update": 0,
-"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(-0.033, 0.033, 0), Vector3(-0.033, 0.033, 0), Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide cover_9:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2.2, 2.33333, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 0.329877, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.091, 0.04, 0), Vector3(-0.091, 0.04, 0), Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0407887, 0.0404786, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/919 glock 17rnd mag empty_10:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.7, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0524783, -0.0256405, 0), Vector3(-0.0524783, -0.0256405, 0), Vector3(-0.582, -5.361, 0), Vector3(-1.053, -3.36, 0), Vector3(-0.0524783, -0.0256405, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_t4q3r"]
 resource_name = "AK_shoot"
@@ -607,372 +544,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_4jhr5"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../NEW_shotgun:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.07, -0.047, -0.272)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../NEW_shotgun/Cube:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(2.38419e-06, 3.43323e-05, -0.0052675)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../NEW_shotgun:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.00872665, 1.5708, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Muzzle_light:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../NEW_shotgun/arm left:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-2.728, -1.71, -1.519)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../NEW_shotgun/shell:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.14162, 0.116629, 0.159698)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../NEW_shotgun/shell:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.678103, 0.00603158, -1.57074)]
-}
-
-[sub_resource type="Animation" id="Animation_632ol"]
-resource_name = "pistol_RELOAD"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.06601e-07, -0.0294479), Vector3(0.027512, -0.0456256, 0.0338431), Vector3(0, 1.06601e-07, -0.0294479)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1.5708, 0, 0), Vector3(2.3562, -4.30442e-08, 0.180991), Vector3(1.5708, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2.2, 2.33333, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 0.329877, 1, 1),
-"update": 0,
-"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(-0.033, 0.033, 0), Vector3(-0.033, 0.033, 0), Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide cover_9:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2.2, 2.33333, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 0.329877, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.091, 0.04, 0), Vector3(-0.091, 0.04, 0), Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0407887, 0.0404786, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/919 glock 17rnd mag empty_10:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.36667, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0524783, -0.0256405, 0), Vector3(-0.052, -0.026, 0), Vector3(-0.052, -0.026, 0), Vector3(-0.0524783, -0.0256405, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("arm right:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-2.05109e-15, -3.14159, -0.0820305), Vector3(4.14819e-08, -3.14159, -0.296723), Vector3(-2.05109e-15, -3.14159, -0.0820305)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("arm right:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.5661, -0.0981607, -7.45058e-09), Vector3(-0.529542, -0.136727, 0.0168368), Vector3(-0.5661, -0.0981607, -7.45058e-09)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("arm left:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.5661, -0.0981607, -0.204354), Vector3(-0.5661, -0.0981607, -0.204354), Vector3(-0.513903, -0.0981607, -0.204354), Vector3(-0.5661, -0.0981607, -0.204354)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("arm left:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8, 1, 1.3, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0.92677), Vector3(0, 3.14159, 0.92677), Vector3(-0.853996, 3.01254, -0.177694), Vector3(-0.853996, 3.01254, 0.564019), Vector3(-0.853996, 3.01254, -0.177694), Vector3(0, 3.14159, 0.92677)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("arm left/RemoteTransform3D:remote_path")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.3, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [NodePath(""), NodePath("../../Sketchfab_model/root/GLTF_SceneRootNode/919 glock 17rnd mag empty_10"), NodePath(""), NodePath("")]
-}
-
-[sub_resource type="Animation" id="Animation_nlvnn"]
-resource_name = "pistol_shoot"
-length = 0.06
-step = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(1, 4.59479, 1),
-"update": 0,
-"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(-0.0325711, 0.0334266, -2.19047e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide cover_9:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(1, 4.59479, 1),
-"update": 0,
-"values": [Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0858342, 0.0404786, 7.45058e-09), Vector3(-0.0407887, 0.0404786, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sketchfab_model:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.31792, -1.5708, 1.5708), Vector3(-1.5708, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Muzzle_light:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.035, 0.05, 0.06),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../BULLET SPAWN")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [null, null, null],
-"method": &"_inst_Bullet"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../VIEWMODEL_ANIMATION/Light_Shoot:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("arm right:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.035, 0.06),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.566, -0.088, 0.03), Vector3(-0.566, -0.103, 0.03), Vector3(-0.566, -0.088, 0.03)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("arm right:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.035),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.994838, -3.14159, -0.0820305), Vector3(0.994838, -3.14159, -0.0820305)]
-}
-
-[sub_resource type="Animation" id="Animation_s2o3n"]
-resource_name = "reset"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06)]
-}
-
-[sub_resource type="Animation" id="Animation_takga"]
-resource_name = "shoot"
-length = 0.06
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(0.203063, 4.59479, 1),
-"update": 0,
-"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(-0.0325711, 0.0334266, -2.19047e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide cover_9:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(0.203063, 4.59479, 1),
-"update": 0,
-"values": [Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0858342, 0.0404786, 7.45058e-09), Vector3(-0.0407887, 0.0404786, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sketchfab_model:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.06),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.31792, -1.5708, 1.5708), Vector3(-1.5708, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_8eeqe"]
 resource_name = "Shotgun_shoot"
@@ -1109,18 +680,143 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector3(-0.678103, 0.00603158, -1.57074), Vector3(-0.678103, 0.00603158, -1.57074), Vector3(0.268511, -0.0207111, -2.87992), Vector3(-0.130913, 0.557446, 2.83788), Vector3(1.17786, -0.734064, 0.521149)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../VIEWMODEL_ANIMATION/Heavy_shoot:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../BULLET SPAWN")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null, null, null],
+"method": &"_inst_bullet_cluster"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nlvnn"]
+resource_name = "pistol_shoot"
+length = 0.06
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide_8:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.06),
+"transitions": PackedFloat32Array(1, 4.59479, 1),
+"update": 0,
+"values": [Vector3(0.0124744, 0.0334267, -2.18838e-06), Vector3(-0.0325711, 0.0334266, -2.19047e-06), Vector3(0.0124744, 0.0334267, -2.18838e-06)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_model/root/GLTF_SceneRootNode/glock 17 gen5 mos slide cover_9:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.06),
+"transitions": PackedFloat32Array(1, 4.59479, 1),
+"update": 0,
+"values": [Vector3(-0.0407887, 0.0404786, 0), Vector3(-0.0858342, 0.0404786, 7.45058e-09), Vector3(-0.0407887, 0.0404786, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sketchfab_model:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.31792, -1.5708, 1.5708), Vector3(-1.5708, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Muzzle_light:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.035, 0.05, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BULLET SPAWN")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null, null, null],
+"method": &"_inst_Bullet"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../VIEWMODEL_ANIMATION/Light_Shoot:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("arm right:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.035, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.566, -0.088, 0.03), Vector3(-0.566, -0.103, 0.03), Vector3(-0.566, -0.088, 0.03)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("arm right:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.035),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.994838, -3.14159, -0.0820305), Vector3(0.994838, -3.14159, -0.0820305)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sqlbt"]
 _data = {
-&"\"pistol\"_RELOAD": SubResource("Animation_ybiwm"),
 &"AK_shoot": SubResource("Animation_t4q3r"),
 &"Axe_Swing": SubResource("Animation_s0814"),
 &"RESET": SubResource("Animation_4jhr5"),
 &"Shotgun_shoot": SubResource("Animation_8eeqe"),
-&"pistol_RELOAD": SubResource("Animation_632ol"),
-&"pistol_shoot": SubResource("Animation_nlvnn"),
-&"reset": SubResource("Animation_s2o3n"),
-&"shoot": SubResource("Animation_takga")
+&"pistol_shoot": SubResource("Animation_nlvnn")
 }
 
 [sub_resource type="Animation" id="Animation_2bg6a"]
@@ -1483,36 +1179,89 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_trhug"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_5x828"]
+resource_name = "shotgun_reload"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Pistol/arm right:position")
+tracks/0/path = NodePath("../NEW_shotgun:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 1.48409, 1.63333, 1.68667, 1.8, 1.93334, 2.5),
+"transitions": PackedFloat32Array(0.574349, 1, 1, 1, 0.34151, 3.605, 0.482968, 0.574349),
 "update": 0,
-"values": [Vector3(-0.566, -0.088, 0.03)]
+"values": [Vector3(0.07, -0.047, -0.272), Vector3(0.0955783, -0.00179042, -0.272), Vector3(0.0955783, -0.00179042, -0.272), Vector3(-0.12, -0.047, -0.272), Vector3(-0.12, -0.047, -0.272), Vector3(-0.1, -0.117, -0.232), Vector3(-0.12, -0.047, -0.272), Vector3(0.07, -0.047, -0.272)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Pistol/arm right:rotation")
+tracks/1/path = NodePath("../NEW_shotgun:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 1.48409, 1.6104, 1.74373, 1.91373, 2.5),
+"transitions": PackedFloat32Array(0.574349, 1, 1, 1, 1, 0.482968, 0.574349),
 "update": 0,
-"values": [Vector3(0.994838, -3.14159, -0.0820305)]
+"values": [Vector3(-0.00872665, 1.5708, 0), Vector3(0.514872, 1.5708, 0.340339), Vector3(0.514872, 1.5708, 0.340339), Vector3(-0.00872665, 2.31256, 0.453786), Vector3(-0.00872665, 2.31256, 0.453786), Vector3(-0.00872665, 2.31256, 0.453786), Vector3(-0.00872665, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../NEW_shotgun/arm left:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.252611, 0.363128, 0.466667, 0.566667, 0.666667, 0.757833, 0.866667, 0.966667, 1.06667, 1.16667, 1.24727, 1.3341, 1.43333, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2.37841, 1),
+"update": 0,
+"values": [Vector3(0.80998, 3.09981, -0.490271), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(1.25315, 4.32318, 1.11003), Vector3(0.921534, 4.32318, 1.11003), Vector3(0.80998, 3.09981, -0.490271)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../NEW_shotgun/arm left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.252611, 1.43673, 1.6, 1.6267, 1.73333, 1.86173),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.603, -1.71, -1.519), Vector3(-2.293, -1.55, -1.244), Vector3(-2.293, -1.55, -1.244), Vector3(-1.603, -1.71, -1.519), Vector3(-1.603, -1.71, -1.519), Vector3(-2.728, -1.71, -1.519), Vector3(-1.603, -1.71, -1.519)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../NEW_shotgun/arm left/pivot left2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.252611, 0.363128, 0.466667, 0.566667, 0.666667, 0.757833, 0.866667, 0.966667, 1.06667, 1.16667, 1.24727, 1.3341, 1.43333, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2.37841, 1),
+"update": 0,
+"values": [Vector3(0.251327, 4.97768, -0.361283), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(-0.109956, 4.42092, -0.179769), Vector3(-0.109956, 3.82751, -0.424115), Vector3(0.251327, 4.97768, -0.361283)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../NEW_shotgun/Cube:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.61829, 1.72305, 1.85333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.38419e-06, 3.43323e-05, -0.0052675), Vector3(2.38419e-06, 3.43323e-05, -0.0052675), Vector3(2.38419e-06, 3.43323e-05, -0.0052675), Vector3(-1.55, 0, -0.005), Vector3(2.38419e-06, 3.43323e-05, -0.0052675)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_coyy0"]
 _data = {
 &"AK_reload": SubResource("Animation_yr5kx"),
 &"Pistol_reload": SubResource("Animation_vq8ry"),
-&"RESET": SubResource("Animation_trhug")
+&"RESET": SubResource("Animation_trhug"),
+&"shotgun_reload": SubResource("Animation_5x828")
 }
 
 [sub_resource type="Animation" id="Animation_l8fd4"]
@@ -2429,7 +2178,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856107, -0.0761598, -0.500
 visible = false
 light_color = Color(1, 0.45, 0, 1)
 light_energy = 16.0
-light_indirect_energy = 16.0
+light_indirect_energy = 0.0
 light_size = 0.583
 light_specular = 16.0
 
@@ -2441,7 +2190,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
 [node name="GLTF_SceneRootNode" parent="Head/Camera3D/VIEWMODEL/Pistol/Sketchfab_model/root" index="0"]
-transform = Transform3D(1, 0, 0, 0, -3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.06601e-07, -0.0294479)
 rotation_order = 0
 
 [node name="9x19_0" parent="Head/Camera3D/VIEWMODEL/Pistol/Sketchfab_model/root/GLTF_SceneRootNode" index="0"]
@@ -2491,7 +2240,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol"]
-transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.67743e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
+transform = Transform3D(-0.518249, 0.690243, 2.18822e-06, 0.690243, 0.518249, -4.58323e-12, -1.31386e-06, 1.74989e-06, -0.863143, -0.5661, -0.0981607, -0.204354)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2501,7 +2250,7 @@ mesh = SubResource("CylinderMesh_pw8jt")
 mesh = SubResource("ArrayMesh_5vr6x")
 
 [node name="pivot left2" type="Node3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left"]
-transform = Transform3D(0.580703, 0.814116, 0, -0.814115, 0.580704, 0, 0, 0, 1, -0.274218, -0.158319, -1.19209e-07)
+transform = Transform3D(0.382681, 0.923881, 2.45269e-08, -0.912506, 0.37797, 0.156435, 0.144527, -0.0598647, 0.987688, -0.274218, -0.158319, -1.19209e-07)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/Pistol/arm left/pivot left2"]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.125503, -0.0724595, 0)
@@ -2532,7 +2281,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, -0.01, 0, 0.01, -4.37114e-10, 0, 0.0123148, 0.0180618)
 
 [node name="magazine_low" parent="Head/Camera3D/VIEWMODEL/AK/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode" index="9"]
-transform = Transform3D(99.9875, 0, 0, 0, -24.5429, 96.9265, 0, -96.9203, -24.5445, -0.614, -12.8823, 13.4768)
+transform = Transform3D(99.9876, 0, 0, 0, -24.5429, 96.9265, 0, -96.9204, -24.5444, -0.614, -12.8823, 13.4768)
 
 [node name="selector_low_Movable_0" parent="Head/Camera3D/VIEWMODEL/AK/Sketchfab_model/a4bb9a85238e480089851de3f6fb8333_fbx/RootNode/selector_low" index="0"]
 transform = Transform3D(0.981627, -0.190809, 0, 0.190809, 0.981627, 0, 0, 0, 1, 0, 0, 0)
@@ -2774,7 +2523,8 @@ cast_shadow = 0
 mesh = SubResource("ArrayMesh_sweqm")
 
 [node name="NEW_shotgun" parent="Head/Camera3D/VIEWMODEL" instance=ExtResource("12_ax3m3")]
-transform = Transform3D(-4.37114e-09, -0.000872654, 0.0999962, 0, 0.0999962, 0.000872654, -0.1, 3.81449e-11, -4.37097e-09, 0.0699392, -0.49605, -0.274744)
+transform = Transform3D(-3.61999e-07, -0.000872654, 0.0999962, 0, 0.0999962, 0.000872654, -0.1, 3.159e-09, -3.61985e-07, 0.0699392, -0.49605, -0.274744)
+visible = false
 
 [node name="Empty" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun" index="0"]
 transform = Transform3D(-0.999862, -5.8033e-08, -4.34229e-08, 4.37722e-08, -4.7306e-07, -0.997947, 4.37431e-08, -1.32509, 3.58061e-07, -7.15256e-06, -0.000104904, 0.0806171)
@@ -2796,7 +2546,7 @@ transform = Transform3D(0.999862, 0, 1.16415e-10, 0, 0.997947, -2.01476e-09, -2.
 material_override = SubResource("StandardMaterial3D_vq3lt")
 
 [node name="arm left" type="Node3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun"]
-transform = Transform3D(-5.03372, -2.49397, 0.161846, -1.82463, 3.4186, -4.07042, 1.70787, -3.69833, -3.87168, -2.728, -1.71, -1.519)
+transform = Transform3D(-5.03373, -2.49395, 0.161859, -1.82463, 3.4186, -4.07042, 1.70785, -3.69834, -3.87168, -1.603, -1.71, -1.519)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun/arm left"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2806,7 +2556,7 @@ mesh = SubResource("CylinderMesh_pw8jt")
 mesh = SubResource("ArrayMesh_5vr6x")
 
 [node name="pivot left2" type="Node3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun/arm left"]
-transform = Transform3D(0.330094, -0.13182, -0.934701, -0.34237, 0.906057, -0.24869, 0.879672, 0.402104, 0.253953, -0.274218, -0.158319, -1.19209e-07)
+transform = Transform3D(0.330095, -0.131819, -0.934701, -0.34237, 0.906057, -0.24869, 0.879672, 0.402104, 0.253954, -0.274218, -0.158319, -1.19209e-07)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun/arm left/pivot left2"]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.125503, -0.0724595, 0)
@@ -2828,7 +2578,7 @@ transform = Transform3D(-0.867616, 0.0693982, -0.492368, -0.200319, -0.955084, 0
 update_scale = false
 
 [node name="arm right" type="Node3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun"]
-transform = Transform3D(-5.57163, -0.735754, 0.0048531, -0.545703, 4.10739, -3.79684, 0.493525, -3.76463, -4.14348, -5.41329, -0.789201, 0.247537)
+transform = Transform3D(-5.57163, -0.735747, 0.00485904, -0.545702, 4.10739, -3.79684, 0.493515, -3.76463, -4.14348, -5.41329, -0.789201, 0.247537)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun/arm right"]
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.125504, -0.0724595, 0)
@@ -2856,7 +2606,7 @@ transform = Transform3D(1.05998, 2.98023e-08, 0, -2.98023e-08, 1.05998, 0, 0, 0,
 mesh = SubResource("ArrayMesh_wbl3y")
 
 [node name="shell" type="MeshInstance3D" parent="Head/Camera3D/VIEWMODEL/NEW_shotgun"]
-transform = Transform3D(0.00383789, 0.999982, 0.00469715, -0.778763, 4.22063e-05, 0.627317, 0.627305, -0.00606555, 0.77875, -1.14162, 0.116629, 0.159698)
+transform = Transform3D(0.335789, -0.90634, -0.256504, 0.190638, 0.332072, -0.923789, 0.922443, 0.261299, 0.284289, -3122.49, -11241, 3459.54)
 mesh = SubResource("CylinderMesh_3vlem")
 
 [node name="VIEWMODEL_ANIMATION" type="Node" parent="Head/Camera3D/VIEWMODEL"]
@@ -2892,11 +2642,14 @@ libraries = {
 stream = ExtResource("7_exkf5")
 volume_db = -7.0
 
-[node name="slash" type="AudioStreamPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
-stream = ExtResource("8_ncqb0")
-
 [node name="Medium_Shoot" type="AudioStreamPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
 stream = ExtResource("9_41nd7")
+
+[node name="Heavy_shoot" type="AudioStreamPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
+stream = ExtResource("19_3vlem")
+
+[node name="slash" type="AudioStreamPlayer" parent="Head/Camera3D/VIEWMODEL/VIEWMODEL_ANIMATION"]
+stream = ExtResource("8_ncqb0")
 
 [node name="touch" type="Area3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0193535, 0)

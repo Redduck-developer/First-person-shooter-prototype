@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cof7ymv5wln4i"]
+[gd_scene load_steps=5 format=3 uid="uid://cof7ymv5wln4i"]
 
 [ext_resource type="Texture2D" uid="uid://dt84xhrnlifow" path="res://Assets/Textures/Blood.png" id="1_cgdgl"]
+[ext_resource type="Script" uid="uid://crdbr736smyoh" path="res://Scenes/misc/blood_decal.gd" id="1_dd2c1"]
 [ext_resource type="Texture2D" uid="uid://ds2is0gtv8acc" path="res://Assets/Textures/Blood_normal.png" id="2_t6y47"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ls101"]
@@ -11,6 +12,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 top_level = true
 collision_mask = 2
 spring_length = 10000.0
+script = ExtResource("1_dd2c1")
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, -0.0325879, -0.0803235)
@@ -30,3 +32,9 @@ distance_fade_begin = 30.0
 transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0)
 visible = false
 mesh = SubResource("QuadMesh_ls101")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

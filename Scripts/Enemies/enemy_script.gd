@@ -5,6 +5,8 @@ class_name enemy
 
 @export var AXE : bool = true
 @export var Health : float = 100
+@export var needs_sight : bool = true
+@export var give_ammo_on_death : bool = false
 
 var SPEED : float
 var gravity = 9.8
@@ -17,6 +19,9 @@ const WALK_SPEED = 5
 const SPRINT_SPEED = 10.0
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y -= (gravity * 2) * delta
+	
 	if $GPUParticles3D.emitting == true:
 		$Bloodbox/CollisionShape3D2.disabled = false
 	else:
@@ -39,54 +44,88 @@ func _physics_process(delta: float) -> void:
 	var next_position = nav.get_next_path_position()
 	var new_velocity = (next_position - current_position).normalized() * SPEED
 	$RayCast3D.rotate_y(1)
-	if in_sight == true:
-		$MeshInstance3D/head.look_at(global.headpos)
-		
-		if %SEE_CAST.is_colliding():
-			spotted = true
-		else:
-			spotted = false
-		
-		if spotted == true:
-			$"Walking(concrete)".playing = true
-			$"Walking(concrete)".volume_db = 80
-			$walk_run_animation_player.play("move")
-			update_target_location(null)
+	if needs_sight == true:
+		if in_sight == true:
+			$MeshInstance3D/head.look_at(global.headpos)
 			
-			if not is_on_floor():
-				velocity.y -= (gravity * 2) * delta
-			if $RayCast3D.is_colliding():
-				if is_on_floor():
-					if $RayCast3D.get_collider() is not player:
-						if $RayCast3D.get_collider() is not prop:
-							if $RayCast3D.get_collider() is not enemy:
-								velocity.y = JUMP_VELOCITY
-			
-			if %SPRINT_CAST.is_colliding():
-				if $%SPRINT_CAST.get_collider() is player:
-					SPEED = WALK_SPEED
-					$walk_run_animation_player.speed_scale = 2.5
-					$"Walking(concrete)".pitch_scale = 1
+			if %SEE_CAST.is_colliding():
+				spotted = true
 			else:
-				SPEED = SPRINT_SPEED
-				$walk_run_animation_player.speed_scale = 5
-				$"Walking(concrete)".pitch_scale = 2
+				spotted = false
 			
-			if %HURT_CAST.is_colliding():
-				if %HURT_CAST.get_collider() is player:
-					$Attack_Animation_player.play("attack_axe")
-			
-			
-			velocity.x = new_velocity.x
-			velocity.z = new_velocity.z
-			_push_away_rigid_bodies()
-			move_and_slide()
+			if spotted == true:
+				$"Walking(concrete)".playing = true
+				$"Walking(concrete)".volume_db = 80
+				$walk_run_animation_player.play("move")
+				update_target_location(null)
+				
+				if not is_on_floor():
+					velocity.y -= (gravity * 2) * delta
+				if $RayCast3D.is_colliding():
+					if is_on_floor():
+						if $RayCast3D.get_collider() is not player:
+							if $RayCast3D.get_collider() is not prop:
+								if $RayCast3D.get_collider() is not enemy:
+									velocity.y = JUMP_VELOCITY
+				
+				if %SPRINT_CAST.is_colliding():
+					if $%SPRINT_CAST.get_collider() is player:
+						SPEED = WALK_SPEED
+						$walk_run_animation_player.speed_scale = 2.5
+						$"Walking(concrete)".pitch_scale = 1
+				else:
+					SPEED = SPRINT_SPEED
+					$walk_run_animation_player.speed_scale = 5
+					$"Walking(concrete)".pitch_scale = 2
+				
+				if %HURT_CAST.is_colliding():
+					if %HURT_CAST.get_collider() is player:
+						$Attack_Animation_player.play("attack_axe")
+				
+				
+				velocity.x = new_velocity.x
+				velocity.z = new_velocity.z
+				_push_away_rigid_bodies()
+				move_and_slide()
+			else:
+				$walk_run_animation_player.stop()
+				$"Walking(concrete)".volume_db = -80
+				$"Walking(concrete)".playing = false
 		else:
-			$walk_run_animation_player.stop()
-			$"Walking(concrete)".volume_db = -80
-			$"Walking(concrete)".playing = false
+			pass
 	else:
-		pass
+		$MeshInstance3D/head.look_at(global.headpos)
+		$"Walking(concrete)".playing = true
+		$"Walking(concrete)".volume_db = 80
+		$walk_run_animation_player.play("move")
+		update_target_location(null)
+		
+		if $RayCast3D.is_colliding():
+			if is_on_floor():
+				if $RayCast3D.get_collider() is not player:
+					if $RayCast3D.get_collider() is not prop:
+						if $RayCast3D.get_collider() is not enemy:
+							velocity.y = JUMP_VELOCITY
+		
+		if %SPRINT_CAST.is_colliding():
+			if $%SPRINT_CAST.get_collider() is player:
+				SPEED = WALK_SPEED
+				$walk_run_animation_player.speed_scale = 2.5
+				$"Walking(concrete)".pitch_scale = 1
+		else:
+			SPEED = SPRINT_SPEED
+			$walk_run_animation_player.speed_scale = 5
+			$"Walking(concrete)".pitch_scale = 2
+		
+		if %HURT_CAST.is_colliding():
+			if %HURT_CAST.get_collider() is player:
+				$Attack_Animation_player.play("attack_axe")
+		
+		
+		velocity.x = new_velocity.x
+		velocity.z = new_velocity.z
+		_push_away_rigid_bodies()
+		move_and_slide()
 
 
 func update_target_location(target_location):
@@ -145,6 +184,11 @@ func  _hurt(amount):
 
 func _on_death_animation_animation_finished(anim_name: StringName) -> void:
 	$death_animation.stop()
+	global.current_enemy_amount = global.current_enemy_amount - 1
+	if give_ammo_on_death == true:
+		AmmoManager.light_ammo = AmmoManager.light_ammo + 5
+		AmmoManager.medium_ammo = AmmoManager.medium_ammo + 15
+		AmmoManager.heavy_ammo = AmmoManager.heavy_ammo + 3
 	queue_free()
 
 
@@ -158,3 +202,6 @@ func _blood_instantiate(pos):
 	var blood_inst = blood.instantiate()
 	blood_inst.position = pos
 	get_parent().add_child(blood_inst)
+
+func _ready() -> void:
+	global.current_enemy_amount = global.current_enemy_amount + 1

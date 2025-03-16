@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://8hjed4tw4oh0"]
+[gd_scene load_steps=63 format=3 uid="uid://8hjed4tw4oh0"]
 
 [ext_resource type="Script" uid="uid://qmc47ywo41by" path="res://Scripts/Levels/LEVEL_DELETER.gd" id="1_6dfxa"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Assets/Materials/Pink.tres" id="1_7m11j"]
@@ -34,6 +34,8 @@
 [ext_resource type="Material" uid="uid://vvr1mayy8hq4" path="res://Assets/Materials/Curugated_metal.tres" id="31_pbsoh"]
 [ext_resource type="PackedScene" uid="uid://2yassif5dplj" path="res://Scenes/props/radio.tscn" id="33_52fq4"]
 [ext_resource type="PackedScene" uid="uid://b43fxqai4g5eg" path="res://Scenes/props/Collectibles (NOT AMMO)/flashlight.tscn" id="34_14yyo"]
+[ext_resource type="PackedScene" uid="uid://ccgdqd8wgxkkg" path="res://Scenes/props/Collectibles (NOT AMMO)/gun_shotgun.tscn" id="35_uckqo"]
+[ext_resource type="PackedScene" uid="uid://boch2ecfekwgv" path="res://Scenes/props/Ammo/Heavy_shotgun_ammo.tscn" id="36_t5eln"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_o275n"]
 albedo = Color(0, 0.5, 1, 1)
@@ -1299,6 +1301,21 @@ transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 10.3563, 1
 
 [node name="flashlight" parent="." instance=ExtResource("34_14yyo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.483, 0.98528, 3.45878)
+
+[node name="shotgun" parent="." instance=ExtResource("35_uckqo")]
+transform = Transform3D(-0.994625, 0.103539, 4.52583e-09, 0, -4.37114e-08, 1, 0.103539, 0.994625, 4.34765e-08, 10.5784, 0.966718, 3.06364)
+
+[node name="Shells" parent="." instance=ExtResource("36_t5eln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1672, 1.03548, 2.81155)
+
+[node name="Shells2" parent="." instance=ExtResource("36_t5eln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.383, 1.03548, 2.80735)
+
+[node name="Shells3" parent="." instance=ExtResource("36_t5eln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6002, 1.03548, 2.81155)
+
+[node name="Shells4" parent="." instance=ExtResource("36_t5eln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8159, 1.03548, 2.80735)
 
 [connection signal="area_entered" from="ROPE/Area3D" to="ROPE" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="ROPE/Area3D" to="ROPE" method="_on_area_3d_area_exited"]

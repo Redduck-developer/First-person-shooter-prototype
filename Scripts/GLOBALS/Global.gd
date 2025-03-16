@@ -1,5 +1,5 @@
 extends Node
-#vector variables
+#vector & transform variables
 var armstart : Vector2
 var playpos : Vector3
 var stunpos : Vector2
@@ -11,11 +11,11 @@ var Climbing_Pos : Vector3
 var headpos : Vector3
 
 
-#float variables
+#float & int variables
 var jump = 10
 var speed = 1
 var ckookpint = 0
-
+var current_enemy_amount : int = 0
 
 #bolean variables
 var retract = false

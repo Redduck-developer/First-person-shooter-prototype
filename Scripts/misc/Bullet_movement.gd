@@ -2,9 +2,8 @@ extends CharacterBody3D
 
 @export var SPEED = 45
 
-
 func _process(delta: float) -> void:
-	var direction = (self.transform.basis * Vector3(0, 0, -10000)).normalized()
+	var direction = (self.global_transform.basis * Vector3(0, 0, -10000)).normalized()
 	velocity = direction * SPEED
 	
 	move_and_slide()

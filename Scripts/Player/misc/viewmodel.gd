@@ -12,36 +12,50 @@ func _process(delta: float) -> void:
 		$Axe.visible = false
 		$KEY.visible = false
 		$Flashlight.visible = false
+		$NEW_shotgun.visible = false
 	if SlotBase.current_slot_data == "pistol":
 		$Pistol.visible = true
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = false
 		$Flashlight.visible = false
+		$NEW_shotgun.visible = false
 	if SlotBase.current_slot_data == "rifle":
 		$Pistol.visible = false
 		$AK.visible = true
 		$Axe.visible = false
 		$KEY.visible = false
 		$Flashlight.visible = false
+		$NEW_shotgun.visible = false
 	if SlotBase.current_slot_data == "axe":
 		$Pistol.visible = false
 		$AK.visible = false
 		$Axe.visible = true
 		$KEY.visible = false
 		$Flashlight.visible = false
+		$NEW_shotgun.visible = false
 	if SlotBase.current_slot_data == "key":
 		$Pistol.visible = false
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = true
 		$Flashlight.visible = false
+		$NEW_shotgun.visible = false
 	if SlotBase.current_slot_data == "flashlight":
 		$Pistol.visible = false
 		$AK.visible = false
 		$Axe.visible = false
 		$KEY.visible = false
 		$Flashlight.visible = true
+		$NEW_shotgun.visible = false
+	if SlotBase.current_slot_data == "shotgun":
+		$Pistol.visible = false
+		$AK.visible = false
+		$Axe.visible = false
+		$KEY.visible = false
+		$Flashlight.visible = false
+		$NEW_shotgun.visible = true
+	
 	
 	if SlotBase.switched == true:
 		$VIEWMODEL_ANIMATION/Swap_animation.stop()
@@ -60,7 +74,8 @@ func _on_ammo_manager_reload_anim() -> void:
 		$VIEWMODEL_ANIMATION/Reload_animations.play("Pistol_reload")
 	if SlotBase.current_slot_data == "rifle":
 		$VIEWMODEL_ANIMATION/Reload_animations.play("AK_reload")
-
+	if SlotBase.current_slot_data == "shotgun":
+		$VIEWMODEL_ANIMATION/Reload_animations.play("shotgun_reload")
 
 func _fire():
 	if SlotBase.current_slot_data == "pistol":
@@ -76,6 +91,11 @@ func _fire():
 		if AmmoManager.is_ready_to_be_fired == false:
 			if Input.is_action_pressed("lmb"):
 				$VIEWMODEL_ANIMATION/AnimationPlayer.play("Axe_Swing")
+	if SlotBase.current_slot_data == "shotgun":
+		if AmmoManager.ammo_left_in_mag > 0:
+			if AmmoManager.is_ready_to_be_fired == false:
+				if Input.is_action_pressed("lmb"):
+					$VIEWMODEL_ANIMATION/AnimationPlayer.play("Shotgun_shoot")
 func _aim_down():
 	if Input.is_action_just_pressed("rmb"):
 		$VIEWMODEL_ANIMATION/Aim_down_Sights.play("Aimdown")

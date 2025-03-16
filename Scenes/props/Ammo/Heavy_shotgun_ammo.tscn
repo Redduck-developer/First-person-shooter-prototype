@@ -1,0 +1,166 @@
+[gd_scene load_steps=17 format=3 uid="uid://boch2ecfekwgv"]
+
+[ext_resource type="Script" uid="uid://cmytkiamw58yj" path="res://Scripts/Props/Collectible_Ammo_Controller.gd" id="1_6ml78"]
+[ext_resource type="AudioStream" uid="uid://dx7hsvq8i8muv" path="res://Assets/Sounds/Impact.wav" id="2_d6snh"]
+[ext_resource type="AudioStream" uid="uid://bxepm6gu87iki" path="res://Assets/Sounds/Inventory_close.wav" id="3_hv7of"]
+[ext_resource type="Texture2D" uid="uid://dspejmw2lp1al" path="res://Assets/Textures/material_textures/Recycled_Wood.jpg" id="4_fao7g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axkpa"]
+size = Vector3(0.204062, 0.171192, 0.169041)
+
+[sub_resource type="Curve" id="Curve_xw7di"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.175824), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_k3hkw"]
+curve = SubResource("Curve_xw7di")
+
+[sub_resource type="Curve" id="Curve_i0ng1"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_b2aqm"]
+curve = SubResource("Curve_i0ng1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bv5of"]
+spread = 180.0
+initial_velocity_min = 22.22
+initial_velocity_max = 22.22
+scale_curve = SubResource("CurveTexture_k3hkw")
+scale_over_velocity_min = 122.22
+scale_over_velocity_max = 122.22
+scale_over_velocity_curve = SubResource("CurveTexture_b2aqm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp1wt"]
+blend_mode = 4
+albedo_color = Color(0.00999999, 1, 0.8185, 1)
+emission_enabled = true
+emission = Color(1, 0.833333, 0, 1)
+emission_energy_multiplier = 26.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hbbg3"]
+material = SubResource("StandardMaterial3D_hp1wt")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy6tu"]
+albedo_color = Color(0.57, 0.152, 0, 1)
+albedo_texture = ExtResource("4_fao7g")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ps4j0"]
+material = SubResource("StandardMaterial3D_hy6tu")
+size = Vector3(0.195, 0.005, 0.165)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4dgc"]
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.75
+rim_enabled = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_arayf"]
+material = SubResource("StandardMaterial3D_l4dgc")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.17
+radial_segments = 9
+
+[node name="Shells" type="RigidBody3D"]
+script = ExtResource("1_6ml78")
+is_light_ammo = false
+is_heavy_ammo = true
+collected_ammo_amount = 6
+is_RigidBody3D = true
+
+[node name="hurtbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101873, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000468753, 0.0812247, 6.10948e-06)
+shape = SubResource("BoxShape3D_axkpa")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115741, 0.010694)
+emitting = false
+amount = 71
+lifetime = 0.15
+one_shot = true
+trail_lifetime = 19.25
+process_material = SubResource("ParticleProcessMaterial_bv5of")
+draw_pass_1 = SubResource("SphereMesh_hbbg3")
+
+[node name="Impact" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101873, 0)
+stream = ExtResource("2_d6snh")
+unit_size = 5.0
+
+[node name="Collect_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hv7of")
+volume_db = -16.46
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000468753, -0.020648, 6.10948e-06)
+shape = SubResource("BoxShape3D_axkpa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101873, 0)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.0999835, -0.00969326)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0202423, 0.0816891)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0202423, -0.0804695)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.57435e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -0.817716, -4.37114e-08, 1.91069e-15, 0.0948721, -0.0202423, 0.000609804)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.69254e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -0.844755, -4.37114e-08, 1.91069e-15, -0.0971485, -0.0210275, 0.00080229)
+mesh = SubResource("BoxMesh_ps4j0")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0672401, -0.0180032, 0.047652)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00133704, -0.0180032, 0.047652)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615533, -0.0180032, 0.047652)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0672401, -0.0180032, -0.00201118)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00133704, -0.0180032, -0.00201118)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0615533, -0.0180032, -0.00201118)
+mesh = SubResource("CylinderMesh_arayf")
+skeleton = NodePath("")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

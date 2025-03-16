@@ -25,8 +25,9 @@ var ID_SIX = null
 var pistol = preload("res://Scenes/props/Collectibles (NOT AMMO)/gun_pistol.tscn")
 var AK = preload("res://Scenes/props/Collectibles (NOT AMMO)/gun_rifle.tscn")
 var AXE = preload("res://Scenes/props/Collectibles (NOT AMMO)/Axe_collect.tscn")
-var  KEY = preload("res://Scenes/props/Collectibles (NOT AMMO)/key.tscn")
+var KEY = preload("res://Scenes/props/Collectibles (NOT AMMO)/key.tscn")
 var flash = preload("res://Scenes/props/Collectibles (NOT AMMO)/flashlight.tscn")
+var shotgun = preload("res://Scenes/props/Collectibles (NOT AMMO)/gun_shotgun.tscn")
 
 #MISC
 var switched = false
@@ -183,6 +184,32 @@ func _remove_ID():
 				instFLASH(global.obj_pickup_position,global.obj_pickup_rotation)
 				ID_FOUR_FULL = false
 				ID_FOUR = ID_FIVE
+	
+	if Current_slot_selected == 1:
+		if ID_ONE_FULL == true:
+			if ID_ONE == "shotgun":
+				instshotgun(global.obj_pickup_position,global.obj_pickup_rotation)
+				ID_ONE_FULL = false
+				ID_ONE = ID_FIVE
+	if Current_slot_selected == 2:
+		if ID_TWO_FULL == true:
+			if ID_TWO == "shotgun":
+				instshotgun(global.obj_pickup_position,global.obj_pickup_rotation)
+				ID_TWO_FULL = false
+				ID_TWO = ID_FIVE
+	if Current_slot_selected == 3:
+		if ID_THREE_FULL == true:
+			if ID_THREE == "shotgun":
+				instshotgun(global.obj_pickup_position,global.obj_pickup_rotation)
+				ID_THREE_FULL = false
+				ID_THREE = ID_FIVE
+	if Current_slot_selected == 4:
+		if ID_FOUR_FULL == true:
+			if ID_FOUR == "shotgun":
+				instshotgun(global.obj_pickup_position,global.obj_pickup_rotation)
+				ID_FOUR_FULL = false
+				ID_FOUR = ID_FIVE
+
 
 func _remove_id_instantiantionless():
 	if Current_slot_selected == 1:
@@ -271,6 +298,12 @@ func instKEY(pos, rot):
 
 func instFLASH(pos, rot):
 	var instance = flash.instantiate()
+	instance.position = pos
+	instance.rotation = rot
+	add_child(instance)
+
+func instshotgun(pos, rot):
+	var instance = shotgun.instantiate()
 	instance.position = pos
 	instance.rotation = rot
 	add_child(instance)
