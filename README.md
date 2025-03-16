@@ -19,7 +19,7 @@ very basic has a couple functions and three ammo types light, medium, and heavy
 ------------
 SANDBOX MODE
 
-has 3 maps
+has 5 maps
 
 ------------
 HEALTH AND STAMINA SYSTEMS
@@ -30,5 +30,10 @@ Includes stamina depletion and regeneration as well as hurt and heal functions
 ENEMIES
 
 1 enemy with the ai of an single cell orginism 
+
+------------
+ARENA MODE
+
+has 1 map currently 
 
 ------------
