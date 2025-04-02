@@ -17,16 +17,13 @@ script = ExtResource("1_dd2c1")
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, -0.0325879, -0.0803235)
 layers = 1023
-size = Vector3(3, 0.664, 3)
+size = Vector3(3, 1.144, 3)
 texture_albedo = ExtResource("1_cgdgl")
 texture_normal = ExtResource("2_t6y47")
 texture_orm = ExtResource("1_cgdgl")
 emission_energy = 16.0
-normal_fade = 0.999
-upper_fade = 0.046168
-lower_fade = 0.01875
+lower_fade = 0.0337968
 distance_fade_enabled = true
-distance_fade_begin = 30.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0)

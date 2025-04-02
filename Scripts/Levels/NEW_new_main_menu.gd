@@ -55,7 +55,18 @@ func _on_back_5_button_pressed() -> void:
 	$ui/Story.visible = false
 
 func _on_new_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://new_tutorial.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/new_tutorial.tscn")
+
+func _on_arena_1_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Levels/wave_survival.tscn")
+
+func _on_arena_button_pressed() -> void:
+	$ui/Arena.visible = true
+	$ui/gamode.visible = false
+
+func _on_back_6_button_pressed() -> void:
+	$ui/Arena.visible = false
+	$ui/gamode.visible = true
 
 #actual functions above
 #-------------------------------------------
@@ -179,3 +190,29 @@ func _on_new_tutorial_mouse_entered() -> void:
 
 func _on_new_tutorial_mouse_exited() -> void:
 	$ui/Story/NEW_Tutorial/OUTLINE.visible = false
+
+
+func _on_arena_1_button_mouse_entered() -> void:
+	$ui/Arena/Arena_1/OUTLINE.visible = true
+
+
+func _on_arena_1_button_mouse_exited() -> void:
+	$ui/Arena/Arena_1/OUTLINE.visible = false
+
+
+
+func _on_arena_button_mouse_entered() -> void:
+	$ui/gamode/ARENA/OUTLINE.visible = true
+
+
+func _on_arena_button_mouse_exited() -> void:
+	$ui/gamode/ARENA/OUTLINE.visible = false
+
+
+
+func _on_back_6_button_mouse_entered() -> void:
+	$ui/Arena/BACK/OUTLINE.visible = true
+
+
+func _on_back_6_button_mouse_exited() -> void:
+	$ui/Arena/BACK/OUTLINE.visible = true

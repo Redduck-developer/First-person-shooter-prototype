@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://bqhw2yulr6bkk"]
+[gd_scene load_steps=48 format=4 uid="uid://bqhw2yulr6bkk"]
 
 [ext_resource type="Script" uid="uid://d2oohsp7acx4d" path="res://Scripts/Levels/NEW_new_main_menu.gd" id="1_t83cj"]
 [ext_resource type="Material" uid="uid://du4aeytu46j26" path="res://Assets/Materials/Concrette.tres" id="2_g5k6n"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dcjgyx8oaog3b" path="res://Assets/Textures/Level_ISLAND_FILE_PHOTO.png" id="10_hipxr"]
 [ext_resource type="Texture2D" uid="uid://ca5rqwljcei6b" path="res://Assets/Textures/Level_TUT_file_photo.png" id="11_3aolv"]
 [ext_resource type="Texture2D" uid="uid://bafvgkcevrsle" path="res://Assets/Textures/NEW_tutorial_file_photo.png" id="13_dn1iv"]
+[ext_resource type="Texture2D" uid="uid://uaiyv5waon81" path="res://Assets/Textures/Arena_1_file_photo.png" id="14_rfcrd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2rsat"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -599,9 +600,9 @@ mesh = SubResource("QuadMesh_lextq")
 
 [node name="SANDBOX" type="Label" parent="ui/gamode"]
 texture_filter = 1
-offset_left = 235.0
+offset_left = 123.0
 offset_top = 286.0
-offset_right = 468.0
+offset_right = 356.0
 offset_bottom = 338.0
 text = "SANDBOX"
 label_settings = SubResource("LabelSettings_g3n2q")
@@ -620,20 +621,41 @@ mesh = SubResource("QuadMesh_a6ejv")
 
 [node name="STORY" type="Label" parent="ui/gamode"]
 texture_filter = 1
-offset_left = 671.0
+offset_left = 757.0
 offset_top = 286.0
-offset_right = 904.0
+offset_right = 990.0
 offset_bottom = 338.0
-text = "STORY"
+text = "MISSIONS"
 label_settings = SubResource("LabelSettings_g3n2q")
 
 [node name="story_button" type="Button" parent="ui/gamode/STORY"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 161.0
+offset_right = 242.0
 offset_bottom = 45.0
 
 [node name="OUTLINE" type="MeshInstance2D" parent="ui/gamode/STORY"]
+visible = false
+position = Vector2(120.125, 43.875)
+scale = Vector2(239.75, 4.25)
+mesh = SubResource("QuadMesh_a6ejv")
+
+[node name="ARENA" type="Label" parent="ui/gamode"]
+texture_filter = 1
+offset_left = 459.0
+offset_top = 286.0
+offset_right = 701.0
+offset_bottom = 338.0
+text = "ARENA"
+label_settings = SubResource("LabelSettings_g3n2q")
+
+[node name="arena_button" type="Button" parent="ui/gamode/ARENA"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 161.0
+offset_bottom = 45.0
+
+[node name="OUTLINE" type="MeshInstance2D" parent="ui/gamode/ARENA"]
 visible = false
 position = Vector2(79.625, 43.875)
 scale = Vector2(158.75, 4.25)
@@ -894,6 +916,65 @@ position = Vector2(44.5625, 32)
 scale = Vector2(86.875, 4.25)
 mesh = SubResource("QuadMesh_a6ejv")
 
+[node name="Arena" type="Node2D" parent="ui"]
+visible = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="ui/Arena"]
+self_modulate = Color(0, 0, 0, 0.647059)
+position = Vector2(575.5, 325)
+scale = Vector2(1159, 658)
+mesh = SubResource("QuadMesh_lextq")
+
+[node name="Arena_1" type="Label" parent="ui/Arena"]
+texture_filter = 1
+offset_left = 150.0
+offset_top = 37.0
+offset_right = 383.0
+offset_bottom = 89.0
+text = "Arena 1"
+label_settings = SubResource("LabelSettings_g3n2q")
+
+[node name="Arena_1_button" type="Button" parent="ui/Arena/Arena_1"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -36.0
+offset_top = 42.0
+offset_right = 215.0
+offset_bottom = 184.0
+
+[node name="OUTLINE" type="MeshInstance2D" parent="ui/Arena/Arena_1"]
+visible = false
+position = Vector2(89, 113)
+scale = Vector2(254, 144)
+mesh = SubResource("QuadMesh_a6ejv")
+
+[node name="Sprite2D" type="Sprite2D" parent="ui/Arena/Arena_1"]
+texture_filter = 4
+position = Vector2(89, 113)
+scale = Vector2(0.12872, 0.123677)
+texture = ExtResource("14_rfcrd")
+
+[node name="BACK" type="Label" parent="ui/Arena"]
+texture_filter = 1
+offset_left = 11.0
+offset_top = 600.0
+offset_right = 244.0
+offset_bottom = 652.0
+text = "BACK"
+label_settings = SubResource("LabelSettings_rh3va")
+
+[node name="back6_button" type="Button" parent="ui/Arena/BACK"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 89.0
+offset_bottom = 38.0
+
+[node name="OUTLINE" type="MeshInstance2D" parent="ui/Arena/BACK"]
+visible = false
+position = Vector2(44.5625, 32)
+scale = Vector2(86.875, 4.25)
+mesh = SubResource("QuadMesh_a6ejv")
+
 [connection signal="mouse_entered" from="ui/title/PLAY/play_button" to="." method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/title/PLAY/play_button" to="." method="_on_play_button_mouse_exited"]
 [connection signal="pressed" from="ui/title/PLAY/play_button" to="." method="_on_play_button_pressed"]
@@ -912,6 +993,9 @@ mesh = SubResource("QuadMesh_a6ejv")
 [connection signal="mouse_entered" from="ui/gamode/STORY/story_button" to="." method="_on_story_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/gamode/STORY/story_button" to="." method="_on_story_button_mouse_exited"]
 [connection signal="pressed" from="ui/gamode/STORY/story_button" to="." method="_on_story_button_pressed"]
+[connection signal="mouse_entered" from="ui/gamode/ARENA/arena_button" to="." method="_on_arena_button_mouse_entered"]
+[connection signal="mouse_exited" from="ui/gamode/ARENA/arena_button" to="." method="_on_arena_button_mouse_exited"]
+[connection signal="pressed" from="ui/gamode/ARENA/arena_button" to="." method="_on_arena_button_pressed"]
 [connection signal="mouse_entered" from="ui/gamode/BACK/back_button" to="." method="_on_back_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/gamode/BACK/back_button" to="." method="_on_back_button_mouse_exited"]
 [connection signal="pressed" from="ui/gamode/BACK/back_button" to="." method="_on_back_button_pressed"]
@@ -939,6 +1023,12 @@ mesh = SubResource("QuadMesh_a6ejv")
 [connection signal="mouse_entered" from="ui/Story/BACK/back5_button" to="." method="_on_back_5_button_mouse_entered"]
 [connection signal="mouse_exited" from="ui/Story/BACK/back5_button" to="." method="_on_back_5_button_mouse_exited"]
 [connection signal="pressed" from="ui/Story/BACK/back5_button" to="." method="_on_back_5_button_pressed"]
+[connection signal="mouse_entered" from="ui/Arena/Arena_1/Arena_1_button" to="." method="_on_arena_1_button_mouse_entered"]
+[connection signal="mouse_exited" from="ui/Arena/Arena_1/Arena_1_button" to="." method="_on_arena_1_button_mouse_exited"]
+[connection signal="pressed" from="ui/Arena/Arena_1/Arena_1_button" to="." method="_on_arena_1_button_pressed"]
+[connection signal="mouse_entered" from="ui/Arena/BACK/back6_button" to="." method="_on_back_6_button_mouse_entered"]
+[connection signal="mouse_exited" from="ui/Arena/BACK/back6_button" to="." method="_on_back_6_button_mouse_exited"]
+[connection signal="pressed" from="ui/Arena/BACK/back6_button" to="." method="_on_back_6_button_pressed"]
 
 [editable path="player_3rd_person_model/ARMS/arms/Axe"]
 [editable path="player_3rd_person_model/ARMS/arms/pistol"]

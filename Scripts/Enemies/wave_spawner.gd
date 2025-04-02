@@ -6,12 +6,18 @@ var enemy_amount_spawn_needed : int = 0
 var enemy_type_1 : PackedScene = preload("res://Scenes/enemies/enemy_mele.tscn")
 var ready_to_run_process : bool = false
 
+@export var spin_on_specified_wave : bool = false
+@export var specified_wave : int = 5
 @export var use_enemy_type_1 : bool = true
 
 func _process(delta: float) -> void:
 	$"visual/wave count".text = str(wave)
 	$"visual/enemies count".text = str(global.current_enemy_amount)
-	self.rotate_y(0.5)
+	if spin_on_specified_wave == false:
+		self.rotate_y(0.5)
+	else:
+		if wave > (specified_wave - 1):
+			self.rotate_y(0.5)
 	if ready_to_run_process == true:
 		if global.current_enemy_amount < 1:
 			if enemy_amount_spawn_needed < 1:

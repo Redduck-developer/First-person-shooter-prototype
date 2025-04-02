@@ -7,12 +7,15 @@ class_name enemy
 @export var Health : float = 100
 @export var needs_sight : bool = true
 @export var give_ammo_on_death : bool = false
+@export var parryable : bool = false
 
 var SPEED : float
 var gravity = 9.8
 var in_sight = false
 var spotted = false
 var blood = preload("res://Scenes/misc/blood_decal.tscn")
+var parry : bool = false
+var parried : bool = false
 
 const JUMP_VELOCITY = 6
 const WALK_SPEED = 5
@@ -119,7 +122,8 @@ func _physics_process(delta: float) -> void:
 		
 		if %HURT_CAST.is_colliding():
 			if %HURT_CAST.get_collider() is player:
-				$Attack_Animation_player.play("attack_axe")
+				if parried == false:
+					$Attack_Animation_player.play("attack_axe")
 		
 		
 		velocity.x = new_velocity.x
@@ -165,10 +169,21 @@ func _on_vision_body_exited(body: Node3D) -> void:
 
 func _on_attack_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack_axe":
-		$Attack_Animation_player.play("reset_axe")
-		if %HURT_CAST.is_colliding():
-			if %HURT_CAST.get_collider() is player:
-				StatusManager._hurt(10)
+		if parry == false:
+			$Attack_Animation_player.play("reset_axe")
+			if %HURT_CAST.is_colliding():
+				if %HURT_CAST.get_collider() is player:
+					StatusManager._hurt(10)
+		else:
+			$Attack_Animation_player.play("reset_axe")
+			$Attack_Animation_player.speed_scale = 0.4
+			$Parry.emitting = true
+			parry = false
+			parried = true
+			_hurt_BLOODLESS(5)
+	if anim_name == "reset_axe":
+		$Attack_Animation_player.speed_scale = 1
+		parried = false
 
 
 func  _hurt(amount):
@@ -181,14 +196,20 @@ func  _hurt(amount):
 	$HitSound.play()
 	_blood_instantiate(self.global_position)
 
+func  _hurt_BLOODLESS(amount):
+	Health = Health - amount
+	$MeshInstance3D/head.look_at(global.headpos)
+	$HitSound.stop()
+	$HitSound.play()
+	_blood_instantiate(self.global_position)
 
 func _on_death_animation_animation_finished(anim_name: StringName) -> void:
 	$death_animation.stop()
 	global.current_enemy_amount = global.current_enemy_amount - 1
 	if give_ammo_on_death == true:
 		AmmoManager.light_ammo = AmmoManager.light_ammo + 5
-		AmmoManager.medium_ammo = AmmoManager.medium_ammo + 15
-		AmmoManager.heavy_ammo = AmmoManager.heavy_ammo + 3
+		AmmoManager.medium_ammo = AmmoManager.medium_ammo + 10
+		AmmoManager.heavy_ammo = AmmoManager.heavy_ammo + 1
 	queue_free()
 
 

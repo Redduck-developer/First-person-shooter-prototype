@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://b845m7vdjyod4"]
+
+[ext_resource type="Script" uid="uid://bippw0jcwcbsd" path="res://Scripts/Enemies/wave_spawner.gd" id="1_t4iaj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_f8s5k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rma3h"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_b8lb3"]
+material = SubResource("StandardMaterial3D_rma3h")
+size = Vector3(4.455, 1, -0.005)
+
+[node name="wave_spawner" type="Node3D"]
+script = ExtResource("1_t4iaj")
+
+[node name="enemy_spawner" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+gizmo_extents = 3.3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy_spawner"]
+visible = false
+mesh = SubResource("SphereMesh_f8s5k")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="enemy_spawner"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 8.63183, 0)
+top_level = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0197, 0, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -23.7402, 1.7286, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.98432, 1.72454, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 1.25572, 0.00406361, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 1.25979, 17.7286, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.98026, 16, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -23.7443, 16.0041, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0157, 17.7245, -18)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_b8lb3")
+skeleton = NodePath("../..")
+
+[node name="wave" type="Label3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5733, 12.4471, -17.5579)
+text = "WAVE "
+font_size = 812
+outline_size = 0
+
+[node name="enemies" type="Label3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2784, 6.44707, -17.5579)
+text = "ENEMIES"
+font_size = 812
+outline_size = 0
+
+[node name="enemies count" type="Label3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28016, 6.44707, -17.5579)
+text = "0"
+font_size = 812
+outline_size = 0
+
+[node name="wave count" type="Label3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28016, 12.5319, -17.5579)
+text = "0"
+font_size = 812
+outline_size = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_spawn_timeout"]
